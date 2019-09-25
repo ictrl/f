@@ -16,7 +16,8 @@ export default function Checkout() {
     phone: getCart().number,
     user_id: '101',
     // redirect_url: `http://localhost:8001/bid/callback?user_id=${user.id}`,
-    redirect_url: `${API}/bid/callback?user_id=101`,
+    //redirect_url: `${API}/bid/callback?user_id=101`,
+    redirect_url:  'http://157.245.101.109/bid/callback?user_id=101',
     webhook_url: '/webhook/'
   };
 
