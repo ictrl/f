@@ -7,6 +7,11 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+
+
+
+
 html {
   font-family: 'Poppins', sans-serif;
   -ms-text-size-adjust: 100%;
@@ -46,7 +51,8 @@ template {
   display: none
 }
 a {
-  background-color: transparent
+  background-color: transparent;
+  text-decoration: none;
 }
 a:active,
 a:hover {
@@ -7427,106 +7433,6 @@ button.close {
 	}
 }
 
-/*footer*/
-.footer ul {
-  list-style: none;
-  padding: 0px;
-}
-.footer ul li a {
-  color: #333 !important;
-  text-decoration: none !important;
-}
-
-.footer ul li {
-  padding-bottom: 10px;
-}
-
-.subscribe-input {
-  margin-top: 80px;
-  border: none;
-  background: #ff9900;
-  border-bottom: 1px solid #fff;
-  width: 100%;
-}
-input ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #fff;
-
-  opacity: 1; /* Firefox */
-}
-.subscribe {
-  margin-top: 30px;
-  margin-bottom: 80px;
-}
-
-/*********************************CATALOGUE***************************************************************/
-
-.top-banner {
-  background-image: url('images/top-image.png');
-}
-
-.cat-galary {
-  height: 350px;
-}
-
-.cat-galary h4 {
-  margin-top: 80px;
-}
-.right {
-  text-align: right;
-}
-
-@media (max-width: 767px) {
-  .col-sm-6.cat-galary {
-    height: auto;
-  }
-}
-
-/* canvasPrint page */
-.upload-image,
-.cartImg {
-  height: 30rem;
-  width: auto;
-}
-
-.cart-badge,
-.cart-badge:hover {
-  border-radius: 50%;
-  padding: 5px;
-  font-size: 12px;
-  font-style: italic;
-  background: #f1b05f;
-}
-
-.mx-auto {
-  margin: 5% 25%;
-}
-
-.right-align {
-  text-align: right !important;
-}
-
-.img {
-  width: 200px;
-  height: 200px;
-  margin: 15%;
-  margin-top: 95%;
-}
-
-.pm {
-  margin: 5%;
-}
-
-.offset {
-  margin: 4% 15%;
-}
-
-.offset-btn {
-  margin: 4% 32%;
-  padding: 2% 3%;
-  font-size: 16px;
-  /* letter-spacing: 2px; */
-}
 /* ////////////////// */
 /* ////////////////// */
 /* ////////////////// */
@@ -7538,7 +7444,6 @@ input ::placeholder {
 /* ////////////////// */
 /* ////////////////// */
 /* ////////////////// */
-
 body{
 	font-family: 'Poppins', sans-serif;
 }
@@ -7552,7 +7457,10 @@ body{
     text-align: left;
     /*float: right;*/
 }
-
+.btn.btn-warning {
+    background: #ff9900;
+    border: #ff9900;
+}
 @media(width: 1024px){
 .pro{
 	width: 50%;
@@ -7623,7 +7531,9 @@ body{
 	}
 	.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
     color: #fff;
-    background-color: rgba(240, 167, 78,0.9);
+    /* background-color: rgba(240, 167, 78,0.9); */
+    background-color:#FF9900;
+    border-radius: 5px;
     
 	}
 	.navbar-nav>li>a{
@@ -7670,33 +7580,107 @@ body{
 	}
 }
 
-.banner-img
-{
-	width: 100%;
-	padding:10px 20px;
-}
-.banner-img1
-{
-	width: 100%;
-  padding:10px;
-  padding-left: 5rem;
-  padding-right: 0rem;
-}
-.banner-img2
-{
-	width: 100vh;
-  padding-right: 0rem;
-  padding-right: 5rem;
-
-}
-.banner-img3
-{
-  padding:10px 4rem;
-
-	width: 100%;
-	padding:10px 20px;
+/*three image section*/
+.hovereffect {
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+  width: 100%;
+  height: 100%;
+  float: left;
+  /*overflow: hidden;*/
+  position: relative;
+  text-align: center;
+  cursor: default;
 }
 
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+
+
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-size: 25px;
+  padding: 10px;
+  margin-top: 100px;
+  /*background: rgba(0, 0, 0, 0.6);*/
+}
+
+.hovereffect a.info {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  /*margin: 50px 0 0 0;*/
+  background-color: transparent;
+}
+
+.hovereffect a.info:hover {
+  box-shadow: 0 0 5px #fff;
+}
+
+.hovereffect a.info, .hovereffect h2 {
+  -webkit-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.hovereffect:hover a.info, .hovereffect:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.hovereffect {
+    border-radius: 50%;
+}
+
+.hovereffect img ,.hovereffect:hover .overlay{width: 100%;
+border-radius: 50%}
+
+/*canvas*/
+.canvas{
+	background-image:  url("../src/images/canvas.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+@media(min-width:1200px)
+{.canvas-inner{margin: 70px 0px;}
+    .canvas-left{padding-right:0px;}
+.canvas-right{padding-left:0px;}
+
+}
+.canvas-heading{
+	/*margin-top: 89px;*/
+	margin-left: 169px;
+}
+.canvas-paragaraph{
+	font-size: 13px;
+	margin-left: 169px;
+}
 .banner-img
 {
 	width: 100%;
@@ -7863,9 +7847,6 @@ input ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 
 
-
-
-
 /*********************************CATALOGUE***************************************************************/
 
 .top-banner{
@@ -7873,11 +7854,12 @@ input ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 
 .cat-galary{
-    height: 350px;
+    height: 370px;
 }
 
 .cat-galary h4{
 	margin-top: 80px;
+	font-weight: bolder;
 }
 .right{
 	text-align: right;
@@ -7940,7 +7922,7 @@ input ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 	/*width: 222px;*/
 	height: 444px;
 	background-color: #969696;
-	margin-top: 10px;
+	margin-top: 5px;
 }
 .split1{
 	/*width: 222px;*/
@@ -7951,7 +7933,7 @@ input ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 	height: 217px;
 	width: 100%;
 	background-color: #969696;
-	margin-top: 10px;
+	/*margin-top: 10px;*/
 }
 .collage1{
 	height: 247px;
@@ -7969,57 +7951,39 @@ input ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     border-color: #ff9900;
 }
 
-/* ////////////////// */
-/* ////////////////// */
-/* ////////////////// */
-/* ////////////////// */
-/* ////////////////// */
-/* ////////////////// */
-/* ////////////////// */
 
 
-
-/*canvas*/
-.canvas{
-	background-image:  url("../src/images/canvas.png");
-	background-repeat: no-repeat;
-	background-size: cover;
+@media (min-width: 768px){
+    .left-section .col-sm-4,.left-section .col-sm-6,.left-section .col-sm-12{
+    padding: 5px;
 }
-@media(min-width:1200px)
-{.canvas-inner{margin: 70px 0px;}
-    .canvas-left{padding-right:0px;}
-.canvas-right{padding-left:0px;}
-
-}
-.canvas-heading{
-	/*margin-top: 89px;*/
-	margin-left: 169px;
-}
-.canvas-paragaraph{
-	font-size: 13px;
-	margin-left: 169px;
-}
-.banner-img
-{
-	width: 100%;
-	padding:10px 20px;
-}
-
-@media (max-width: 767px) {
-	.canvas-heading {
-	margin-top: 89px;
-	margin-left: 0px;
-}
-	.canvas-paragaraph{
-	margin-top: 0px;
-	margin-left: 0px;
+.left-section .col-sm-5,.left-section .col-sm-2 {
+    padding: 0px !important;
 }
 }
 
+.canvas-card{
+    border:1px solid #767676;
+    padding-bottom: 50px;
+}
 
-/* ////////////////// */
-/* ////////////////// */
-/* ////////////////// */
-/* ////////////////// */
-/* ////////////////// */
+.canvas-card:hover{
+    border:1px solid #ff9900;
+    
+}
+
+.canvas-card p{
+    margin: 0 25px;
+}
+
+.overley-hover:hover{
+  color: rgb(51, 46, 46) !important;
+}
+
+
+
+/* .banner-img:hover{
+  transform: scale(1.1);
+} */
+
 
