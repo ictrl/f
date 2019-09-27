@@ -21,9 +21,9 @@ const Item = ({ frame = '', price = '', image = '' }) => {
               style={{ height: '21rem', verticalAlign: 'middle' }}
             />
           </div>
-          <div className='col-md-5'>
-            <div className='row-md-6'>
-              <h3 style={{ marginLeft: '5rem', fontSize: '18px', fontWeight: 'bold' }}>
+          <div className='col-md-4'>
+            <div className='row'>
+              <h3 style={{ marginLeft: '5rem', fontSize: '16px', fontWeight: 'bold' }}>
                 {frame}
               </h3>
             </div>
@@ -36,27 +36,37 @@ const Item = ({ frame = '', price = '', image = '' }) => {
                   <span className='input-group-text'>Quantity</span>
                 </div>
                 <input
-                  id='quantity'
                   type='number'
-                  className='form-control'
+                  className='form-control quantity'
                   value={quantity}
                   onChange={handleChange}
                 />
               </div>
             </div>
           </div>
-          <div className='col-md-2'>
-            <p
-              className='text-primary'
-              id='price'
-              style={{ marginTop: '1.2rem', fontSize: '24px', fontWeight: '700' }}>
-              ₹{price * quantity}
-            </p>
-            <Link style={{ lineHeight: '3rem' }} to=''>
+          <div className='col-md-3'>
+            <div className='row'>
+              <div className='col-md-6'>
+                <span
+                  className='text-primary'
+                  style={{ marginTop: '2.5rem', fontSize: '24px', fontWeight: '700' }}>
+                  ₹
+                </span>
+              </div>
+              <div className='col-md-6'>
+                <p
+                  className='text-primary price'
+                  style={{ marginTop: '1.2rem', fontSize: '24px', fontWeight: '700' }}>
+                  {price * quantity}
+                </p>
+              </div>
+            </div>
+
+            {/** <Link style={{ lineHeight: '3rem' }} to=''>
               &times; Remove
             </Link>
             <br />
-            <Link to='{/CanvasPrint}'>Edit Selection</Link>
+            <Link to='{/CanvasPrint}'>Edit Selection</Link> */}
           </div>
         </div>
       </div>

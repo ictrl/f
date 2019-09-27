@@ -7,16 +7,18 @@ const updateCart = () => {
   const address = document.querySelector('#address').value;
   const email = document.querySelector('#email').value;
 
-  var existing = localStorage.getItem('cart');
+  // var existing = localStorage.getItem('cart');
 
-  existing = existing ? JSON.parse(existing) : {};
+  // existing = existing ? JSON.parse(existing) : {};
+
+  let existing = {};
 
   existing['name'] = name;
   existing['number'] = number;
   existing['address'] = address;
   existing['email'] = email;
 
-  localStorage.setItem('cart', JSON.stringify(existing));
+  localStorage.setItem('User', JSON.stringify(existing));
 };
 
 const Cart = () => {

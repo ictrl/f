@@ -1,19 +1,25 @@
 import React, { Fragment } from 'react';
-import { Link,} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Item from './Item';
-import { getCart, saveOrder } from './cartHelpers';
+import { getCart } from './cartHelpers';
+
+var xquantity = 0;
+var xprice = 0;
 
 const updateCart = () => {
-  const xquantity = document.querySelector('#quantity').value;
+  for (var i = 0; i < localStorage.length; i++) {
+    xquantity = xquantity + parseInt(document.querySelectorAll('.quantity')[i].value);
+    xprice = xprice + parseInt(document.querySelectorAll('.price')[i].innerText);
+  }
 
-  var existing = localStorage.getItem('cart');
+  var existing = localStorage.getItem('User');
 
   existing = existing ? JSON.parse(existing) : {};
 
   existing['quantity'] = '';
   existing['quantity'] = xquantity;
   existing['price'] = '';
-  existing['price'] = getCart().price * xquantity
+  existing['price'] = xprice;
 
   localStorage.setItem('cart', JSON.stringify(existing));
 };
@@ -23,13 +29,22 @@ const Cart = () => {
     <Fragment>
       <div className='container'>
         <div className='row'>
-        <h1 style={{ color: '#F1B000', textAlign:"center" }}>Shopping Cart </h1>
+          <h1 style={{ color: '#F1B000', textAlign: 'center' }}>Shopping Cart </h1>
           <div className=' col-md-8 offset'>
-            <Item
-              frame={getCart().frame}
-              image={getCart().image}
-              price={getCart().price}
-            />
+            {(function(rows, i, len) {
+              while (++i <= len) {
+                rows.push(
+                  <Item
+                    key={i}
+                    frame={JSON.parse(localStorage[i]).frame}
+                    image={JSON.parse(localStorage[i]).image}
+                    price={JSON.parse(localStorage[i]).price}
+                  />
+                );
+              }
+              return rows;
+            })([], 0, localStorage.length)}
+
             <Link to='checkout'>
               <button
                 onClick={updateCart}

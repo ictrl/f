@@ -1,10 +1,8 @@
 import React, { useState, Fragment, useEffect } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { addItem, getSizeList, getStyleList } from './cartHelpers';
 
-
-import '../styles/imgupload.css'
-
+import '../styles/imgupload.css';
 export default function CanvasPrint() {
   const [image, setImage] = useState('https://img.icons8.com/officel/2x/add-image.png');
   let [sizePrice, setSizePrice] = useState('50');
@@ -108,12 +106,14 @@ export default function CanvasPrint() {
               <hr size='30'></hr>
               {showError()}
               <div className='col-md-6'>
-                <h3 id='frame' className style={{ color: '#666666', fontWeight: "bold" }}>
+                <h3 id='frame' className style={{ color: '#666666', fontWeight: 'bold' }}>
                   {style},{size}
                 </h3>
                 <img src={image} className='upload-image' alt='-' id='upload-image' />
-                <input type="file" id="file" accept='image/*' onChange={handleChange}/>
-                <label for="file" class="btn-2">Upload Image</label>
+                <input type='file' id='file' accept='image/*' onChange={handleChange} />
+                <label for='file' class='btn-2'>
+                  Upload Image
+                </label>
               </div>
               {/*    
                 <div className='col-md-6'>
@@ -135,9 +135,9 @@ export default function CanvasPrint() {
                   onChange={calculatePrice}
                 />*/}
 
-                <div className='col-md-6' >
-                <h3 style={{ marginTop: '3rem', }}>Select Style</h3>
-                <div className='select' style={{ marginLeft: '12rem' }} >
+              <div className='col-md-6'>
+                <h3 style={{ marginTop: '3rem' }}>Select Style</h3>
+                <div className='select' style={{ marginLeft: '12rem' }}>
                   <select name='slct' id='slct' onChange={handleChangeStyle}>
                     {styles.map((p, i) => (
                       <option value={p.value} key={i} id={p.value} className={p.price}>
@@ -147,7 +147,7 @@ export default function CanvasPrint() {
                     ))}
                   </select>
                 </div>
-                <h3 style={ { marginTop: '3rem'}}>Select Size</h3>
+                <h3 style={{ marginTop: '3rem' }}>Select Size</h3>
                 <div className='select' style={{ marginLeft: '12rem' }}>
                   <select name='slct' id='slct' value={size} onChange={handleChangeSize}>
                     {sizes.map((p, i) => (
@@ -158,9 +158,8 @@ export default function CanvasPrint() {
                     ))}
                   </select>
                 </div>
-                <h2 style={ { marginTop: '4rem' } }>
-                Price: { stylePrice * sizePrice } </h2>
-                </div>
+                <h2 style={{ marginTop: '4rem' }}>Price: {stylePrice * sizePrice} </h2>
+              </div>
               {showAddtoCartButton()}
             </div>
           </div>
