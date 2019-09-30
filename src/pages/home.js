@@ -1,9 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 import CreateYourPrint from '../components/CreateYourPrint';
 
-export default function home() {
+export default function Home() {
+  const [insta, setInsta] = useState();
+  const clg = () => {
+    console.log('cool');
+  };
+
   return (
     <Fragment>
       <div id='myCarousel' className='carousel slide' data-ride='carousel'>
@@ -77,8 +82,8 @@ export default function home() {
             <img className='img-responsive' src={require('../images/sub-1.png')} alt='' />
             <div className='overlay'>
               <h2>
-                Wall <br />
-                Art
+                Canvas <br />
+                Ideas
               </h2>
               <Link className='info' to='/catalog'>
                 Explore More
@@ -105,8 +110,8 @@ export default function home() {
             <img className='img-responsive' src={require('../images/sub-3.png')} alt='' />
             <div className='overlay'>
               <h2>
-                Wall <br />
-                Art
+                Premium <br />
+                Prints
               </h2>
               <Link className='info' to='/catalog'>
                 Explore More
@@ -173,7 +178,7 @@ export default function home() {
         <div className='col-sm-6 canvas-left'>
           <img
             className='banner-img'
-            src={require('../images/banner-image-4.png')}
+            src={require('../images/last-left-banner.png')}
             alt=''
           />
           <h4 className='center'>Floating Frame Canvas</h4>
@@ -187,30 +192,49 @@ export default function home() {
           <h4 className='center'>Large Canvas Print</h4>
         </div>
         <div className='col-sm-12'>
-          <img
-            className='banner-img'
-            src={require('../images/banner-image-6.png')}
-            alt=''
-          />
+          <img className='banner-img' src={require('../images/womenSmile.png')} alt='' />
           <h4 className='center'>Acrylic Premium Prints</h4>
         </div>
       </div>
       <div>
-        <h2 className='center'>CUSTOMER TESTIMONIAL</h2>
-        <div id='myCarousel' className='carousel carousel1  slide' data-ride='carousel'>
+        <p
+          className='center testimonial-upper'
+          style={{ letterSpacing: '4px', fontSize: '30px', fontWeight: '10' }}>
+          CUSTOMER TESTIMONIALS
+        </p>
+        <div
+          id='myCarousel'
+          className='carousel carousel1  slide testimonial-div'
+          data-ride='carousel'>
           <div className='carousel-inner'>
             <div className='item carousel-item active'>
               <div className='img-box'>
                 <img src={require('../images/testimonial.png')} alt='' />
               </div>
+              <div className='testmonial-quote testmonial-quote-up'>
+                <img
+                  className='testmonial-img'
+                  src={require('../images/quotes.png')}
+                  alt=''
+                />
+              </div>
               <p className='testimonial'>
-                Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia.
-                Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan
-                tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt
-                fringilla massa. Etiam hendrerit dolor eget rutrum.
+                I have ordered many, many items from Galleriq and have always been
+                satisfied. The
+                <br />
+                process the quick. The items are packaged with care and have
+                <br />
+                never been damaged. I have never had a complaint.
               </p>
+              <div className='testmonial-quote testmonial-quote-down'>
+                <img
+                  className='testmonial-img'
+                  src={require('../images/quotes.png')}
+                  alt=''
+                />
+              </div>
               <p className='overview'>
-                <b>Michael Holz</b>
+                <p>- Nitesh Upraity</p>
               </p>
               <div className='star-rating'>
                 <ul className='list-inline'>
@@ -236,14 +260,30 @@ export default function home() {
               <div className='img-box'>
                 <img src={require('../images/testimonial.png')} alt='' />
               </div>
+              <div className='testmonial-quote testmonial-quote-up'>
+                <img
+                  className='testmonial-img'
+                  src={require('../images/quotes.png')}
+                  alt=''
+                />
+              </div>
               <p className='testimonial'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem
-                tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis
-                vel, semper malesuada ante. Vestibulum idac nisl bibendum scelerisque non
-                non purus. Suspendisse varius nibh non aliquet.
+                I have ordered many, many items from Galleriq and have always been
+                satisfied. The
+                <br />
+                process the quick. The items are packaged with care and have
+                <br />
+                never been damaged. I have never had a complaint.
               </p>
+              <div className='testmonial-quote testmonial-quote-down'>
+                <img
+                  className='testmonial-img'
+                  src={require('../images/quotes.png')}
+                  alt=''
+                />
+              </div>
               <p className='overview'>
-                <b>Paula Wilson</b>
+                <p>- Nitesh Upraity</p>
               </p>
               <div className='star-rating'>
                 <ul className='list-inline'>
@@ -269,14 +309,30 @@ export default function home() {
               <div className='img-box'>
                 <img src={require('../images/testimonial.png')} alt='' />
               </div>
+              <div className='testmonial-quote testmonial-quote-up'>
+                <img
+                  className='testmonial-img'
+                  src={require('../images/quotes.png')}
+                  alt=''
+                />
+              </div>
               <p className='testimonial'>
-                Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a
-                mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra
-                sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida
-                nibh, facilisis gravida odio. Phasellus auctor velit.
+                I have ordered many, many items from Galleriq and have always been
+                satisfied. The
+                <br />
+                process the quick. The items are packaged with care and have
+                <br />
+                never been damaged. I have never had a complaint.
               </p>
               <p className='overview'>
-                <b>Antonio Moreno</b>
+                <div className='testmonial-quote testmonial-quote-down'>
+                  <img
+                    className='testmonial-img'
+                    src={require('../images/quotes.png')}
+                    alt=''
+                  />
+                </div>
+                <p>- Nitesh Upraity</p>
               </p>
               <div className='star-rating'>
                 <ul className='list-inline'>

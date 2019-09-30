@@ -20,6 +20,7 @@ import PaymentComplete from './pages/PaymentComplete';
 import About from './pages/about';
 import Home from './pages/home';
 import calatog from './pages/calatog';
+import category from './pages/category';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Navbar />
       <Route exact path='/' component={Home} />
       <Route exact path='/catalog' component={calatog} />
+      <Route exact path='/category' component={category} />
 
       <div className='container'>
         <Route exact path='/about' component={ About } />

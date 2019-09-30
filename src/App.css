@@ -7344,7 +7344,7 @@ button.close {
 
 
 .carousel1  {
-	width: 650px;
+	width: 750px;
 	margin: 0 auto;
 	padding-bottom: 50px;
 }
@@ -7371,7 +7371,8 @@ button.close {
 	border-radius: 50%;
 }
 .carousel1 .testimonial {	
-	padding: 30px 0 10px;
+  padding: 30px 0 10px;
+  width: 900px;
 }
 .carousel1 .overview {	
 	text-align: center;
@@ -7982,8 +7983,56 @@ input ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 
 
-/* .banner-img:hover{
-  transform: scale(1.1);
-} */
+/* changed 30 sep 10pm */
+.subscribe-input::placeholder{
+  color: #fff;
+}
+.testimonial{
+  font-style: italic;
+  color: #000;
+  letter-spacing: 1.5px;
+  line-height: 3rem;
+  
+}
 
+.testmonial-quote{
+  text-align: center;
+ 
+  word-spacing: 2rem !important;
 
+}
+.testmonial-quote-up{
+  margin-top: 1rem;
+  margin-bottom: -2rem;
+}
+.testmonial-quote-down{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.testmonial-img{
+  width: 12px;
+}
+
+.testimonial-div{
+  width: 900px;
+}
+.testimonial-upper{
+  margin-top: 5rem;
+}
+
+.shape{
+    border: solid 2px #ff9900 !important;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.arrow-down{
+  position: absolute;
+  font-size: 20px;
+  right: 25px;
+  top: 8px;
+  color: #ff9900;
+}

@@ -482,3 +482,84 @@ $(document).ready(function () {
 
 
 
+
+const UnsplashImage = ({ url, key }) =>
+  React.createElement(
+    'div',
+    { className: 'image-item', key: key },
+    React.createElement('img', { src: url })
+  );
+
+let Collage = () => {
+  const [images, setImages] = React.useState([]);
+  const [loaded, setIsLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchImages();
+  }, []);
+
+  const fetchImages = (count = 10) => {
+    const apiRoot = 'https://api.unsplash.com';
+    const accessKey = 'a22f61e98da4efa25d8860e77a91a596867dd335ecdf7feb12e086943db9565a';
+
+    axios
+      .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=${count}`)
+      .then((res) => {
+        setImages([...images, ...res.data]);
+        setIsLoaded(true);
+
+        console.log(images);
+      });
+  };
+
+  return React.createElement(
+    'div',
+    { className: 'hero is-fullheight is-bold is-info' },
+    React.createElement(
+      'div',
+      { className: 'hero-body' },
+      React.createElement(
+        'div',
+        { className: 'container' },
+        React.createElement(
+          'div',
+          { className: 'header content' },
+          React.createElement('h2', { className: 'subtitle is-6' }, 'Code Challenge #16'),
+          React.createElement(
+            'h1',
+            { className: 'title is-1' },
+            'Infinite Scroll Unsplash Code Challenge'
+          )
+        ),
+
+        React.createElement(
+          InfiniteScroll,
+          {
+            dataLength: images,
+            next: () => fetchImages(5),
+            hasMore: true,
+            loader: React.createElement('img', {
+              src:
+                'https://res.cloudinary.com/chuloo/image/upload/v1550093026/scotch-logo-gif_jq4tgr.gif',
+              alt: 'loading'
+            })
+          },
+
+          React.createElement(
+            'div',
+            { className: 'image-grid', style: { marginTop: '30px' } },
+            loaded
+              ? images.map((image, index) =>
+                  React.createElement(UnsplashImage, {
+                    url: image.urls.regular,
+                    key: index
+                  })
+                )
+              : ''
+          )
+        )
+      )
+    )
+  );
+};
+

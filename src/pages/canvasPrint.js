@@ -1,12 +1,39 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-import { Redirect } from 'react-router-dom';
-import { addItem, getSizeList, getStyleList } from './cartHelpers';
-
 import '../styles/imgupload.css';
 
 export default function canvasPrint() {
+  const splitHandler = (e) => {
+    if (e.target.classList[2] == 'i1') {
+      console.log('i1');
+      document.querySelector('.left-section:nth-child(2)').style.display = 'none';
+      document.querySelector('.left-section:nth-child(3)').style.display = 'none';
+      document.querySelector('.left-section:nth-child(4)').style.display = 'none';
+      document.querySelector('#title').innerHTML = 'Single Print';
+      document.querySelector('.left-section:nth-child(1)').style.display = 'block';
+    } else if (e.target.classList[2] == 'i2') {
+      console.log('i2');
+      document.querySelector('.left-section:nth-child(1)').style.display = 'none';
+      document.querySelector('.left-section:nth-child(3)').style.display = 'none';
+      document.querySelector('.left-section:nth-child(4)').style.display = 'none';
+      document.querySelector('#title').innerHTML = 'Split Image';
+      document.querySelector('.left-section:nth-child(2)').style.display = 'block';
+    } else if (e.target.classList[2] == 'i3') {
+      console.log('i3');
+      document.querySelector('.left-section:nth-child(2)').style.display = 'none';
+      document.querySelector('.left-section:nth-child(1)').style.display = 'none';
+      document.querySelector('.left-section:nth-child(4)').style.display = 'none';
+      document.querySelector('#title').innerHTML = 'Wall Display';
+      document.querySelector('.left-section:nth-child(3)').style.display = 'block';
+    } else {
+      console.log('i4');
+      document.querySelector('.left-section:nth-child(2)').style.display = 'none';
+      document.querySelector('.left-section:nth-child(3)').style.display = 'none';
+      document.querySelector('.left-section:nth-child(1)').style.display = 'none';
+      document.querySelector('#title').innerHTML = 'Collage Image';
+      document.querySelector('.left-section:nth-child(4)').style.display = 'block';
+    }
+  };
   return (
     <Fragment>
       <div className='row' style={{ margin: '0 40px 50px 40px' }}>
@@ -118,9 +145,12 @@ export default function canvasPrint() {
           </div>
           <div className='row' style={{ marginTop: '20px' }}>
             <div className='col-sm-6 center'>
-              <a className='btn btn-default' value='Input Button'>
+              <Link
+                to='/CreateYourPrint'
+                className='btn btn-default'
+                value='Input Button'>
                 <img src={require('../images/back.png')} alt='' />
-              </a>
+              </Link>
             </div>
             <div className='col-sm-6 center'>
               <a className='btn btn-warning' value='Input Button'>
@@ -137,40 +167,40 @@ export default function canvasPrint() {
                 <strong>1. Select Styles</strong>
               </h4>
             </div>
-            <div className='col-sm-3'>
+            <div className='col-sm-3 x i1' onClick={splitHandler}>
               <div className='card collage-thumbnail i1'>
-                <img src={require('../images/single.png')} alt='' />
-                <h5>
+                <img className='x xx i1' src={require('../images/single.png')} alt='' />
+                <h5 className='x xx i1'>
                   Single <br />
                   Print
                 </h5>
-                <p>₹1177.00</p>
+                <p className='x xx i1'>₹1177.00</p>
               </div>
             </div>
-            <div className='col-sm-3'>
+            <div className='col-sm-3 x i2' onClick={splitHandler}>
               <div className='card collage-thumbnail i2'>
-                <img src={require('../images/split.png')} alt='' />
-                <h5>
+                <img src={require('../images/split.png')} alt='' className='x xx i2' />
+                <h5 className='x xx i2'>
                   Split
                   <br />
                   Image
                 </h5>
-                <p>₹1177.00</p>
+                <p className='x xx i2'> ₹1177.00</p>
               </div>
             </div>
-            <div className='col-sm-3'>
+            <div className='col-sm-3 x i3' onClick={splitHandler}>
               <div className='card collage-thumbnail i3'>
-                <img src={require('../images/wall.png')} alt='' />
-                <h5>
+                <img src={require('../images/wall.png')} alt='' className='x xx i3' />
+                <h5 className='x xx i3'>
                   Wall
                   <br />
                   Displays
                 </h5>
-                <p>₹1177.00</p>
+                <p className='x xx i3'> ₹1177.00</p>
               </div>
             </div>
-            <div className='col-sm-3'>
-              <div className='card collage-thumbnail i4'>
+            <div className='col-sm-3 i4' onClick={splitHandler}>
+              <div className='card collage-thumbnail '>
                 <img src={require('../images/collage.png')} alt='' />
                 <h5>
                   Collage
@@ -188,14 +218,13 @@ export default function canvasPrint() {
               </h4>
             </div>
             <div className='col-sm-12'>
-              <select
-                className='browser-default custom-select custom-select-lg mb-3'
-                style={{ border: '2px solid #ff9900', padding: '10px' }}>
-                <option selected>Open this select menu</option>
+              <select className='browser-default custom-select custom-select-lg mb-3 shape'>
+                <option selected>*Please select value &nbsp;</option>
                 <option value={1}>One</option>
                 <option value={2}>Two</option>
                 <option value={3}>Three</option>
               </select>
+              <span className='arrow-down'>▼</span>
             </div>
           </div>
         </div>
