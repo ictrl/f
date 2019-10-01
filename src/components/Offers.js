@@ -5,7 +5,15 @@ import account from '../images/acoount.png';
 export default function Offers() {
   return (
     <Fragment>
-      <div className='row' style={{ marginBottom: '0px', paddingBottom: '0px' }}>
+      <div
+        className='row'
+        style={{
+          marginBottom: '0px',
+          paddingBottom: '0px',
+          position: 'sticky',
+          top: '0',
+          zIndex: '999'
+        }}>
         <div
           className=' col-sm-6 col-md-3 pro'
           style={{ textAlign: 'left', marginLeft: '-4.5rem' }}>

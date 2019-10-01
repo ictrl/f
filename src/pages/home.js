@@ -82,8 +82,8 @@ export default function Home() {
             <img className='img-responsive' src={require('../images/sub-1.png')} alt='' />
             <div className='overlay'>
               <h2>
-                Canvas <br />
-                Ideas
+                Wall <br />
+                Art
               </h2>
               <Link className='info' to='/catalog'>
                 Explore More
@@ -96,8 +96,8 @@ export default function Home() {
             <img className='img-responsive' src={require('../images/sub-2.png')} alt='' />
             <div className='overlay'>
               <h2>
-                Wall <br />
-                Art
+                Canvas <br />
+                Ideas
               </h2>
               <Link className='info' to='/catalog'>
                 Explore More

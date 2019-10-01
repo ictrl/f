@@ -10,8 +10,11 @@ import cart from '../images/cart.png';
 
 export default function Navbar() {
   return (
-    <nav className='navbar navbar-inverse' style={{ marginTop: '0', paddingTop: '0' }}>
-      <div className='navbar-header'>
+    <nav
+      id='header'
+      className='navbar navbar-inverse sticky-nav'
+      style={{ marginTop: '0', paddingTop: '0' }}>
+      <div className='navbar-header' style={{}}>
         <button
           type='button'
           data-target='#navbarCollapse'
@@ -31,7 +34,7 @@ export default function Navbar() {
           />
         </Link>
       </div>
-      <div id='navbarCollapse' className='collapse navbar-collapse'>
+      <div id='navbarCollapse' style={{}} className='collapse navbar-collapse'>
         <ul className='nav navbar-nav nav-center '>
           <li>
             <Link className='navb' to='#'>
@@ -72,12 +75,12 @@ export default function Navbar() {
         </ul>
         <ul className='nav navbar-nav navbar-right'>
           <li>
-            <Link to='#'>
+            <Link to='#' className='img-bg-rm'>
               <img src={search} alt='' />
             </Link>
           </li>
           <li>
-            <Link to='/cart'>
+            <Link to='/cart' className='img-bg-rm'>
               <img style={{ marginRight: '2.4rem' }} src={cart} alt='' />
             </Link>
           </li>

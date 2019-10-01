@@ -1,39 +1,144 @@
-import React, { useState, Fragment, useEffect } from 'react';
+import React, { useState, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/imgupload.css';
 
-export default function canvasPrint() {
+export default function CanvasPrint() {
+  const [styleImage, setStyleImage] = useState(null);
+
+  const handleChange = (event) => {
+    console.log('call');
+    const file = URL.createObjectURL(event.target.files[0]);
+
+    setStyleImage(file);
+  };
+  const [styleName, setStyleName] = useState('Single Print');
+  const [styleDiv, setStyleDiv] = useState(
+    <div className='row left-section' style={{ display: 'block' }}>
+      <div className='col-sm-12'>
+        <div className='split'>
+          <img src alt='' />
+        </div>
+      </div>
+    </div>
+  );
+
   const splitHandler = (e) => {
     if (e.target.classList[2] == 'i1') {
-      console.log('i1');
-      document.querySelector('.left-section:nth-child(2)').style.display = 'none';
-      document.querySelector('.left-section:nth-child(3)').style.display = 'none';
-      document.querySelector('.left-section:nth-child(4)').style.display = 'none';
-      document.querySelector('#title').innerHTML = 'Single Print';
-      document.querySelector('.left-section:nth-child(1)').style.display = 'block';
+      setStyleName('Single Print');
+      setStyleDiv(
+        <div className='row left-section' style={{ display: 'block' }}>
+          <div className='col-sm-12'>
+            <div className='split'>
+              <img src alt='' />
+            </div>
+          </div>
+        </div>
+      );
     } else if (e.target.classList[2] == 'i2') {
-      console.log('i2');
-      document.querySelector('.left-section:nth-child(1)').style.display = 'none';
-      document.querySelector('.left-section:nth-child(3)').style.display = 'none';
-      document.querySelector('.left-section:nth-child(4)').style.display = 'none';
-      document.querySelector('#title').innerHTML = 'Split Image';
-      document.querySelector('.left-section:nth-child(2)').style.display = 'block';
+      setStyleName('Split Image');
+      setStyleDiv(
+        <div className='row left-section' style={{ display: 'block' }}>
+          <div className='col-sm-4'>
+            <div className='split'>
+              <img src alt='' />
+            </div>
+          </div>
+          <div className='col-sm-4'>
+            <div className='split'>
+              <img src alt='' />
+            </div>
+          </div>
+          <div className='col-sm-4'>
+            <div className='split'>
+              <img src alt='' />
+            </div>
+          </div>
+        </div>
+      );
     } else if (e.target.classList[2] == 'i3') {
-      console.log('i3');
-      document.querySelector('.left-section:nth-child(2)').style.display = 'none';
-      document.querySelector('.left-section:nth-child(1)').style.display = 'none';
-      document.querySelector('.left-section:nth-child(4)').style.display = 'none';
-      document.querySelector('#title').innerHTML = 'Wall Display';
-      document.querySelector('.left-section:nth-child(3)').style.display = 'block';
+      setStyleName('Wall Display');
+      setStyleDiv(
+        <div className='row left-section' style={{ display: 'block' }}>
+          <div className='col-sm-6'>
+            <div className='row'>
+              <div className='col-sm-12'>
+                <div className='split2'>
+                  <img src alt='' />
+                </div>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-12'>
+                <div className='split2'>
+                  <img src alt='' />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-sm-6'>
+            <div className='split'>
+              <img src alt='' />
+            </div>
+          </div>
+        </div>
+      );
     } else {
-      console.log('i4');
-      document.querySelector('.left-section:nth-child(2)').style.display = 'none';
-      document.querySelector('.left-section:nth-child(3)').style.display = 'none';
-      document.querySelector('.left-section:nth-child(1)').style.display = 'none';
-      document.querySelector('#title').innerHTML = 'Collage Image';
-      document.querySelector('.left-section:nth-child(4)').style.display = 'block';
+      setStyleName('Collage Image');
+      setStyleDiv(
+        <div className='row left-section' style={{ display: 'block' }}>
+          <div className='col-sm-5'>
+            <div className='row'>
+              <div className='col-sm-12'>
+                <div className='split2'>
+                  <img src alt='' />
+                </div>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-12'>
+                <div className='split2'>
+                  <img src alt='' />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-sm-2'>
+            <div className='row'>
+              <div className='col-sm-12'>
+                <div className='split2 collage1'>
+                  <img src alt='' />
+                </div>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-12'>
+                <div className='split2 collage2'>
+                  <img src alt='' />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-sm-5'>
+            <div className='row'>
+              <div className='col-sm-12'>
+                <div className='split2'>
+                  <img src alt='' />
+                </div>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-12'>
+                <div className='split2'>
+                  <img src alt='' />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
     }
   };
+
   return (
     <Fragment>
       <div className='row' style={{ margin: '0 40px 50px 40px' }}>
@@ -41,108 +146,13 @@ export default function canvasPrint() {
           <h3 className='center' style={{ color: '#ff9900' }}>
             <b>CREATE YOUR OWN CANVAS</b>
           </h3>
+
           <h4 className='center'>
-            (Acrylic Premium Prints: <b id='title'>Single Print</b>)
+            (Acrylic Premium Prints: <b id='title'>{styleName}</b>)
           </h4>
         </div>
         <div className='col-sm-6'>
-          <div className='row left-section' style={{ display: 'block' }}>
-            <div className='col-sm-12'>
-              <div className='split'>
-                <img src alt='' />
-              </div>
-            </div>
-          </div>
-          <div className='row left-section' style={{ display: 'none' }}>
-            <div className='col-sm-4'>
-              <div className='split'>
-                <img src alt='' />
-              </div>
-            </div>
-            <div className='col-sm-4'>
-              <div className='split'>
-                <img src alt='' />
-              </div>
-            </div>
-            <div className='col-sm-4'>
-              <div className='split'>
-                <img src alt='' />
-              </div>
-            </div>
-          </div>
-          <div className='row left-section' style={{ display: 'none' }}>
-            <div className='col-sm-6'>
-              <div className='row'>
-                <div className='col-sm-12'>
-                  <div className='split2'>
-                    <img src alt='' />
-                  </div>
-                </div>
-              </div>
-              <div className='row'>
-                <div className='col-sm-12'>
-                  <div className='split2'>
-                    <img src alt='' />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='col-sm-6'>
-              <div className='split'>
-                <img src alt='' />
-              </div>
-            </div>
-          </div>
-          <div className='row left-section' style={{ display: 'none' }}>
-            <div className='col-sm-5'>
-              <div className='row'>
-                <div className='col-sm-12'>
-                  <div className='split2'>
-                    <img src alt='' />
-                  </div>
-                </div>
-              </div>
-              <div className='row'>
-                <div className='col-sm-12'>
-                  <div className='split2'>
-                    <img src alt='' />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='col-sm-2'>
-              <div className='row'>
-                <div className='col-sm-12'>
-                  <div className='split2 collage1'>
-                    <img src alt='' />
-                  </div>
-                </div>
-              </div>
-              <div className='row'>
-                <div className='col-sm-12'>
-                  <div className='split2 collage2'>
-                    <img src alt='' />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='col-sm-5'>
-              <div className='row'>
-                <div className='col-sm-12'>
-                  <div className='split2'>
-                    <img src alt='' />
-                  </div>
-                </div>
-              </div>
-              <div className='row'>
-                <div className='col-sm-12'>
-                  <div className='split2'>
-                    <img src alt='' />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {styleDiv}
           <div className='row' style={{ marginTop: '20px' }}>
             <div className='col-sm-6 center'>
               <Link
@@ -153,10 +163,10 @@ export default function canvasPrint() {
               </Link>
             </div>
             <div className='col-sm-6 center'>
-              <a className='btn btn-warning' value='Input Button'>
+              <Link to='/UploadImage' className='btn btn-warning' value='Input Button'>
                 <img src={require('../images/upload.png')} alt='' />
                 <input type='file' id='file' accept='image/*' />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
