@@ -24,6 +24,8 @@ import Home from './pages/home';
 import calatog from './pages/calatog';
 import category from './pages/category';
 
+import ThemeProvider, { ThemeContext } from './themeContext';
+
 function App() {
   return (
     <Router>
@@ -35,10 +37,12 @@ function App() {
 
       <div className='container'>
         <Route exact path='/about' component={About} />
-        <Route exact path='/CreateYourPrint' component={CreateYourPrint} />
+        <ThemeProvider>
+          <Route exact path='/CreateYourPrint' component={CreateYourPrint} />
+          <Route exact path='/CanvasPrint' component={CanvasPrint} />
+          <Route exact path='/Cart' component={Cart} />
+        </ThemeProvider>
 
-        <Route exact path='/CanvasPrint' component={CanvasPrint} />
-        <Route exact path='/Cart' component={Cart} />
         <Route exact path='/Login' component={Login} />
         <Route exact path='/create' component={create} />
         <Route exact path='/register' component={register} />

@@ -8327,3 +8327,23 @@ input ::placeholder {
   width: 100%; /* Full width */
 
 }
+
+/* 1 oct saurav */
+/*cart page*/
+
+.cart-img{
+	width: 100px;
+	height: 100px;
+}
+
+.cart-body{
+	padding-left: 20px;
+}
+
+/*checkout*/
+
+.heading-warning{
+    background: #ff9900 !important;
+    border: #ff9900 !important;
+    color: #fff !important;
+}

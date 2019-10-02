@@ -1,9 +1,12 @@
-import React, { Fragment } from 'react';
+import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import CanvasPrint from '../pages/canvasPrint';
+import { ThemeContext } from '../themeContext';
 
 export default function CreateYourPrint() {
+  const context = useContext(ThemeContext);
+  const { productProperty, setProductProperty } = context;
+
   return (
     <Fragment>
       <div className='row' style={{ marginBottom: '3rem' }}>
@@ -14,7 +17,11 @@ export default function CreateYourPrint() {
           <h4>(Choose the perfect material)</h4>
         </div>
 
-        <Link to='CanvasPrint'>
+        <Link
+          to='CanvasPrint'
+          onClick={() => {
+            setProductProperty({ ...productProperty, material: 'canvas' });
+          }}>
           <div className='col-sm-4'>
             <div className='card center canvas-card'>
               <img
@@ -34,7 +41,11 @@ export default function CreateYourPrint() {
           </div>
         </Link>
 
-        <Link to='CanvasPrint'>
+        <Link
+          to='CanvasPrint'
+          onClick={() => {
+            setProductProperty({ ...productProperty, material: 'HD Metal' });
+          }}>
           <div className='col-sm-4'>
             <div className='card center canvas-card'>
               <img
@@ -51,10 +62,14 @@ export default function CreateYourPrint() {
                 1500s,
               </p>
             </div>
-          </div>  
+          </div>
         </Link>
 
-        <Link to='CanvasPrint'>
+        <Link
+          to='CanvasPrint'
+          onClick={() => {
+            setProductProperty({ ...productProperty, material: 'Acrylic' });
+          }}>
           <div className='col-sm-4'>
             <div className='card center canvas-card'>
               <img
@@ -63,7 +78,7 @@ export default function CreateYourPrint() {
                 style={{ width: '100%' }}
               />
               <h4>
-                <b>JAcrylic</b>
+                <b>Acrylic</b>
               </h4>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.

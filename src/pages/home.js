@@ -11,25 +11,33 @@ export default function Home() {
 
   return (
     <Fragment>
+      {/* carousel start */}
       <div id='myCarousel' className='carousel slide' data-ride='carousel'>
+        {/* Indicators */}
         <ol className='carousel-indicators'>
           <li data-target='#myCarousel' data-slide-to={0} className='active' />
           <li data-target='#myCarousel' data-slide-to={1} />
           <li data-target='#myCarousel' data-slide-to={2} />
         </ol>
+        {/* Wrapper for slides */}
         <div className='carousel-inner'>
           <div className='item active'>
             <img src={require('../images/banner1.png')} alt='Los Angeles' />
           </div>
           <div className='item'>
-            <img src={require('../images/banner1.png')} alt='Chicago' />
+            <img src={require('../images/banner2.jpg')} alt='Chicago' />
           </div>
           <div className='item'>
             <img src={require('../images/banner1.png')} alt='New York' />
           </div>
         </div>
-        <a className='left carousel-control' href='#myCarousel' data-slide='prev'></a>
-        <a className='right carousel-control' href='#myCarousel' data-slide='next'></a>
+        {/* Left and right controls */}
+        <a className='left carousel-control' href='#myCarousel' data-slide='prev'>
+          <span className='sr-only'>Previous</span>
+        </a>
+        <a className='right carousel-control' href='#myCarousel' data-slide='next'>
+          <span className='sr-only'>Next</span>
+        </a>
       </div>
       <div className='row' style={{ padding: '20px 0', backgroundColor: '#EFEFEF' }}>
         <div className='col-sm-2' />
@@ -82,8 +90,8 @@ export default function Home() {
             <img className='img-responsive' src={require('../images/sub-1.png')} alt='' />
             <div className='overlay'>
               <h2>
-                Wall <br />
-                Art
+                Caanvas <br />
+                Print
               </h2>
               <Link className='info' to='/catalog'>
                 Explore More
@@ -96,8 +104,8 @@ export default function Home() {
             <img className='img-responsive' src={require('../images/sub-2.png')} alt='' />
             <div className='overlay'>
               <h2>
-                Canvas <br />
-                Ideas
+                Wall <br />
+                Art
               </h2>
               <Link className='info' to='/catalog'>
                 Explore More
