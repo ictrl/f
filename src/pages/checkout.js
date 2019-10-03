@@ -1,92 +1,288 @@
-import React, { Fragment } from 'react';
+// import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+// export default function PaymentComplete() {
+//   const clearLocalStorage = () => {
+//     localStorage.clear();
+//   };
 
-const updateCart = () => {
-  const name = document.querySelector('#name').value;
-  const number = document.querySelector('#number').value;
-  const address = document.querySelector('#address').value;
-  const email = document.querySelector('#email').value;
+//   const content = () => (
+//     <div class='center  jumbotron jumbotron-fluid'>
+//       <div class='container'>
+//         <h1 class='display-4'>checkout</h1>
+//         {clearLocalStorage()}
+//         <Link to='/summary'>
+//           <button>Summary</button>
+//         </Link>
+//       </div>
+//     </div>
+//   );
 
-  // var existing = localStorage.getItem('cart');
+//   return <Fragment>{content()}</Fragment>;
+// }
 
-  // existing = existing ? JSON.parse(existing) : {};
+import React from 'react';
 
-  let existing = {};
-
-  existing['name'] = name;
-  existing['number'] = number;
-  existing['address'] = address;
-  existing['email'] = email;
-
-  localStorage.setItem('User', JSON.stringify(existing));
-};
-
-const Cart = () => {
+export default function newCheckout() {
   return (
-    <Fragment>
-      <div class='card mx-auto' style={{ maxWidth: '60rem' }}>
-        <div class='card-header'>
-          <center>
-            <h1>Checkout Details</h1>
-          </center>
+    <div>
+      <div>
+        <div className='row cart-body'>
+          <form className='form-horizontal' method='post' action>
+            <div className='col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6'>
+              {/*REVIEW ORDER*/}
+              <div className='panel panel-warning'>
+                <div className='panel-heading heading-warning'>
+                  Review Order{' '}
+                  <div className='pull-right'>
+                    <small>
+                      <a className='afix-1' href='#'>
+                        Edit Cart
+                      </a>
+                    </small>
+                  </div>
+                </div>
+                <div className='panel-body'>
+                  <div className='form-group'>
+                    <div className='col-sm-3 col-xs-3'>
+                      <img
+                        className='img-responsive'
+                        src={require('../images/material-card-1.png')}
+                      />
+                    </div>
+                    <div className='col-sm-6 col-xs-6'>
+                      <div className='col-xs-12'>Product name</div>
+                      <div className='col-xs-12'>
+                        <small>
+                          Quantity:<span>1</span>
+                        </small>
+                      </div>
+                    </div>
+                    <div className='col-sm-3 col-xs-3 text-right'>
+                      <h6>
+                        <span>$</span>25.00
+                      </h6>
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <hr />
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-sm-3 col-xs-3'>
+                      <img
+                        className='img-responsive'
+                        src={require('../images/material-card-2.png')}
+                      />
+                    </div>
+                    <div className='col-sm-6 col-xs-6'>
+                      <div className='col-xs-12'>Product name</div>
+                      <div className='col-xs-12'>
+                        <small>
+                          Quantity:<span>1</span>
+                        </small>
+                      </div>
+                    </div>
+                    <div className='col-sm-3 col-xs-3 text-right'>
+                      <h6>
+                        <span>$</span>25.00
+                      </h6>
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <hr />
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-sm-3 col-xs-3'>
+                      <img
+                        className='img-responsive'
+                        src={require('../images/material-card-3.png')}
+                      />
+                    </div>
+                    <div className='col-sm-6 col-xs-6'>
+                      <div className='col-xs-12'>Product name</div>
+                      <div className='col-xs-12'>
+                        <small>
+                          Quantity:<span>2</span>
+                        </small>
+                      </div>
+                    </div>
+                    <div className='col-sm-3 col-xs-3 text-right'>
+                      <h6>
+                        <span>$</span>50.00
+                      </h6>
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <hr />
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-xs-12'>
+                      <strong>Subtotal</strong>
+                      <div className='pull-right'>
+                        <span>$</span>
+                        <span>200.00</span>
+                      </div>
+                    </div>
+                    <div className='col-xs-12'>
+                      <small>Shipping</small>
+                      <div className='pull-right'>
+                        <span>-</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <hr />
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-xs-12'>
+                      <strong>Order Total</strong>
+                      <div className='pull-right'>
+                        <span>$</span>
+                        <span>150.00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/*REVIEW ORDER END*/}
+            </div>
+            <div className='col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6'>
+              {/*SHIPPING METHOD*/}
+              <div className='panel panel-warning'>
+                <div className='panel-heading heading-warning'>Address</div>
+                <div className='panel-body'>
+                  <div className='form-group'>
+                    <div className='col-md-12'>
+                      <h4>Shipping Address</h4>
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-md-12'>
+                      <strong>Country:</strong>
+                    </div>
+                    <div className='col-md-12'>
+                      <input
+                        type='text'
+                        className='form-control'
+                        name='country'
+                        defaultValue
+                      />
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-md-6 col-xs-12'>
+                      <strong>First Name:</strong>
+                      <input
+                        type='text'
+                        name='first_name'
+                        className='form-control'
+                        defaultValue
+                      />
+                    </div>
+                    <div className='span1' />
+                    <div className='col-md-6 col-xs-12'>
+                      <strong>Last Name:</strong>
+                      <input
+                        type='text'
+                        name='last_name'
+                        className='form-control'
+                        defaultValue
+                      />
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-md-12'>
+                      <strong>Address:</strong>
+                    </div>
+                    <div className='col-md-12'>
+                      <input
+                        type='text'
+                        name='address'
+                        className='form-control'
+                        defaultValue
+                      />
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-md-12'>
+                      <strong>City:</strong>
+                    </div>
+                    <div className='col-md-12'>
+                      <input
+                        type='text'
+                        name='city'
+                        className='form-control'
+                        defaultValue
+                      />
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-md-12'>
+                      <strong>State:</strong>
+                    </div>
+                    <div className='col-md-12'>
+                      <input
+                        type='text'
+                        name='state'
+                        className='form-control'
+                        defaultValue
+                      />
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-md-12'>
+                      <strong>Zip / Postal Code:</strong>
+                    </div>
+                    <div className='col-md-12'>
+                      <input
+                        type='text'
+                        name='zip_code'
+                        className='form-control'
+                        defaultValue
+                      />
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-md-12'>
+                      <strong>Phone Number:</strong>
+                    </div>
+                    <div className='col-md-12'>
+                      <input
+                        type='text'
+                        name='phone_number'
+                        className='form-control'
+                        defaultValue
+                      />
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-md-12'>
+                      <strong>Email Address:</strong>
+                    </div>
+                    <div className='col-md-12'>
+                      <input
+                        type='text'
+                        name='email_address'
+                        className='form-control'
+                        defaultValue
+                      />
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-md-6 col-sm-6 col-xs-12'>
+                      <Link to="/summary">
+                      <button type='submit' className='btn btn-warning btn-submit-fix'>
+                        Place Order
+                      </button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
-        <ul class='list-group list-group-flush'>
-          <input
-            type='text'
-            name='name'
-            id='name'
-            placeholder='Name'
-            class='list-group-item'
-            style={{ width: '100%' }}></input>
-          <input
-            type='email'
-            name='email'
-            id='email'
-            placeholder='Email'
-            class='list-group-item'
-            style={{ width: '100%' }}></input>
-          <input
-            type='text'
-            name='number'
-            id='number'
-            placeholder='Number'
-            class='list-group-item'
-            style={{ width: '100%' }}></input>
-          <input
-            type='text'
-            name='address'
-            id='address'
-            placeholder='Address line 1'
-            class='list-group-item'
-            style={{ width: '100%' }}></input>
-          <input
-            type='text'
-            name='address1'
-            id='address1'
-            placeholder='Address line 1'
-            class='list-group-item'
-            style={{ width: '100%' }}></input>
-          <input
-            type='text'
-            name='address2'
-            id='address2'
-            placeholder='Delivery Address'
-            class='list-group-item'
-            style={{ width: '100%' }}></input>
-        </ul>
+        <div className='row cart-footer'></div>
       </div>
-
-      <Link to='summary'>
-        <button
-          onClick={updateCart}
-          className='btn offset-btn  btn-primary btn-2 col-md-4'
-          type='submit'
-          style={{ width: '25%', marginTop: '-3rem', marginLeft: '40rem' }}>
-          Checkout
-        </button>
-      </Link>
-    </Fragment>
+    </div>
   );
-};
-
-export default Cart;
+}

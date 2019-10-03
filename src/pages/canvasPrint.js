@@ -8,23 +8,24 @@ export default function CanvasPrint() {
 
   const splitHandler = (e) => {
     if (e.target.classList[2] == 'i1') {
-      setProductProperty({ ...productProperty, style: 'Single Print' });
       setProductProperty({
         ...productProperty,
+        styleName: 'Single Print',
+
         div: (
           <div className='row left-section' style={{ display: 'block' }}>
             <div className='col-sm-12'>
-              <div className='split'>
-                <img src alt='' />
+              <div class='upload-image-preview split' id='uploadImg'>
+                <img src={productProperty.url} alt='' />
               </div>
             </div>
           </div>
         )
       });
     } else if (e.target.classList[2] == 'i2') {
-      setProductProperty({ ...productProperty, style: 'Split Image' });
       setProductProperty({
         ...productProperty,
+        styleName: 'Split Image',
         div: (
           <div className='row left-section' style={{ display: 'block' }}>
             <div className='col-sm-4'>
@@ -46,9 +47,10 @@ export default function CanvasPrint() {
         )
       });
     } else if (e.target.classList[2] == 'i3') {
-      setProductProperty({ ...productProperty, style: 'Wall Display' });
       setProductProperty({
         ...productProperty,
+        styleName: 'Wall Display',
+
         div: (
           <div className='row left-section' style={{ display: 'block' }}>
             <div className='col-sm-6'>
@@ -76,9 +78,9 @@ export default function CanvasPrint() {
         )
       });
     } else {
-      setProductProperty({ ...productProperty, style: 'Collage Image' });
       setProductProperty({
         ...productProperty,
+        styleName: 'Collage Image',
         div: (
           <div className='row left-section' style={{ display: 'block' }}>
             <div className='col-sm-5'>
@@ -136,8 +138,8 @@ export default function CanvasPrint() {
   };
 
   const handleChange = (e) => {
-    console.log('canvasPRint page', productProperty);
     setProductProperty({ ...productProperty, sizeShape: e.target.value });
+    console.log(productProperty.styleName);
   };
 
   return (
@@ -148,7 +150,7 @@ export default function CanvasPrint() {
             <b>CREATE YOUR OWN CANVAS</b>
           </h3>
           <h4 className='center'>
-            ({productProperty.material}: <b id='title'>{productProperty.sizeShape}</b>)}
+            ({productProperty.material}: <b id='title'>{productProperty.styleName}</b>)}
           </h4>
         </div>
         <div className='col-sm-6'>
