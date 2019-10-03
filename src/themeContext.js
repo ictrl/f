@@ -5,7 +5,7 @@ export const ThemeContext = React.createContext({});
 const ThemeProveider = ({ children }) => {
   const [productProperty, setProductProperty] = useState({
     material: '',
-    style: 'Single Print',
+    style: '',
     sizeShape: '',
     price: '',
     image: '',

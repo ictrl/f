@@ -148,7 +148,7 @@ export default function CanvasPrint() {
             <b>CREATE YOUR OWN CANVAS</b>
           </h3>
           <h4 className='center'>
-            ({productProperty.material}: <b id='title'>{productProperty.style}</b>)}
+            ({productProperty.material}: <b id='title'>{productProperty.sizeShape}</b>)}
           </h4>
         </div>
         <div className='col-sm-6'>
