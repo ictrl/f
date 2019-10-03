@@ -8299,7 +8299,7 @@ input ::placeholder {
 .arrow-down {
   position: absolute;
   font-size: 20px;
-  right: 16px;
+  right: 17px;
   top: 8px;
   color: #ff9900;
 }
@@ -8443,6 +8443,7 @@ input ::placeholder {
 }
 
 
+<<<<<<< HEAD
 
 /**********Menu dropdown hover ********/
 
@@ -8531,4 +8532,9 @@ input ::placeholder {
 .category .col-sm-4 {
     padding: 3px;
 }
+=======
+.mx-auto {
+    /* margin-right: auto!important; */
+    margin-left: 23rem !important;
+>>>>>>> bf32811600dbe34fd3e8296f2573a3415b6a3bb4
 }

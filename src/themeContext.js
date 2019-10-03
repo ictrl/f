@@ -8,9 +8,14 @@ const ThemeProveider = ({ children }) => {
     styleName: 'Single Prints',
     show: false,
     sizeShape: '',
-    price: '',
-    image: '',
-    url: '',
+    price: 11,
+    image: [],
+    shipping: 10,
+    url: [],
+    quantity: 1,
+    subPrice: 11,
+    user: {},
+    totalPrice: 21,
     div: (
       <div className='row left-section ' style={{ display: 'block' }}>
         {' '}

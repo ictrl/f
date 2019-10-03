@@ -7,11 +7,11 @@ export default function CanvasPrint() {
   const { productProperty, setProductProperty } = context;
 
   const splitHandler = (e) => {
+    console.log(productProperty.url);
     if (e.target.classList[2] == 'i1') {
       setProductProperty({
         ...productProperty,
         styleName: 'Single Print',
-
         div: (
           <div className='row left-section' style={{ display: 'block' }}>
             <div className='col-sm-12'>
@@ -150,15 +150,14 @@ export default function CanvasPrint() {
             <b>CREATE YOUR OWN CANVAS</b>
           </h3>
           <h4 className='center'>
-            ({productProperty.material}: <b id='title'>{productProperty.styleName}</b>)}
+            ({productProperty.material}: <b id='title'>{productProperty.styleName}</b>)
           </h4>
         </div>
         <div className='col-sm-6'>
           {productProperty.div}
           <div className='row' style={{ marginTop: '20px' }}>
             <div
-              className='col-sm-6 ce
-            nter'>
+              className='col-sm-6 center'>
               <Link
                 to='/CreateYourPrint'
                 className='btn btn-default'
