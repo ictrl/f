@@ -5,9 +5,21 @@ export const ThemeContext = React.createContext({});
 const ThemeProveider = ({ children }) => {
   const [productProperty, setProductProperty] = useState({
     material: '',
-    style: '',
+    style: 'Single Print',
     sizeShape: '',
-    price: ''
+    price: '',
+    image: '',
+    url: '',
+    div: (
+      <div className='row left-section ' style={{ display: 'block' }}>
+        {' '}
+        <div className='col-sm-12'>
+          <div className='split'>
+            <img src alt='' />
+          </div>
+        </div>
+      </div>
+    )
   });
 
   return (

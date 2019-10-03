@@ -41,6 +41,7 @@ function App() {
           <Route exact path='/CreateYourPrint' component={CreateYourPrint} />
           <Route exact path='/CanvasPrint' component={CanvasPrint} />
           <Route exact path='/Cart' component={Cart} />
+          <Route exact path='/uploadImage' component={uploadImage} />
         </ThemeProvider>
 
         <Route exact path='/Login' component={Login} />
@@ -48,7 +49,6 @@ function App() {
         <Route exact path='/register' component={register} />
         <Route exact path='/checkout' component={checkout} />
         <Route exact path='/summary' component={summary} />
-        <Route exact path='/uploadImage' component={uploadImage} />
         <Route exact path='/payment-complete' component={PaymentComplete} />
       </div>
       <Footer />

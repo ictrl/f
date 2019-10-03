@@ -5,9 +5,6 @@ import CreateYourPrint from '../components/CreateYourPrint';
 
 export default function Home() {
   const [insta, setInsta] = useState();
-  const clg = () => {
-    console.log('cool');
-  };
 
   return (
     <Fragment>
@@ -401,7 +398,34 @@ export default function Home() {
           <h3>GALLERIQ ON INSTAGRAM</h3>
           <hr style={{ width: '7rem', border: '2px solid grey', borderRadius: ' 2px' }} />
           <div style={{ margin: '0 2rem', marginBottom: '3rem' }}>
-            <div id='instafeed_gallery' style={{ padding: '2rem 1rem' }}></div>
+            {/**<div id='instafeed_gallery' style={{ padding: '2rem 1rem' }}></div> */}
+
+            <div id='' style={{ padding: '2rem 1rem' }}>
+              <div class='col-md-3 '>
+                <img
+                  src='https://scontent.cdninstagram.com/vp/ee82adb66f3869fb1f4f233f54c18fe4/5E352120/t51.2885-15/sh0.08/e35/s640x640/54732081_2480255758651162_2082569370229781734_n.jpg?_nc_ht=scontent.cdninstagram.com'
+                  class='img-responsive overley-hover'
+                />
+              </div>
+              <div class='col-md-3 '>
+                <img
+                  src='https://scontent.cdninstagram.com/vp/57dbf4ab6a4836aa69149760daaeda61/5E19C9F8/t51.2885-15/sh0.08/e35/s640x640/53931056_553119818509947_4756748281490530144_n.jpg?_nc_ht=scontent.cdninstagram.com'
+                  class='img-responsive overley-hover'
+                />
+              </div>
+              <div class='col-md-3 '>
+                <img
+                  src='https://scontent.cdninstagram.com/vp/8d2aad4c01caea949c1812be869fe5f1/5E1B517B/t51.2885-15/sh0.08/e35/s640x640/52382697_1969205423206223_242070823319389570_n.jpg?_nc_ht=scontent.cdninstagram.com'
+                  class='img-responsive overley-hover'
+                />
+              </div>
+              <div class='col-md-3 '>
+                <img
+                  src='https://scontent.cdninstagram.com/vp/f2ed4263496f583eb944491aaef8c41f/5E1B6633/t51.2885-15/sh0.08/e35/s640x640/52673355_584651762009851_2514136196853131759_n.jpg?_nc_ht=scontent.cdninstagram.com'
+                  class='img-responsive overley-hover'
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

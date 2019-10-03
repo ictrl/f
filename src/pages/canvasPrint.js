@@ -1,150 +1,143 @@
-import React, { useState, useContext, Fragment } from 'react';
+import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/imgupload.css';
 import { ThemeContext } from '../themeContext';
 
 export default function CanvasPrint() {
-  //2 oct
   const context = useContext(ThemeContext);
   const { productProperty, setProductProperty } = context;
-  //2oct ~
-  // const [styleImage, setStyleImage] = useState(null);
 
-  // const handleChange = (event) => {
-  //   console.log('call');
-  //   const file = URL.createObjectURL(event.target.files[0]);
+  const splitHandler = (e) => {
+    if (e.target.classList[2] == 'i1') {
+      setProductProperty({ ...productProperty, style: 'Single Print' });
+      setProductProperty({
+        ...productProperty,
+        div: (
+          <div className='row left-section' style={{ display: 'block' }}>
+            <div className='col-sm-12'>
+              <div className='split'>
+                <img src alt='' />
+              </div>
+            </div>
+          </div>
+        )
+      });
+    } else if (e.target.classList[2] == 'i2') {
+      setProductProperty({ ...productProperty, style: 'Split Image' });
+      setProductProperty({
+        ...productProperty,
+        div: (
+          <div className='row left-section' style={{ display: 'block' }}>
+            <div className='col-sm-4'>
+              <div className='split'>
+                <img src alt='' />
+              </div>
+            </div>
+            <div className='col-sm-4'>
+              <div className='split'>
+                <img src alt='' />
+              </div>
+            </div>
+            <div className='col-sm-4'>
+              <div className='split'>
+                <img src alt='' />
+              </div>
+            </div>
+          </div>
+        )
+      });
+    } else if (e.target.classList[2] == 'i3') {
+      setProductProperty({ ...productProperty, style: 'Wall Display' });
+      setProductProperty({
+        ...productProperty,
+        div: (
+          <div className='row left-section' style={{ display: 'block' }}>
+            <div className='col-sm-6'>
+              <div className='row'>
+                <div className='col-sm-12'>
+                  <div className='split2'>
+                    <img src alt='' />
+                  </div>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col-sm-12'>
+                  <div className='split2'>
+                    <img src alt='' />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='col-sm-6'>
+              <div className='split'>
+                <img src alt='' />
+              </div>
+            </div>
+          </div>
+        )
+      });
+    } else {
+      setProductProperty({ ...productProperty, style: 'Collage Image' });
+      setProductProperty({
+        ...productProperty,
+        div: (
+          <div className='row left-section' style={{ display: 'block' }}>
+            <div className='col-sm-5'>
+              <div className='row'>
+                <div className='col-sm-12'>
+                  <div className='split2'>
+                    <img src alt='' />
+                  </div>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col-sm-12'>
+                  <div className='split2'>
+                    <img src alt='' />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='col-sm-2'>
+              <div className='row'>
+                <div className='col-sm-12'>
+                  <div className='split2 collage1'>
+                    <img src alt='' />
+                  </div>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col-sm-12'>
+                  <div className='split2 collage2'>
+                    <img src alt='' />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='col-sm-5'>
+              <div className='row'>
+                <div className='col-sm-12'>
+                  <div className='split2'>
+                    <img src alt='' />
+                  </div>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col-sm-12'>
+                  <div className='split2'>
+                    <img src alt='' />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      });
+    }
+  };
 
-  //   setStyleImage(file);
-  // };
-  // const [styleName, setStyleName] = useState('Single Print');
-  // const [styleDiv, setStyleDiv] = useState(
-  //   <div className='row left-section' style={{ display: 'block' }}>
-  //     <div className='col-sm-12'>
-  //       <div className='split'>
-  //         <img src alt='' />
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
-
-  const splitHandler = (e, productStyle, productPrice) => {
-    //2 oct
-    setProductProperty({ ...productProperty, style: productStyle, price: productPrice });
-    //2oct~
-    // if (e.target.classList[2] == 'i1') {
-    //   setStyleName('Single Print');
-    //   setStyleDiv(
-    //     <div className='row left-section' style={{ display: 'block' }}>
-    //       <div className='col-sm-12'>
-    //         <div className='split'>
-    //           <img src alt='' />
-    //         </div>
-    //       </div>
-    //     </div>
-    //   );
-    // } else if (e.target.classList[2] == 'i2') {
-    //   setStyleName('Split Image');
-    //   setStyleDiv(
-    //     <div className='row left-section' style={{ display: 'block' }}>
-    //       <div className='col-sm-4'>
-    //         <div className='split'>
-    //           <img src alt='' />
-    //         </div>
-    //       </div>
-    //       <div className='col-sm-4'>
-    //         <div className='split'>
-    //           <img src alt='' />
-    //         </div>
-    //       </div>
-    //       <div className='col-sm-4'>
-    //         <div className='split'>
-    //           <img src alt='' />
-    //         </div>
-    //       </div>
-    //     </div>
-    //   );
-    // } else if (e.target.classList[2] == 'i3') {
-    //   setStyleName('Wall Display');
-    //   setStyleDiv(
-    //     <div className='row left-section' style={{ display: 'block' }}>
-    //       <div className='col-sm-6'>
-    //         <div className='row'>
-    //           <div className='col-sm-12'>
-    //             <div className='split2'>
-    //               <img src alt='' />
-    //             </div>
-    //           </div>
-    //         </div>
-    //         <div className='row'>
-    //           <div className='col-sm-12'>
-    //             <div className='split2'>
-    //               <img src alt='' />
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //       <div className='col-sm-6'>
-    //         <div className='split'>
-    //           <img src alt='' />
-    //         </div>
-    //       </div>
-    //     </div>
-    //   );
-    // } else {
-    //   setStyleName('Collage Image');
-    //   setStyleDiv(
-    //     <div className='row left-section' style={{ display: 'block' }}>
-    //       <div className='col-sm-5'>
-    //         <div className='row'>
-    //           <div className='col-sm-12'>
-    //             <div className='split2'>
-    //               <img src alt='' />
-    //             </div>
-    //           </div>
-    //         </div>
-    //         <div className='row'>
-    //           <div className='col-sm-12'>
-    //             <div className='split2'>
-    //               <img src alt='' />
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //       <div className='col-sm-2'>
-    //         <div className='row'>
-    //           <div className='col-sm-12'>
-    //             <div className='split2 collage1'>
-    //               <img src alt='' />
-    //             </div>
-    //           </div>
-    //         </div>
-    //         <div className='row'>
-    //           <div className='col-sm-12'>
-    //             <div className='split2 collage2'>
-    //               <img src alt='' />
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //       <div className='col-sm-5'>
-    //         <div className='row'>
-    //           <div className='col-sm-12'>
-    //             <div className='split2'>
-    //               <img src alt='' />
-    //             </div>
-    //           </div>
-    //         </div>
-    //         <div className='row'>
-    //           <div className='col-sm-12'>
-    //             <div className='split2'>
-    //               <img src alt='' />
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   );
-    // }
+  const handleChange = (e) => {
+    console.log('canvasPRint page', productProperty);
+    setProductProperty({ ...productProperty, sizeShape: e.target.value });
   };
 
   return (
@@ -154,15 +147,12 @@ export default function CanvasPrint() {
           <h3 className='center' style={{ color: '#ff9900' }}>
             <b>CREATE YOUR OWN CANVAS</b>
           </h3>
-
           <h4 className='center'>
-            {/**(Acrylic Premium Prints: <b id='title'>{styleName}</b>) */}
-            (Acrylic Premium Prints: <b id='title'>'styleName'</b>)
+            ({productProperty.material}: <b id='title'>{productProperty.style}</b>)}
           </h4>
         </div>
         <div className='col-sm-6'>
-          'styleDiv'
-          {/**{styleDiv} */}
+          {productProperty.div}
           <div className='row' style={{ marginTop: '20px' }}>
             <div
               className='col-sm-6 ce
@@ -177,7 +167,6 @@ export default function CanvasPrint() {
             <div className='col-sm-6 center'>
               <Link to='/UploadImage' className='btn btn-warning' value='Input Button'>
                 <img src={require('../images/upload.png')} alt='' />
-                <input type='file' id='file' accept='image/*' />
               </Link>
             </div>
           </div>
@@ -189,7 +178,7 @@ export default function CanvasPrint() {
                 <strong>1. Select Styles</strong>
               </h4>
             </div>
-            <div className='col-sm-3 x i1' onClick={splitHandler('Single Print', '1177')}>
+            <div className='col-sm-3 x i1' onClick={splitHandler}>
               <div className='card collage-thumbnail i1'>
                 <img className='x xx i1' src={require('../images/single.png')} alt='' />
                 <h5 className='x xx i1'>
@@ -199,7 +188,7 @@ export default function CanvasPrint() {
                 <p className='x xx i1'>₹1177.00</p>
               </div>
             </div>
-            <div className='col-sm-3 x i2' onClick={splitHandler('Split Image', '1177')}>
+            <div className='col-sm-3 x i2' onClick={splitHandler}>
               <div className='card collage-thumbnail i2'>
                 <img src={require('../images/split.png')} alt='' className='x xx i2' />
                 <h5 className='x xx i2'>
@@ -210,9 +199,7 @@ export default function CanvasPrint() {
                 <p className='x xx i2'> ₹1177.00</p>
               </div>
             </div>
-            <div
-              className='col-sm-3 x i3'
-              onClick={splitHandler('Wall Displays', '1177')}>
+            <div className='col-sm-3 x i3' onClick={splitHandler}>
               <div className='card collage-thumbnail i3'>
                 <img src={require('../images/wall.png')} alt='' className='x xx i3' />
                 <h5 className='x xx i3'>
@@ -223,7 +210,7 @@ export default function CanvasPrint() {
                 <p className='x xx i3'> ₹1177.00</p>
               </div>
             </div>
-            <div className='col-sm-3 i4' onClick={splitHandler('Collage Image', '1177')}>
+            <div className='col-sm-3 i4' onClick={splitHandler}>
               <div className='card collage-thumbnail '>
                 <img src={require('../images/collage.png')} alt='' />
                 <h5>
@@ -242,8 +229,10 @@ export default function CanvasPrint() {
               </h4>
             </div>
             <div className='col-sm-12'>
-              <select className='browser-default custom-select custom-select-lg mb-3 shape'>
-                <option selected>*Please select value &nbsp;</option>
+              <select
+                onChange={handleChange}
+                className='browser-defaul,ethisstom-select custom-select-lg mb-3 shape'>
+                <option> *Please select value &nbsp;</option>
                 <option value={1}>One</option>
                 <option value={2}>Two</option>
                 <option value={3}>Three</option>

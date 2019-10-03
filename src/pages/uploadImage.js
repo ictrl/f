@@ -1,24 +1,43 @@
-import React, { Fragment } from 'react';
+import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../themeContext';
 
-export default function uploadImage() {
-  const clearLocalStorage = () => {
-    localStorage.clear();
+export default function UploadImage() {
+  const context = useContext(ThemeContext);
+  const { productProperty, setProductProperty } = context;
+
+  const _handleImageChange = (e) => {
+    e.preventDefault();
+
+    let reader = new FileReader();
+    let file = e.target.files[0];
+
+    reader.onloadend = () => {
+      setProductProperty({ ...productProperty, image: file });
+      setProductProperty({ ...productProperty, url: reader.result });
+      console.log('image', file);
+      console.log('url', reader.result);
+    };
+
+    reader.readAsDataURL(file);
   };
-
-  const content = () => (
-    <div>
-      <div class='center  jumbotron jumbotron-fluid'>
-        <div class='container'>
-          <h1 class='display-4'>Under Construction!</h1>
-          {clearLocalStorage()}
+  return (
+    <Fragment>
+      <div className='center'>
+        <div className='row left-section ' style={{ display: 'block' }}>
+          {' '}
+          <div className='col-sm-12'>
+            <div class='upload-image-preview split' id='uploadImg'>
+              <img src={productProperty.url} alt='' />
+            </div>
+            <input type='file' onChange={_handleImageChange} />
+          </div>
         </div>
-      </div>
-      {/**<Link to='/cart' className='btn btn-default' value='Input Button'>
-        <h1>Add to cart</h1>
-      </Link> */}
-    </div>
-  );
 
-  return <Fragment>{content()}</Fragment>;
+        <Link to='/cart'>
+          <button className='btn '> Add to cart </button>
+        </Link>
+      </div>
+    </Fragment>
+  );
 }
