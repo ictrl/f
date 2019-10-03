@@ -8307,21 +8307,6 @@ input ::placeholder {
 .img-bg-rm:hover {
   background-color: #fff !important;
 }
-.sticky-nav {
-  position: sticky;
-  top: -10px;
-  z-index: 9999;
-  /* min-height: 6.5rem; */
-  /* height: 7rem; */
-}
-
-
-#header {
- 
-  top: 0;
-  width: 100%; /* Full width */
-
-}
 
 /* 1 oct saurav */
 /*cart page*/
@@ -8371,25 +8356,25 @@ input ::placeholder {
 }
 
  .left-overlay{
-  height: 86%;
-  width: 92%;
-  left: 5%;
-  top: 2.5%;
+  height: 87%;
+  width: 92.9%;
+  left: 4.6%;
+  top: 2.4%;
   right: 0;
   bottom: 0;
 
 }
 .right-overlay{
-  height: 86%;
-  width: 92%;
- left: 3%;
-  top: 2.5%;
+  height: 87.3%;
+  width: 92.7%;
+ left: 2.7%;
+  top: 2.3%;
   bottom: 0;
 }
 .full-overlay{
-  height: 86%;
-  width: 95%;
- left: 2.7%;
+  height: 87.6%;
+  width: 95.4%;
+ left: 2.2%;
   top: 2.5%;
   bottom: 0;
 }
@@ -8458,3 +8443,92 @@ input ::placeholder {
 }
 
 
+
+/**********Menu dropdown hover ********/
+
+@media only screen and (min-width: 768px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+@media only screen and (max-width: 768px) {
+	.dropdown-menu li{
+		width: 90%;
+	}
+	}
+
+@media only screen and (min-width: 1000px){
+	
+	.dropdown-menu {
+    text-align: center;
+		width: 1200px !important;
+		padding: 60px 40px;
+	}
+    .dropdown-menu li{
+		width: 19%;
+	}
+    .menu1 {
+    left: -150px !important;
+	}
+	.menu2 {
+    left: -261px !important;
+	}
+	.menu3 {
+    left: -333px !important;
+	}
+	.menu4 {
+    left: -457px !important;
+	}
+	.menu5 {
+    left: -574px !important;
+	}
+	.menu6 {
+    left: -636px !important;
+	}
+}
+
+.navbar-inverse .navbar-nav li a:focus, .navbar-inverse .navbar-nav li a:hover {
+    color:  rgba(240, 167, 78,1) !important;
+    background-color:#fff !important;
+}
+
+
+/* ///30 sep  */
+
+.sticky-nav {
+  position: sticky;
+  top: -10px;
+  z-index: 9999;
+  /* min-height: 6.5rem; */
+  /* height: 7rem; */
+}
+
+
+#header {
+ 
+  top: 0;
+  width: 100%; /* Full width */
+
+}
+
+.logo {
+  margin-left: 6rem !important;
+}
+
+
+/* ////fjfjjfjf */
+/* /category/ */
+
+.category img,.gallary img{
+	width: 100%;
+	margin-bottom: 0;
+}
+.category p{
+	color: #ff9900;
+}
+
+@media (min-width: 768px){
+.category .col-sm-4 {
+    padding: 3px;
+}
+}

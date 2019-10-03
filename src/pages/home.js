@@ -158,7 +158,7 @@ export default function Home() {
 
 
         <div class='banner-content col-sm-6 canvas-left'>
-          <Link to="/CreateYourPrint" >
+          <Link to="/singleCanvasPrint" >
             <div className="banner-content-overlay left-overlay" />
 
             <img
@@ -178,7 +178,7 @@ export default function Home() {
 
 
         <div class='banner-content col-sm-6 canvas-right'>
-          <Link to="/CreateYourPrint"   >
+          <Link to="/canvasCollages"   >
             <div className="banner-content-overlay right-overlay" />
 
           <img
@@ -187,7 +187,7 @@ export default function Home() {
             alt=''
           />
           <div className="banner-content-details  fadeIn-right">
-            <h3 className="banner-content-title">Canvas Images</h3>
+            <h3 className="banner-content-title">Canvas Collages</h3>
             <p className="banner-content-text">This is a short description</p>
           </div>
         </Link>
@@ -205,7 +205,7 @@ export default function Home() {
 
 
       <div class='banner-content col-sm-12'>
-          <Link to="/CreateYourPrint"  >
+          <Link to="/canvasSplitImage"  >
             <div className="banner-content-overlay full-overlay" />
 
           <img
@@ -214,7 +214,7 @@ export default function Home() {
             alt=''
           />
           <div className="banner-content-details  fadeIn-bottom">
-            <h3 className="banner-content-title">Canvas Images</h3>
+            <h3 className="banner-content-title">CANVAS SPLIT IMAGE</h3>
             <p className="banner-content-text">This is a short description</p>
           </div>
         </Link>
@@ -230,7 +230,7 @@ export default function Home() {
 
 
         <div class='banner-content col-sm-6 canvas-left'>
-          <Link to="/CreateYourPrint"   >
+          <Link to="/floatingFrameCanvas"   >
             <div className="banner-content-overlay left-overlay" />
 
             <img
@@ -244,12 +244,12 @@ export default function Home() {
             </div>
           </Link>
           <h4 className='center'>
-        Single Canvas Print
+          Floating Frame Canvas
           </h4>
         </div>
 
         <div class='banner-content col-sm-6 canvas-right'>
-          <Link to="/CreateYourPrint"   >
+          <Link to="/largeCanvasPrints"   >
             <div className="banner-content-overlay right-overlay" />
 
           <img
@@ -265,7 +265,7 @@ export default function Home() {
           </div>
         </Link>
         <h4 className='center' >
-      Canvas Collages
+        Large Canvas Print
         </h4>
       </div>
 
@@ -275,7 +275,7 @@ export default function Home() {
 
 
       <div class='banner-content col-sm-12'>
-          <Link to="/CreateYourPrint"   >
+          <Link to="/acrylicPremiumPrints"   >
             <div className="banner-content-overlay full-overlay" />
 
           <img
