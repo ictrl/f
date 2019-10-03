@@ -29,10 +29,10 @@ export default function Home() {
           </div>
         </div>
         {/* Left and right controls */}
-        <a className='left carousel-control' href='#myCarousel' data-slide='prev'>
+        <a className='left carousel-control' to='#myCarousel' data-slide='prev'>
           <span className='sr-only'>Previous</span>
         </a>
-        <a className='right carousel-control' href='#myCarousel' data-slide='next'>
+        <a className='right carousel-control' to='#myCarousel' data-slide='next'>
           <span className='sr-only'>Next</span>
         </a>
       </div>
@@ -153,53 +153,147 @@ export default function Home() {
           SHOP BY COLLECTION
         </h3>
       </div>
+
       <div className='row'>
-        <div class='col-sm-6 canvas-left'>
-          <img
-            className='banner-img'
-            src={require('../images/banner-image-1.png')}
-            alt=''
-          />
-          <h4 className='center'>Single Canvas Print</h4>
+
+
+        <div class='banner-content col-sm-6 canvas-left'>
+          <Link to="/CreateYourPrint" >
+            <div className="banner-content-overlay left-overlay" />
+
+            <img
+              className='banner-content-image banner-img'
+              src={require('../images/banner-image-1.png')}
+              alt=''
+            />
+            <div className="banner-content-details  fadeIn-left">
+              <h3 className="banner-content-title">Single Canvas Print</h3>
+              <p className="banner-content-text">This is a short description</p>
+            </div>
+          </Link>
+          <h4 className='center'>
+        Single Canvas Print
+          </h4>
         </div>
-        <div className='col-sm-6 canvas-right'>
+
+
+        <div class='banner-content col-sm-6 canvas-right'>
+          <Link to="/CreateYourPrint"   >
+            <div className="banner-content-overlay right-overlay" />
+
           <img
-            className='banner-img'
+            className='banner-content-image banner-img'
             src={require('../images/banner-image-2.png')}
             alt=''
           />
-          <h4 className='center'>Canvas Collages</h4>
-        </div>
-        <div className='col-sm-12'>
+          <div className="banner-content-details  fadeIn-right">
+            <h3 className="banner-content-title">Canvas Images</h3>
+            <p className="banner-content-text">This is a short description</p>
+          </div>
+        </Link>
+        <h4 className='center' >
+      Canvas Collages
+        </h4>
+      </div>
+
+
+
+
+
+
+
+
+
+      <div class='banner-content col-sm-12'>
+          <Link to="/CreateYourPrint"  >
+            <div className="banner-content-overlay full-overlay" />
+
           <img
-            className='banner-img'
+            className='banner-content-image banner-img'
             src={require('../images/banner-image-3.png')}
             alt=''
           />
-          <h4 className='center' style={{ fontWeight: '700' }}>
+          <div className="banner-content-details  fadeIn-bottom">
+            <h3 className="banner-content-title">Canvas Images</h3>
+            <p className="banner-content-text">This is a short description</p>
+          </div>
+        </Link>
+        
+        <h4 className='center' >
             CANVAS SPLIT IMAGE
           </h4>
-        </div>
-        <div className='col-sm-6 canvas-left'>
-          <img
-            className='banner-img'
+      </div>
+
+
+
+      
+
+
+        <div class='banner-content col-sm-6 canvas-left'>
+          <Link to="/CreateYourPrint"   >
+            <div className="banner-content-overlay left-overlay" />
+
+            <img
+              className='banner-content-image banner-img'
             src={require('../images/last-left-banner.png')}
-            alt=''
-          />
-          <h4 className='center'>Floating Frame Canvas</h4>
+              alt=''
+            />
+            <div className="banner-content-details  fadeIn-left">
+              <h3 className="banner-content-title">Floating Frame Canvas</h3>
+              <p className="banner-content-text">This is a short description</p>
+            </div>
+          </Link>
+          <h4 className='center'>
+        Single Canvas Print
+          </h4>
         </div>
-        <div className='col-sm-6 canvas-right'>
+
+        <div class='banner-content col-sm-6 canvas-right'>
+          <Link to="/CreateYourPrint"   >
+            <div className="banner-content-overlay right-overlay" />
+
           <img
-            className='banner-img'
+            className='banner-content-image banner-img'
             src={require('../images/banner-image-5.png')}
+        
             alt=''
           />
-          <h4 className='center'>Large Canvas Print</h4>
-        </div>
-        <div className='col-sm-12'>
-          <img className='banner-img' src={require('../images/womenSmile.png')} alt='' />
-          <h4 className='center'>Acrylic Premium Prints</h4>
-        </div>
+          <div className="banner-content-details  fadeIn-right">
+           
+          <h3 className='banner-content-title'>Large Canvas Print</h3>
+            <p className="banner-content-text">This is a short description</p>
+          </div>
+        </Link>
+        <h4 className='center' >
+      Canvas Collages
+        </h4>
+      </div>
+
+
+
+
+
+
+      <div class='banner-content col-sm-12'>
+          <Link to="/CreateYourPrint"   >
+            <div className="banner-content-overlay full-overlay" />
+
+          <img
+            className='banner-content-image banner-img'
+            src={require('../images/womenSmile.png')}
+            alt=''
+          />
+          <div className="banner-content-details  fadeIn-bottom">
+          <h3 className='banner-content-titler'>Acrylic Premium Prints</h3>
+            <p className="banner-content-text">This is a short description</p>
+          </div>
+        </Link>
+        
+        <h4 className='center'>Acrylic Premium Prints</h4>
+      </div>
+
+
+
       </div>
       <div>
         <p
@@ -384,14 +478,14 @@ export default function Home() {
                 tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                 nostrud. Excepteur sint.
               </p>
-              <a href='#' className='btn'>
+              <a to='#' className='btn'>
                 Read More
               </a>
             </div>
           </div>
         </div>
       </div>
-      ;
+      
       <div className='row'>
         <div className='col-sm-12 center'>
           <img src={require('../images/Instagram_icon@1X.png')} alt='' />
