@@ -23,6 +23,7 @@ import About from './pages/about';
 import Home from './pages/home';
 import calatog from './pages/calatog';
 import category from './pages/category';
+import CartLayout from './pages/cartLayout';
 
 import ThemeProvider, { ThemeContext } from './themeContext';
 
@@ -38,16 +39,17 @@ function App() {
       <div className='container'>
         <Route exact path='/about' component={About} />
         <ThemeProvider>
+          <Route exact path='/checkout' component={checkout} />
           <Route exact path='/CreateYourPrint' component={CreateYourPrint} />
           <Route exact path='/CanvasPrint' component={CanvasPrint} />
           <Route exact path='/Cart' component={Cart} />
           <Route exact path='/uploadImage' component={uploadImage} />
+          <Route exact path='/CartLayout' component={CartLayout} />
         </ThemeProvider>
 
         <Route exact path='/Login' component={Login} />
         <Route exact path='/create' component={create} />
         <Route exact path='/register' component={register} />
-        <Route exact path='/checkout' component={checkout} />
         <Route exact path='/summary' component={summary} />
         <Route exact path='/payment-complete' component={PaymentComplete} />
       </div>
