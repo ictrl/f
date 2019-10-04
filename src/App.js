@@ -120,7 +120,6 @@ function App() {
       <div className='container'>
         <ThemeProvider>
           <Route exact path='/CreateYourPrint' component={CreateYourPrint} />
-
           <Route exact path='/CanvasPrint' component={CanvasPrint} />
           <Route exact path='/Cart' component={Cart} />
           <Route exact path='/uploadImage' component={uploadImage} />

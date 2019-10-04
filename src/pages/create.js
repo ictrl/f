@@ -19,13 +19,15 @@ export default function CreateStyle() {
   };
 
   const clearInput = () => {
-    document.querySelector('#a').value = '';
-    document.querySelector('#b').value = '';
-    document.querySelector('#c').value = '';
-    document.querySelector('#d').value = '';
+    var form1 = document.getElementById("Form1");
+    var form2 = document.getElementById("Form2");
+    form1.reset();
+    form2.reset();
   };
 
   const createSizePost = (c, d) => {
+    console.log("createSizePost");
+
     return fetch(`${API}/createSize`, {
       method: 'POST',
       Accept: 'application/json',
@@ -40,56 +42,72 @@ export default function CreateStyle() {
       });
   };
 
-  const clickSubmit = (e) => {
+  const clickSubmitStyle = (e) => {
     e.preventDefault();
+    
     const a = document.querySelector('#a').value;
     const b = document.querySelector('#b').value;
+    
+    createStylePost(a, b);
+    clearInput();
+  };
+  const clickSubmitSize = (e) => {
+    e.preventDefault();
+    console.log("clickSubmitSize");
+    
     const c = document.querySelector('#c').value;
     const d = document.querySelector('#d').value;
-    createStylePost(a, b);
+    
     createSizePost(c, d);
     clearInput();
   };
 
   const newCategoryFom = () => (
-    <form onSubmit={clickSubmit}>
+    <div className="col-md-12">  
+    <div className="col-md-6">  
+    <form onSubmit={clickSubmitStyle} id="Form1">
       <div className='form-group'>
-        <label className='text-muted'>Name</label>
-        <h1>Create Style</h1>
-        <input
-          type='text'
-          className='form-control'
-          id='a'
-          autoFocus
-          required
-          placeholder='Style Name'
-        />
+        <h1>Create Style Price</h1>
+        <select name="styleList" id="a" className="form-control">
+          <option> *Please select style &nbsp;</option>
+          <option value="Single Print">Single Print</option>
+          <option value="Split Image">Split Image</option>
+          <option value="Wall Display">Wall Display</option>
+          <option value="Collage Image">Collage Image</option>
+        </select>
         <input
           type='text'
           className='form-control'
           id='b'
           required
-          placeholder='Style Starting Price'
+          placeholder='Style Price'
         />
-
-        <h1>Create Size</h1>
+      <button className='btn' style={{margin: '1rem'}}>Create Style </button>
+        </div>
+    </form>
+  </div>
+  <div className="col-md-6">  
+<form onSubmit={clickSubmitSize} id="Form2">
+        <h1>Create Size & Price</h1>
         <input
           type='text'
           id='c'
           className='form-control'
           required
-          placeholder='Size Name'
+          placeholder='Size'
         />
         <input
           type='text'
           id='d'
           className='form-control'
           required
-          placeholder='Size Starting Price'
+          placeholder='Size Price'
         />
-      </div>
-      <button className='btn btn-outline-primary'>Create Category</button>
+      <button className='btn' style={{margin: '1rem'}}>Create Size</button>
+   
     </form>
+    </div>
+    </div>
   );
 
   return <Fragment>{newCategoryFom()}</Fragment>;

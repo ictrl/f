@@ -6,7 +6,7 @@ import Layout from './cartLayout';
 export default function NewCart() {
   const context = useContext(ThemeContext);
   const { productProperty, setProductProperty } = context;
-  console.log('object', productProperty.url);
+  console.log('object', productProperty);  
   return (
     <div>
       <div className='container' style={{ marginTop: 50, marginBottom: 50 }}>
@@ -25,10 +25,10 @@ export default function NewCart() {
                 </thead>
                 <tbody>
                   <Layout
-                    title={productProperty.material}
-                    size={productProperty.sizeShape}
+                    title={productProperty.preview}
+                    size={productProperty.size}
                     price={productProperty.price}
-                    image={productProperty.url}></Layout>
+                    image={productProperty.preview}></Layout>
                   <tr>
                     <td> &nbsp; </td>
                     <td> &nbsp; </td>

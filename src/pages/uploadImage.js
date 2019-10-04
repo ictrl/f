@@ -1,7 +1,8 @@
 import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../themeContext';
-
+import htmlToImage from 'html-to-image';
+let arr = [];
 export default function UploadImage() {
   const context = useContext(ThemeContext);
   const { productProperty, setProductProperty } = context;
@@ -13,10 +14,9 @@ export default function UploadImage() {
     let file = e.target.files[0];
 
     reader.onloadend = () => {
-      setProductProperty({ ...productProperty, image: file });
-      setProductProperty({ ...productProperty, url: reader.result });
+      arr.push(reader.result);
+      setProductProperty({ ...productProperty, images: arr});
     };
-
     reader.readAsDataURL(file);
   };
 
@@ -27,19 +27,19 @@ export default function UploadImage() {
         <div className='row left-section' style={{ display: 'block' }}>
           <div className='col-sm-4'>
             <div className='split upload-image-preview'>
-              <img src={productProperty.url} alt='' />
+              <img src={productProperty.images[0]} alt='' />
             </div>
             <input type='file' onChange={_handleImageChange} />
           </div>
           <div className='col-sm-4'>
             <div className='split upload-image-preview'>
-              <img src={productProperty.url} alt='' />
+              <img src={productProperty.images[1]} alt='' />
             </div>
             <input type='file' onChange={_handleImageChange} />
           </div>
           <div className='col-sm-4'>
             <div className='split upload-image-preview'>
-              <img src={productProperty.url} alt='' />
+              <img src={productProperty.images[2]} alt='' />
             </div>
             <input type='file' onChange={_handleImageChange} />
           </div>
@@ -51,12 +51,33 @@ export default function UploadImage() {
       return <h1>Collage Image</h1>;
     } else {
       if (frame == 'Single Print') {
+        // return (
+        //   <div className='row left-section' style={{ display: 'block' }}>
+        //     {' '}
+        //     <div className='col-sm-12 center'>
+        //       <div class='upload-image-preview split'>
+        //         <img src={productProperty.images[0]} alt='' />
+        //       </div>
+        //       <input type='file' onChange={_handleImageChange} />
+        //     </div>
+        //   </div>
         return (
           <div className='row left-section' style={{ display: 'block' }}>
-            {' '}
-            <div className='col-sm-12 center'>
-              <div class='upload-image-preview split'>
-                <img src={productProperty.url} alt='' />
+            <div className='col-sm-4'>
+              <div className='split upload-image-preview'>
+                <img src={productProperty.images[0]} alt='' />
+              </div>
+              <input type='file' onChange={_handleImageChange} />
+            </div>
+            <div className='col-sm-4'>
+              <div className='split upload-image-preview'>
+                <img src={productProperty.images[1]} alt='' />
+              </div>
+              <input type='file' onChange={_handleImageChange} />
+            </div>
+            <div className='col-sm-4'>
+              <div className='split upload-image-preview'>
+                <img src={productProperty.images[2]} alt='' />
               </div>
               <input type='file' onChange={_handleImageChange} />
             </div>
@@ -66,6 +87,21 @@ export default function UploadImage() {
     }
   };
 
+  const savePreview  = () => {
+
+    var node = document.getElementById('preview');
+ 
+    htmlToImage.toPng(node)
+      .then(function (dataUrl) {
+        console.log("pre",dataUrl);
+        
+        setProductProperty({ ...productProperty, preview: dataUrl});
+      })
+      .catch(function (error) {
+        console.error('oops, something went wrong!', error);
+      });
+    
+  }
   return (
     <Fragment>
       <div className='center'>
@@ -77,19 +113,21 @@ export default function UploadImage() {
             ({productProperty.material}: <b id='title'>{productProperty.styleName}</b>)
           </h4>
         </div>
-        {mainSection()}
+      <div id="preview">
+      {mainSection()}
+      </div>
 
         <div className='row' style={{ marginTop: '20px' }}>
-          <div className='col-sm-6 center'>
-            <Link to='/CanvasPrint' className='btn btn-default' value='Input Button'>
+          {/* <div className='col-sm-6 center'> */}
+            {/* <Link to='/CanvasPrint' className='btn btn-default' value='Input Button'>
               <button className='btn'>Select Style</button>
-            </Link>
-          </div>
-          <div className='col-sm-6 center'>
+            </Link> */}
+          {/* </div> */}
+          {/* <div className='col-sm-6 center'> */}
             <Link to='/cart'>
-              <button className='btn '> Add to cart </button>
+              <button className='btn btn-warning' style={{fontSize:"2rem"}} onClick={savePreview}> Add to cart </button>
             </Link>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </Fragment>

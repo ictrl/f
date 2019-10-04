@@ -189,6 +189,7 @@ export default function NewCheckOut() {
                     </div>
                   </div>
                   <div className='form-group'>
+                    
                     <div className='col-md-6 col-sm-6 col-xs-12'>
                       {/**<Link to='/payment-complete'> */}
                       <button type='submit' className='btn btn-warning btn-submit-fix'>
@@ -199,6 +200,72 @@ export default function NewCheckOut() {
                 </div>
               </div>
             </div>
+            <div className="col-md-6" >
+              {/*REVIEW ORDER*/}
+              <div className='panel panel-warning'>
+                <div className='panel-heading heading-warning'>
+                  Review Order{' '}
+                  <div className='pull-right'>
+                    <small>
+                      <a className='afix-1' href='#'>
+                        Edit Cart
+                      </a>
+                    </small>
+                  </div>
+                </div>
+                <div className='panel-body'>
+                  <div className='form-group'>
+                    <div className='col-sm-3 col-xs-3'>
+                      <img
+                        className='img-responsive'
+                        src={require('../images/material-card-1.png')}
+                      />
+                    </div>
+                    <div className='col-sm-6 col-xs-6'>
+                      <div className='col-xs-12'>Product name</div>
+                      <div className='col-xs-12'>
+                        <small>
+                          Quantity:<span>1</span>
+                        </small>
+                      </div>
+                    </div>
+                    <div className='col-sm-3 col-xs-3 text-right'>
+                      <h6>
+                        <span>$</span>25.00
+                      </h6>
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-xs-12'>
+                      <strong>Subtotal</strong>
+                      <div className='pull-right'>
+                        <span>$</span>
+                        <span>200.00</span>
+                      </div>
+                    </div>
+                    <div className='col-xs-12'>
+                      <small>Shipping</small>
+                      <div className='pull-right'>
+                        <span>-</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <hr />
+                  </div>
+                  <div className='form-group'>
+                    <div className='col-xs-12'>
+                      <strong>Order Total</strong>
+                      <div className='pull-right'>
+                        <span>$</span>
+                        <span>150.00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/*REVIEW ORDER END*/}
+              </div>
           </form>
         </div>
         <div className='row cart-footer'></div>

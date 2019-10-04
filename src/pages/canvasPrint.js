@@ -1,17 +1,41 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useState, useEffect ,useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../themeContext';
+import { getSizeList, getStyleList } from './cartHelpers';
 
 export default function CanvasPrint() {
   const context = useContext(ThemeContext);
   const { productProperty, setProductProperty } = context;
+  const [sizes, setSizeList] = useState([]);
+  const [styles, setStyleList] = useState([{},{},{},{}]);
+
+  const loadSizes = () => {    
+    getSizeList().then((data) => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        setSizeList(data);
+      }
+    });
+  };
+
+  const loadStyles = () => {
+    getStyleList().then((data) => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        setStyleList(data);
+      }
+    });
+  };
+
 
   const splitHandler = (e) => {
-    console.log(productProperty.url);
     if (e.target.classList[2] == 'i1') {
       setProductProperty({
         ...productProperty,
         styleName: 'Single Print',
+        stylePrice: styles[0].price,
         div: (
           <div className='row left-section' style={{ display: 'block' }}>
             <div className='col-sm-12'>
@@ -26,6 +50,7 @@ export default function CanvasPrint() {
       setProductProperty({
         ...productProperty,
         styleName: 'Split Image',
+        stylePrice: styles[1].price,
         div: (
           <div className='row left-section' style={{ display: 'block' }}>
             <div className='col-sm-4'>
@@ -50,7 +75,7 @@ export default function CanvasPrint() {
       setProductProperty({
         ...productProperty,
         styleName: 'Wall Display',
-
+        stylePrice: styles[2].price,
         div: (
           <div className='row left-section' style={{ display: 'block' }}>
             <div className='col-sm-6'>
@@ -81,6 +106,7 @@ export default function CanvasPrint() {
       setProductProperty({
         ...productProperty,
         styleName: 'Collage Image',
+        stylePrice: styles[3].price,        
         div: (
           <div className='row left-section' style={{ display: 'block' }}>
             <div className='col-sm-5'>
@@ -137,10 +163,22 @@ export default function CanvasPrint() {
     }
   };
 
+
   const handleChange = (e) => {
-    setProductProperty({ ...productProperty, sizeShape: e.target.value });
-    console.log(productProperty.styleName);
+    var str = e.target.value;
+    
+    var pos = str.search("₹");
+    var size = str.slice(" " ,pos);
+    var price = str.slice(pos);
+    setProductProperty({ ...productProperty, size:size,
+    sizePrice: price,
+  });
   };
+
+  useEffect(() => {
+    loadSizes();
+    loadStyles();
+  }, []);
 
   return (
     <Fragment>
@@ -186,7 +224,7 @@ export default function CanvasPrint() {
                   Single <br />
                   Print
                 </h5>
-                <p className='x xx i1'>₹1177.00</p>
+                <p className='x xx i1'>₹ {styles[0].price}  </p>
               </div>
             </div>
             <div className='col-sm-3 x i2' onClick={splitHandler}>
@@ -197,7 +235,7 @@ export default function CanvasPrint() {
                   <br />
                   Image
                 </h5>
-                <p className='x xx i2'> ₹1177.00</p>
+                <p className='x xx i2'>₹ {styles[1].price}</p>
               </div>
             </div>
             <div className='col-sm-3 x i3' onClick={splitHandler}>
@@ -208,7 +246,7 @@ export default function CanvasPrint() {
                   <br />
                   Displays
                 </h5>
-                <p className='x xx i3'> ₹1177.00</p>
+                <p className='x xx i3'> ₹ {styles[2].price} </p>
               </div>
             </div>
             <div className='col-sm-3 i4' onClick={splitHandler}>
@@ -219,7 +257,7 @@ export default function CanvasPrint() {
                   <br />
                   Image
                 </h5>
-                <p>₹1177.00</p>
+                <p>₹{styles[3].price}</p>
               </div>
             </div>
           </div>
@@ -230,13 +268,15 @@ export default function CanvasPrint() {
               </h4>
             </div>
             <div className='col-sm-12'>
-              <select
-                onChange={handleChange}
+              <select   id='slct'
+                onChange={handleChange} 
                 className='browser-defaul,ethisstom-select custom-select-lg mb-3 shape'>
-                <option> *Please select value &nbsp;</option>
-                <option value={1}>One</option>
-                <option value={2}>Two</option>
-                <option value={3}>Three</option>
+                {sizes.map((p, i) => (
+                      <option value= {p.value + " ₹ " + p.price} key={i} id={p.value} className={p.price}>
+                        {p.value}
+                        &nbsp;&nbsp;&nbsp; ₹{p.price}
+                      </option>
+                    ))}
               </select>
               <span className='arrow-down'>▼</span>
             </div>
