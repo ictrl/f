@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 
 import '../styles/navbar.css';
 
-import logo from '../images/logo.png';
 import account from '../images/acoount.png';
-import search from '../images/search.png';
 import cart from '../images/cart.png';
 
 export default function Navbar() {
@@ -50,6 +48,7 @@ export default function Navbar() {
                   <img
                     src={require('../images/m1.jpg')}
                     style={{ width: '100%' }}
+                    alt=''
                     className='thumbnail'
                   />
                   <h5 style={{ color: 'blue' }}>Single Canvas Prints</h5>
@@ -63,6 +62,7 @@ export default function Navbar() {
                   <img
                     src={require('../images/m2.jpg')}
                     style={{ width: '100%' }}
+                    alt=''
                     className='thumbnail'
                   />
                   <h5 style={{ color: 'blue' }}>Canvas Collages</h5>
@@ -76,6 +76,7 @@ export default function Navbar() {
                   <img
                     src={require('../images/m3.jpg')}
                     style={{ width: '100%' }}
+                    alt=''
                     className='thumbnail'
                   />
                   <h5 style={{ color: 'blue' }}>Canvas Split Image</h5>
@@ -90,6 +91,7 @@ export default function Navbar() {
                     src={require('../images/m4.jpg')}
                     style={{ width: '100%' }}
                     className='thumbnail'
+                    alt=''
                   />
                   <h5 style={{ color: 'blue' }}>Canvas Wall Displays</h5>
                   <p>
@@ -104,6 +106,7 @@ export default function Navbar() {
                     src={require('../images/m5.jpg')}
                     style={{ width: '100%' }}
                     className='thumbnail'
+                    alt=''
                   />
                   <h5 style={{ color: 'blue' }}>Floating Frame Canvas</h5>
                   <p>
@@ -122,100 +125,110 @@ export default function Navbar() {
             </Link>
             <ul className='dropdown-menu list-inline menu2'>
               <li>
-                <Link to='/canvasWallDisplays' className='center'>
+                <Link to='/createYourPrint' className='center'>
                   <img
                     src={require('../images/m4.jpg')}
                     style={{ width: '100%' }}
                     className='thumbnail'
+                    alt=''
                   />
                   <h5 style={{ marginTop: '-1rem', color: 'blue' }}>LandEscape</h5>
                 </Link>
               </li>
               <li>
-                <Link to='/SingleCanvasPrints' className='center'>
+                <Link to='/createYourPrint' className='center'>
                   <img
                     src={require('../images/m1.jpg')}
                     style={{ width: '100%' }}
                     className='thumbnail'
+                    alt=''
                   />
                   <h5 style={{ marginTop: '-1rem', color: 'blue' }}>LandEscape</h5>
                 </Link>
               </li>
               <li>
-                <Link to='/canvasSplitImage' className='center'>
+                <Link to='/createYourPrint' className='center'>
                   <img
                     src={require('../images/m3.jpg')}
                     style={{ width: '100%' }}
                     className='thumbnail'
+                    alt=''
                   />
                   <h5 style={{ marginTop: '-1rem', color: 'blue' }}>LandEscape</h5>
                 </Link>
               </li>
               <li>
-                <Link to='/canvasWallDisplays' className='center'>
+                <Link to='/createYourPrint' className='center'>
                   <img
                     src={require('../images/m4.jpg')}
                     style={{ width: '100%' }}
+                    alt=''
                     className='thumbnail'
                   />
                   <h5 style={{ marginTop: '-1rem', color: 'blue' }}>LandEscape</h5>
                 </Link>
               </li>
               <li>
-                <Link to='/floatingFrameCanvas' className='center'>
+                <Link to='/createYourPrint' className='center'>
                   <img
                     src={require('../images/m5.jpg')}
                     style={{ width: '100%' }}
+                    alt=''
                     className='thumbnail'
                   />
                   <h5 style={{ marginTop: '-1rem', color: 'blue' }}>LandEscape</h5>
                 </Link>
               </li>
               <li>
-                <Link to='/canvasCollages' className='center'>
+                <Link to='/createYourPrint' className='center'>
                   <img
                     src={require('../images/m2.jpg')}
                     style={{ width: '100%' }}
+                    alt=''
                     className='thumbnail'
                   />
                   <h5 style={{ marginTop: '-1rem', color: 'blue' }}>Aboriginal</h5>
                 </Link>
               </li>
               <li>
-                <Link to='/canvasSplitImage' className='center'>
+                <Link to='/createYourPrint' className='center'>
                   <img
                     src={require('../images/m3.jpg')}
                     style={{ width: '100%' }}
+                    alt=''
                     className='thumbnail'
                   />
                   <h5 style={{ marginTop: '-1rem', color: 'blue' }}>Urban</h5>
                 </Link>
               </li>
               <li>
-                <Link to='/canvasWallDisplays' className='center'>
+                <Link to='/createYourPrint' className='center'>
                   <img
                     src={require('../images/m4.jpg')}
                     style={{ width: '100%' }}
                     className='thumbnail'
+                    alt=''
                   />
                   <h5 style={{ marginTop: '-1rem', color: 'blue' }}>Architecture</h5>
                 </Link>
               </li>
               <li>
-                <Link to='/canvasWallDisplays' className='center'>
+                <Link to='/createYourPrint' className='center'>
                   <img
                     src={require('../images/m4.jpg')}
                     style={{ width: '100%' }}
                     className='thumbnail'
+                    alt=''
                   />
                   <h5 style={{ marginTop: '-1rem', color: 'blue' }}>Abstract</h5>
                 </Link>
               </li>
               <li>
-                <Link to='/floatingFrameCanvas' className='center'>
+                <Link to='/createYourPrint' className='center'>
                   <img
                     src={require('../images/m5.jpg')}
                     style={{ width: '100%' }}
+                    alt=''
                     className='thumbnail'
                   />
                   <h5 style={{ marginTop: '-1rem', color: 'blue' }}>Contemporary</h5>
@@ -236,6 +249,7 @@ export default function Navbar() {
                   <img
                     src={require('../images/m1.jpg')}
                     style={{ width: '100%' }}
+                    alt=''
                     className='thumbnail'
                   />
                   <h5 style={{ color: 'blue' }}>Acrylic Prints</h5>
@@ -250,6 +264,7 @@ export default function Navbar() {
                     src={require('../images/m2.jpg')}
                     style={{ width: '100%' }}
                     className='thumbnail'
+                    alt=''
                   />
                   <h5 style={{ color: 'blue' }}>Canvas Collages</h5>
                   <p>
@@ -283,23 +298,23 @@ export default function Navbar() {
 
         <ul className='nav navbar-nav navbar-right'>
           <li>
-            <a href='#'>
+            <Link to='#'>
               <img
                 src={require('../images/search.png')}
                 style={{ marginTop: '0.4rem' }}
-                alt
+                alt=''
               />
-            </a>
+            </Link>
           </li>
           <li>
-            <a href='#'>
-              <img src={cart} style={{ marginTop: '0.4rem' }} alt />
+            <Link to='#'>
+              <img src={cart} style={{ marginTop: '0.4rem' }} alt='' />
               {/* <span style={{ margin: 5, verticalAlign: "bottom" }}></span> */}
-            </a>
+            </Link>
           </li>
           <li>
             <a className='login-nav' href>
-              <img src={account} alt />
+              <img src={account} alt='' />
             </a>
           </li>
         </ul>
