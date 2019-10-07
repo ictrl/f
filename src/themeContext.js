@@ -1,39 +1,53 @@
-import React, { useState } from 'react';
-import { getSizeList, getStyleList } from '../src/pages/cartHelpers';
-export const ThemeContext = React.createContext({});
+import React, { useReducer, Fragment, useEffect } from 'react';
+// export const ThemeContext = React.createContext({});
+
+const inintalProducts = [
+	{
+		material: 'defalut maetiral',
+		style: '',
+		stylePrice: null,
+		size: '',
+		sizePrice: null,
+		quantity: 1,
+		images: [ 'https://samrat.online/images/pic.gif' ],
+		subPrice: null,
+		calculatedPrice: null
+	}
+];
+const reducer = (state, action) => {
+	switch (action.type) {
+		case 'material':
+			return state.map((product) => {
+				return { ...product, material: action.value };
+			});
+
+		case 'images':
+			return state.map((product) => {
+				product.images[0] = action.value;
+				return { ...product };
+			});
+		case 'images-push':
+			return state.map((product) => {
+				product.images.push(action.value);
+				return { ...product };
+			});
+
+		default:
+			return state;
+	}
+};
+
+export const ProductContext = React.createContext();
 
 const ThemeProveider = ({ children }) => {
-
-  const [productProperty, setProductProperty] = useState({
-    user: {},
-    material: 'Canvas',
-    styleName: 'Single Print',
-    stylePrice: null,
-    size: '',
-    sizePrice: null,
-    images: [],
-    preview:'',
-    shipping: null,
-    quantity: 1,
-    subPrice: null,
-    totalPrice: null,
-    div: (
-      <div className='row left-section ' style={{ display: 'block' }}>
-        {' '}
-        <div className='col-sm-12'>
-          <div className='split'>
-            <img src alt='' />
-          </div>
-        </div>
-      </div>
-    )
-  });
-
-  return (
-    <ThemeContext.Provider value={{ productProperty, setProductProperty }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+	const [ products, dispatch ] = useReducer(reducer, inintalProducts);
+	return (
+		<Fragment>
+			<ProductContext.provider>
+				<createYourPrint value={{ productState: products, productDispatch: dispatch }} />
+			</ProductContext.provider>
+		</Fragment>
+	);
 };
 
 export default ThemeProveider;

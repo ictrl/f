@@ -1,10 +1,9 @@
-import React, { useContext, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { ThemeContext } from '../themeContext';
+import React, { useContext } from 'react';
+import { ProductContext } from '../themeContext';
 import { API } from '../config';
 
 export default function NewCheckOut() {
-  const context = useContext(ThemeContext);
+  const context = useContext(ProductContext);
   const { productProperty, setProductProperty } = context;
 
   const createPost = (order) => {
@@ -49,13 +48,14 @@ export default function NewCheckOut() {
     const order = {
       purpose: 'GalleriQ Payment',
       amount: productProperty.totalPrice,
-      frame: productProperty.material,
+      frame: productProperty.material + " " + productProperty.styleName,
       buyer_name: f,
       email: e,
       phone: p,
       address: a,
-      image: 'ss.jpg',
-      quantity: 9,
+      // image:  productProperty.images[0],
+      image:  productProperty.preview,
+      quantity:  productProperty.quantity,
       user_id: '101',
       // redirect_url: `http://localhost:8001/bid/callback?user_id=${user.id}`,
       //redirect_url: `${API}/bid/callback?user_id=101`,
@@ -89,7 +89,7 @@ export default function NewCheckOut() {
                         type='text'
                         name='first_name'
                         className='form-control'
-                        defaultValue
+                      placeholder="John"
                       />
                     </div>
                     <div className='span1' />
@@ -100,7 +100,7 @@ export default function NewCheckOut() {
                         type='text'
                         name='last_name'
                         className='form-control'
-                        defaultValue
+                      placeholder="Don"
                       />
                     </div>
                   </div>
@@ -114,7 +114,7 @@ export default function NewCheckOut() {
                         type='text'
                         name='address'
                         className='form-control'
-                        defaultValue
+                      placeholder="My address"
                       />
                     </div>
                   </div>
@@ -128,7 +128,7 @@ export default function NewCheckOut() {
                         type='text'
                         name='city'
                         className='form-control'
-                        defaultValue
+                      placeholder="My city"
                       />
                     </div>
                   </div>
@@ -142,7 +142,7 @@ export default function NewCheckOut() {
                         type='text'
                         name='state'
                         className='form-control'
-                        defaultValue
+                      placeholder="My state"
                       />
                     </div>
                   </div>
@@ -156,7 +156,7 @@ export default function NewCheckOut() {
                         type='text'
                         name='zip_code'
                         className='form-control'
-                        defaultValue
+                      placeholder="My postal code"
                       />
                     </div>
                   </div>
@@ -170,7 +170,7 @@ export default function NewCheckOut() {
                         type='text'
                         name='phone_number'
                         className='form-control'
-                        defaultValue
+                      placeholder="8492785928"
                       />
                     </div>
                   </div>
@@ -184,7 +184,7 @@ export default function NewCheckOut() {
                         type='text'
                         name='email_address'
                         className='form-control'
-                        defaultValue
+                      placeholder="example@mail.com"
                       />
                     </div>
                   </div>
@@ -207,9 +207,9 @@ export default function NewCheckOut() {
                   Review Order{' '}
                   <div className='pull-right'>
                     <small>
-                      <a className='afix-1' href='#'>
+                      {/* <a className='afix-1' href='#'>
                         Edit Cart
-                      </a>
+                      </a> */}
                     </small>
                   </div>
                 </div>
@@ -218,20 +218,20 @@ export default function NewCheckOut() {
                     <div className='col-sm-3 col-xs-3'>
                       <img
                         className='img-responsive'
-                        src={require('../images/material-card-1.png')}
+                        src={ productProperty.images[0] }
                       />
                     </div>
                     <div className='col-sm-6 col-xs-6'>
-                      <div className='col-xs-12'>Product name</div>
+                      <div className='col-xs-12'>{ productProperty.material +  productProperty.styleName}</div>
                       <div className='col-xs-12'>
                         <small>
-                          Quantity:<span>1</span>
+                          Quantity:<span> { productProperty.quantity} </span>
                         </small>
                       </div>
                     </div>
                     <div className='col-sm-3 col-xs-3 text-right'>
                       <h6>
-                        <span>$</span>25.00
+                        <span>₹ </span> { productProperty.subPrice}
                       </h6>
                     </div>
                   </div>
@@ -239,14 +239,14 @@ export default function NewCheckOut() {
                     <div className='col-xs-12'>
                       <strong>Subtotal</strong>
                       <div className='pull-right'>
-                        <span>$</span>
-                        <span>200.00</span>
+                        <span> ₹ </span>
+                        <span>{ productProperty.subPrice}</span>
                       </div>
                     </div>
                     <div className='col-xs-12'>
                       <small>Shipping</small>
                       <div className='pull-right'>
-                        <span>-</span>
+                        <span> ₹ { productProperty.shipping}</span>
                       </div>
                     </div>
                   </div>
@@ -257,8 +257,8 @@ export default function NewCheckOut() {
                     <div className='col-xs-12'>
                       <strong>Order Total</strong>
                       <div className='pull-right'>
-                        <span>$</span>
-                        <span>150.00</span>
+                        <span>₹</span>
+                        <span>{ productProperty.totalPrice}</span>
                       </div>
                     </div>
                   </div>

@@ -1,101 +1,105 @@
 import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../themeContext';
+import { ProductContext } from '../themeContext';
 import Layout from './cartLayout';
 
 export default function NewCart() {
-  const context = useContext(ThemeContext);
-  const { productProperty, setProductProperty } = context;
-  console.log('object', productProperty);  
-  return (
-    <div>
-      <div className='container' style={{ marginTop: 50, marginBottom: 50 }}>
-        <div className='row'>
-          <div className='col-sm-12 col-md-10 col-md-offset-1'>
-            <div className='table-responsive'>
-              <table className='table table-hover'>
-                <thead>
-                  <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th className='text-center'>Price</th>
-                    <th className='text-center'>Total</th>
-                    <th>&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <Layout
-                    title={productProperty.preview}
-                    size={productProperty.size}
-                    price={productProperty.price}
-                    image={productProperty.preview}></Layout>
-                  <tr>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td>
-                      <h5>Subtotal</h5>
-                    </td>
-                    <td className='text-right'>
-                      <h5>
-                        <strong>₹ {productProperty.subPrice}</strong>
-                      </h5>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td>
-                      <h5>Estimated shipping</h5>
-                    </td>
-                    <td className='text-right'>
-                      <h5>
-                        <strong>₹ {productProperty.shipping}</strong>
-                      </h5>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td>
-                      <h3>Total</h3>
-                    </td>
-                    <td className='text-right'>
-                      <h3>
-                        <strong>₹ {productProperty.totalPrice}</strong>
-                      </h3>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td>
-                      <button type='button' className='btn btn-default'>
-                        <span className='glyphicon glyphicon-shopping-cart' /> Continue
-                        Shopping
-                      </button>
-                    </td>
-                    <td>
-                      <Link to='/checkout'>
-                        <button type='button' className='btn btn-warning'>
-                          Checkout <span className='glyphicon glyphicon-play' />
-                        </button>
-                      </Link>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+	const context = useContext(ProductContext);
+	const { productProperty, setProductProperty } = context;
+	console.log('CartPage', productProperty);
+
+	return (
+		<div>
+			<div className="container" style={{ marginTop: 50, marginBottom: 50 }}>
+				<div className="row">
+					<div className="col-sm-12 col-md-10 col-md-offset-1">
+						<div className="table-responsive">
+							<table className="table table-hover">
+								<thead>
+									<tr>
+										<th>Product</th>
+										<th>Quantity</th>
+										<th className="text-center">Price</th>
+										<th className="text-center">Total</th>
+										<th>&nbsp;</th>
+									</tr>
+								</thead>
+								<tbody>
+									<Layout
+										material={productProperty.material}
+										styleName={productProperty.styleName}
+										sizes={productProperty.size}
+										price={productProperty.subPrice}
+										image={productProperty.images[0]}
+									/>
+									<tr>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td>
+											<h5>Subtotal</h5>
+										</td>
+										<td className="text-right">
+											<h5>
+												<strong>₹ {productProperty.subPrice}</strong>
+											</h5>
+										</td>
+									</tr>
+									<tr>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td>
+											<h5>Estimated shipping</h5>
+										</td>
+										<td className="text-right">
+											<h5>
+												<strong>₹ {productProperty.shipping}</strong>
+											</h5>
+										</td>
+									</tr>
+									<tr>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td>
+											<h3>Total</h3>
+										</td>
+										<td className="text-right">
+											<h3>
+												<strong>₹ {productProperty.totalPrice}</strong>
+											</h3>
+										</td>
+									</tr>
+									<tr>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td> &nbsp; </td>
+										<td>
+											<Link to="/CreateYourPrint">
+												<button type="button" className="btn btn-default">
+													Continue Shopping
+												</button>
+											</Link>
+										</td>
+										<td>
+											<Link to="/checkout">
+												<button type="button" id="checkout" className="btn btn-warning">
+													Checkout
+												</button>
+											</Link>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
