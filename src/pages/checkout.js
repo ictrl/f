@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { ProductContext } from '../themeContext';
+import { ThemeContext } from '../themeContext';
 import { API } from '../config';
 
 export default function NewCheckOut() {
-  const context = useContext(ProductContext);
+  const context = useContext(ThemeContext);
   const { productProperty, setProductProperty } = context;
 
   const createPost = (order) => {

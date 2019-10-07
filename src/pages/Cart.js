@@ -1,10 +1,10 @@
 import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { ProductContext } from '../themeContext';
+import { ThemeContext } from '../themeContext';
 import Layout from './cartLayout';
 
 export default function NewCart() {
-	const context = useContext(ProductContext);
+	const context = useContext(ThemeContext);
 	const { productProperty, setProductProperty } = context;
 	console.log('CartPage', productProperty);
 
@@ -12,6 +12,7 @@ export default function NewCart() {
 		<div>
 			<div className="container" style={{ marginTop: 50, marginBottom: 50 }}>
 				<div className="row">
+					{console.log(productProperty)}
 					<div className="col-sm-12 col-md-10 col-md-offset-1">
 						<div className="table-responsive">
 							<table className="table table-hover">
@@ -30,7 +31,8 @@ export default function NewCart() {
 										styleName={productProperty.styleName}
 										sizes={productProperty.size}
 										price={productProperty.subPrice}
-										image={productProperty.images[0]}
+										// image={productProperty.images[0]}
+										image={productProperty.preview}
 									/>
 									<tr>
 										<td> &nbsp; </td>
@@ -42,7 +44,7 @@ export default function NewCart() {
 										</td>
 										<td className="text-right">
 											<h5>
-												<strong>₹ {productProperty.subPrice}</strong>
+												<strong>₹ {productProperty.calculatedPrice}</strong>
 											</h5>
 										</td>
 									</tr>

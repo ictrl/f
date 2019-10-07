@@ -1,53 +1,36 @@
-import React, { useReducer, Fragment, useEffect } from 'react';
-// export const ThemeContext = React.createContext({});
-
-const inintalProducts = [
-	{
-		material: 'defalut maetiral',
-		style: '',
-		stylePrice: null,
-		size: '',
-		sizePrice: null,
-		quantity: 1,
-		images: [ 'https://samrat.online/images/pic.gif' ],
-		subPrice: null,
-		calculatedPrice: null
-	}
-];
-const reducer = (state, action) => {
-	switch (action.type) {
-		case 'material':
-			return state.map((product) => {
-				return { ...product, material: action.value };
-			});
-
-		case 'images':
-			return state.map((product) => {
-				product.images[0] = action.value;
-				return { ...product };
-			});
-		case 'images-push':
-			return state.map((product) => {
-				product.images.push(action.value);
-				return { ...product };
-			});
-
-		default:
-			return state;
-	}
-};
-
-export const ProductContext = React.createContext();
+import React, { useState } from 'react';
+export const ThemeContext = React.createContext({});
 
 const ThemeProveider = ({ children }) => {
-	const [ products, dispatch ] = useReducer(reducer, inintalProducts);
-	return (
-		<Fragment>
-			<ProductContext.provider>
-				<createYourPrint value={{ productState: products, productDispatch: dispatch }} />
-			</ProductContext.provider>
-		</Fragment>
-	);
+	const [ productProperty, setProductProperty ] = useState({
+		user: {},
+		// product: [ {} ]
+		material: 'Canvas',
+		styleName: 'Single Printss',
+		stylePrice: 100,
+		size: '10" X 10"',
+		sizePrice: 50,
+		images: 'https://samrat.online/images/pic.gif',
+		preview: '',
+		shipping: 100,
+		quantity: 1,
+		subPrice: 100,
+		calculatedPrice: 100,
+		totalPrice: 200,
+		num: 2,
+		div: (
+			<div className="row left-section " style={{ display: 'block' }}>
+				{' '}
+				<div className="col-sm-12">
+					<div className="split">
+						<img src alt="" />
+					</div>
+				</div>
+			</div>
+		)
+	});
+
+	return <ThemeContext.Provider value={{ productProperty, setProductProperty }}>{children}</ThemeContext.Provider>;
 };
 
 export default ThemeProveider;

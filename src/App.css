@@ -8422,3 +8422,12 @@ input ::placeholder {
   width: 470px;
   verticalAlign: center;
 }
+
+.add-img-height{
+	height: 34.5px;
+}
+
+.imgPreview{
+	width: 400px;
+	height: 400px;
+}

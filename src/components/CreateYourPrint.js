@@ -1,10 +1,10 @@
 import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ProductContext } from '../themeContext';
+import { ThemeContext } from '../themeContext';
 
 export default function CreateYourPrint() {
-	const context = useContext(ProductContext);
+	const context = useContext(ThemeContext);
 	const { productProperty, setProductProperty } = context;
 
 	return (
@@ -20,7 +20,7 @@ export default function CreateYourPrint() {
 				<Link
 					to="CanvasPrint"
 					onClick={() => {
-						setProductProperty({ ...productProperty, material: 'canvas' });
+						setProductProperty({ ...productProperty, material: 'Canvas' });
 					}}
 				>
 					<div className="col-sm-4">

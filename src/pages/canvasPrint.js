@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { ProductContext } from '../themeContext';
+import { ThemeContext } from '../themeContext';
 import { getSizeList, getStyleList } from './cartHelpers';
 
 export default function CanvasPrint() {
-	const context = useContext(ProductContext);
+	const context = useContext(ThemeContext);
 	const { productProperty, setProductProperty } = context;
 	const [ sizes, setSizeList ] = useState([]);
 	const [ styles, setStyleList ] = useState([ {}, {}, {}, {} ]);
@@ -35,6 +35,7 @@ export default function CanvasPrint() {
 				...productProperty,
 				styleName: 'Single Print',
 				stylePrice: styles[0].price,
+				num: 1,
 				div: (
 					<div className="row left-section" style={{ display: 'block' }}>
 						<div className="col-sm-12">
@@ -48,6 +49,7 @@ export default function CanvasPrint() {
 		} else if (e.target.classList[2] == 'i2') {
 			setProductProperty({
 				...productProperty,
+				num: 2,
 				styleName: 'Split Image',
 				stylePrice: styles[1].price,
 				div: (
@@ -73,6 +75,7 @@ export default function CanvasPrint() {
 		} else if (e.target.classList[2] == 'i3') {
 			setProductProperty({
 				...productProperty,
+				num: 3,
 				styleName: 'Wall Display',
 				stylePrice: styles[2].price,
 				div: (
@@ -105,6 +108,7 @@ export default function CanvasPrint() {
 			setProductProperty({
 				...productProperty,
 				styleName: 'Collage Image',
+				num: 4,
 				stylePrice: styles[3].price,
 				div: (
 					<div className="row left-section" style={{ display: 'block' }}>
@@ -144,7 +148,7 @@ export default function CanvasPrint() {
 							<div className="row">
 								<div className="col-sm-12">
 									<div className="split2">
-										<img src alt="" />
+										<img src="" alt="" />
 									</div>
 								</div>
 							</div>

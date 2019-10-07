@@ -1,10 +1,11 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext, Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ProductContext } from '../themeContext';
+import ReactFilestack from 'filestack-react';
+import { ThemeContext } from '../themeContext';
 
 let arr = [];
 export default function UploadImage() {
-	const context = useContext(ProductContext);
+	const context = useContext(ThemeContext);
 	const { productProperty, setProductProperty } = context;
 	console.log('UploadPage', productProperty);
 
@@ -27,48 +28,55 @@ export default function UploadImage() {
 		reader.readAsDataURL(file);
 	};
 
+	const actionObj = {
+		maxFiles: productProperty.num
+	};
+
 	const mainSection = () => {
 		var frame = productProperty.styleName;
-		if (frame == 'Single Print') {
-			return (
-				<div className="row left-section" style={{ display: 'block' }}>
-					{' '}
-					<div className="col-sm-12 center imgdiv">
-						<div class="upload-image-preview split imgdiv1">
-							<img src={productProperty.images[0]} alt="" className="" />
-						</div>
-						<input type="file" id="test" onChange={_handleImageChange} style={{ display: 'none' }} />
-					</div>
-				</div>
-			);
-		} else if (frame == 'Wall Displays') {
-			return <h1>Wall Displays</h1>;
-		} else if (frame == 'Collage Image') {
-			return <h1>Collage Image</h1>;
-		} else {
-			return (
-				<div className="row left-section" style={{ display: 'block' }}>
-					<div className="col-sm-4">
-						<div className="split upload-image-preview">
-							<img src={productProperty.images[0]} alt="" />
-						</div>
-						<input type="file" onChange={_handleImageChange} />
-					</div>
-					<div className="col-sm-4">
-						<div className="split upload-image-preview">
-							<img src={productProperty.images[1]} alt="" />
-						</div>
-						<input type="file" onChange={_handleImageChange} />
-					</div>
-					<div className="col-sm-4">
-						<div className="split upload-image-preview">
-							<img src={productProperty.images[2]} alt="" />
-						</div>
-						<input type="file" onChange={_handleImageChange} />
-					</div>
-				</div>
-			);
-		}
+
+		// if (frame == 'Single Print') {
+		// 	return (
+		// 		<div className="row left-section" style={{ display: 'block' }}>
+		// 			{' '}
+		// 			<div className="col-sm-12 center imgdiv">
+		// 				<div class="upload-image-preview split imgdiv1">
+		// 					<img src={productProperty.images[0]} alt="" className="" />
+		// 				</div>
+		// 				<input type="file" id="test" onChange={_handleImageChange} style={{ display: 'none' }} />
+		// 			</div>
+		// 		</div>
+		// 	);
+		// } else if (frame == 'Wall Displays') {
+		// 	return <h1>Wall Displays</h1>;
+		// } else if (frame == 'Collage Image') {
+		// 	return <h1>Collage Image</h1>;
+		// } else {
+		// 	return (
+		// 		<div className="row left-section" style={{ display: 'block' }}>
+		// 			<div className="col-sm-4">
+		// 				<div className="split upload-image-preview">
+		// 					<img src={productProperty.images[0]} alt="" />
+		// 				</div>
+		// 				<input type="file" onChange={_handleImageChange} />
+		// 			</div>
+		// 			<div className="col-sm-4">
+		// 				<div className="split upload-image-preview">
+		// 					<img src={productProperty.images[1]} alt="" />
+		// 				</div>
+		// 				<input type="file" onChange={_handleImageChange} />
+		// 			</div>
+		// 			<div className="col-sm-4">
+		// 				<div className="split upload-image-preview">
+		// 					<img src={productProperty.images[2]} alt="" />
+		// 				</div>
+		// 				<input type="file" onChange={_handleImageChange} />
+		// 			</div>
+		// 		</div>
+		// 	);
+		// }
+
+		//show img here from filestack
 	};
 
 	const savePreview = () => {
@@ -84,6 +92,14 @@ export default function UploadImage() {
 		//     console.error('oops, something went wrong!', error);
 		//   });
 	};
+	const loadPreview = () => {
+		return <img src={productProperty.preview} alt="" />;
+		console.log(productProperty.preview);
+	};
+
+	useEffect(() => {
+		loadPreview();
+	}, []);
 
 	return (
 		<Fragment>
@@ -100,7 +116,11 @@ export default function UploadImage() {
 						({productProperty.material}: <b id="title">{productProperty.styleName}</b>)
 					</h4>
 				</div>
-				<div id="preview">{mainSection()}</div>
+				<div id="preview">
+					{loadPreview()}
+
+					{mainSection()}
+				</div>
 
 				<div className="row" style={{ marginTop: '20px' }}>
 					{/* <div className='col-sm-6 center'> */}
@@ -109,18 +129,46 @@ export default function UploadImage() {
             </Link> */}
 					{/* </div> */}
 					<div className="col-md-6" style={{ textAlign: 'right' }}>
-						<button
-							className="btn btn-warning"
-							onClick={() => {
-								document.getElementById('test').click();
+						<ReactFilestack
+							apikey={'AfcnFThTU4ebKMjxRMngSz'}
+							actionOptions={actionObj}
+							componentDisplayMode={{
+								type: 'button',
+								customText: 'Add Image',
+								customClass: 'btn btn-warning add-img-height'
 							}}
-							style={{ height: '34.5px' }}
-						>
-							{' '}
-							Add Image{' '}
-						</button>
+							onSuccess={(res) => {
+								if (productProperty.num == 1) {
+									const handle = res.filesUploaded[0].handle;
+									const url = `https://cdn.filestackcontent.com/resize=height:400/${handle}`;
+									productProperty.preview = url;
+								} else if (productProperty.num == 2) {
+									console.log(res);
+									const handle0 = res.filesUploaded[0].handle;
+									const handle1 = res.filesUploaded[1].handle;
+									const url = `https://process.filestackapi.com/collage=files:[${handle0}],w:800,h:600,/${handle1}`;
+									productProperty.preview = url;
+								} else if (productProperty.num == 3) {
+									console.log(res);
+									const handle0 = res.filesUploaded[0].handle;
+									const handle1 = res.filesUploaded[1].handle;
+									const handle2 = res.filesUploaded[2].handle;
+									const url = `https://process.filestackapi.com/collage=files:[${handle0},${handle2}],w:800,h:600,/${handle1}`;
+									productProperty.preview = url;
+								}
+								if (productProperty.num == 4) {
+									console.log(res);
+									const handle0 = res.filesUploaded[0].handle;
+									const handle1 = res.filesUploaded[1].handle;
+									const handle2 = res.filesUploaded[2].handle;
+									const handle3 = res.filesUploaded[3].handle;
+									const url = `https://process.filestackapi.com/collage=files:[${handle0},${handle2},${handle3}],w:800,h:600,/${handle1}`;
+									productProperty.preview = url;
+								}
+							}}
+						/>
 					</div>
-
+					{console.log('preview-->', productProperty.preview)}
 					<div className="col-sm-6" style={{ textAlign: 'left' }}>
 						<Link to="/cart">
 							<button className="btn btn-warning oultine-btn" onClick={savePreview}>
@@ -269,4 +317,67 @@ export default function UploadImage() {
 //     );
 
 //     return <Fragment>{content()}</Fragment>;
+// }
+
+// import React, { Fragment } from 'react';
+// import ReactFilestack from 'filestack-react';
+
+// export default function UploadImage() {
+//     const actionObj = {
+//         maxFiles: 7
+//     };
+//     return (
+//         <Fragment>
+//             <ReactFilestack
+//                 apikey={'AfcnFThTU4ebKMjxRMngSz'}
+//                 actionOptions={actionObj}
+//                 componentDisplayMode={{
+//                     type: 'button',
+//                     customText: 'Add Image',
+//                     customClass: 'btn btn-warning'
+//                 }}
+//                 customRender={({ onPick }) => (
+//                     <div>
+//                         <strong>Find an avatar</strong>
+//                         <button onClick={onPick}>Pick</button>
+//                     </div>
+//                 )}
+//                 onSuccess={(res) => console.log(res)}
+//             />
+
+//             <h1>YOU ARE BEST! </h1>
+//         </Fragment>
+//     );
+// }
+
+/////////
+// import React, { Fragment } from 'react';
+// import ReactFilestack from 'filestack-react';
+
+// export default function UploadImage() {
+// 	const actionObj = {
+// 		maxFiles: 7
+// 	};
+// 	return (
+// 		<Fragment>
+// 			<ReactFilestack
+// 				apikey={'AfcnFThTU4ebKMjxRMngSz'}
+// 				actionOptions={actionObj}
+// 				componentDisplayMode={{
+// 					type: 'button',x`
+// 					customText: 'Add Image',
+// 					customClass: 'btn btn-warning'
+// 				}}
+// 				customRender={({ onPick }) => (
+// 					<div>
+// 						<strong>Find an avatar</strong>
+// 						<button onClick={onPick}>Pick</button>
+// 					</div>
+// 				)}
+// 				onSuccess={(res) => console.log(res)}
+// 			/>
+
+// 			<h1>YOU ARE BEST! </h1>
+// 		</Fragment>
+// 	);
 // }

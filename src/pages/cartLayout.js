@@ -1,6 +1,6 @@
 import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { ProductContext } from '../themeContext';
+import { ThemeContext } from '../themeContext';
 
 export default function Layout({
 	styleName = 'Single Print',
@@ -10,7 +10,7 @@ export default function Layout({
 	quantity = 1,
 	image = 'https://samrat.online/images/pic.gif'
 }) {
-	const context = useContext(ProductContext);
+	const context = useContext(ThemeContext);
 	const { productProperty, setProductProperty } = context;
 	// const handle = (e) => {
 	//   setProductProperty({ ...productProperty, quantity: e.target.value,
@@ -37,6 +37,7 @@ export default function Layout({
 		});
 
 		document.getElementById('checkout').remove();
+		
 	};
 
 	const handleChange = (event) => {
@@ -45,7 +46,7 @@ export default function Layout({
 			quantity: event.target.value,
 
 			//calculation bug
-			subPrice: productProperty.subPrice * event.target.value,
+			calculatedPrice: productProperty.subPrice * event.target.value,
 			totalPrice: productProperty.subPrice * event.target.value + productProperty.shipping
 		});
 	};
@@ -80,7 +81,7 @@ export default function Layout({
 				<strong>₹ {price}</strong>
 			</td>
 			<td className="col-md-1 text-center">
-				<strong>₹ {productProperty.subPrice} </strong>
+				<strong>₹ {productProperty.calculatedPrice} </strong>
 			</td>
 			<td className="col-md-1">
 				<Link to="/CreateYourPrint">
