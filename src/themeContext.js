@@ -10,14 +10,14 @@ const ThemeProveider = ({ children }) => {
 		stylePrice: 100,
 		size: '10" X 10"',
 		sizePrice: 50,
-		images: 'https://samrat.online/images/pic.gif',
+		images: '',
 		preview: '',
 		shipping: 100,
 		quantity: 1,
 		subPrice: 100,
 		calculatedPrice: 100,
 		totalPrice: 200,
-		num: 2,
+		num: 1,
 		div: (
 			<div className="row left-section " style={{ display: 'block' }}>
 				{' '}

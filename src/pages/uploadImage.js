@@ -1,4 +1,4 @@
-import React, { useContext, Fragment, useEffect } from 'react';
+import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import ReactFilestack from 'filestack-react';
 import { ThemeContext } from '../themeContext';
@@ -79,28 +79,6 @@ export default function UploadImage() {
 		//show img here from filestack
 	};
 
-	const savePreview = () => {
-		// var node = document.getElementById('preview');
-		// htmlToImage.toPng(node)
-		//   .then(function (dataUrl) {
-		//     var img = new Image();
-		//     img.src = dataUrl;
-		//     setProductProperty({ ...productProperty, preview: dataUrl});
-		//     document.body.appendChild(img);
-		//   })
-		//   .catch(function (error) {
-		//     console.error('oops, something went wrong!', error);
-		//   });
-	};
-	const loadPreview = () => {
-		return <img src={productProperty.preview} alt="" />;
-		console.log(productProperty.preview);
-	};
-
-	useEffect(() => {
-		loadPreview();
-	}, []);
-
 	return (
 		<Fragment>
 			<div className="center">
@@ -108,17 +86,12 @@ export default function UploadImage() {
 					<h3 className="center" style={{ color: '#ff9900' }}>
 						<b>CREATE YOUR OWN CANVAS</b>
 					</h3>
-					{/* <h3>Preview :</h3>  */}
-
-					{/* <div id="previewImage"></div>  */}
-					{/* <button onClick={savePreview} > test</button> */}
 					<h4 className="center">
 						({productProperty.material}: <b id="title">{productProperty.styleName}</b>)
 					</h4>
 				</div>
-				<div id="preview">
-					{loadPreview()}
-
+				<div id="previewImg">
+					<img src={productProperty.preview} />
 					{mainSection()}
 				</div>
 
@@ -141,20 +114,20 @@ export default function UploadImage() {
 								if (productProperty.num == 1) {
 									const handle = res.filesUploaded[0].handle;
 									const url = `https://cdn.filestackcontent.com/resize=height:400/${handle}`;
-									productProperty.preview = url;
+									setProductProperty({ ...productProperty, preview: url });
 								} else if (productProperty.num == 2) {
 									console.log(res);
 									const handle0 = res.filesUploaded[0].handle;
 									const handle1 = res.filesUploaded[1].handle;
 									const url = `https://process.filestackapi.com/collage=files:[${handle0}],w:800,h:600,/${handle1}`;
-									productProperty.preview = url;
+									setProductProperty({ ...productProperty, preview: url });
 								} else if (productProperty.num == 3) {
 									console.log(res);
 									const handle0 = res.filesUploaded[0].handle;
 									const handle1 = res.filesUploaded[1].handle;
 									const handle2 = res.filesUploaded[2].handle;
 									const url = `https://process.filestackapi.com/collage=files:[${handle0},${handle2}],w:800,h:600,/${handle1}`;
-									productProperty.preview = url;
+									setProductProperty({ ...productProperty, preview: url });
 								}
 								if (productProperty.num == 4) {
 									console.log(res);
@@ -163,7 +136,7 @@ export default function UploadImage() {
 									const handle2 = res.filesUploaded[2].handle;
 									const handle3 = res.filesUploaded[3].handle;
 									const url = `https://process.filestackapi.com/collage=files:[${handle0},${handle2},${handle3}],w:800,h:600,/${handle1}`;
-									productProperty.preview = url;
+									setProductProperty({ ...productProperty, preview: url });
 								}
 							}}
 						/>
@@ -171,10 +144,7 @@ export default function UploadImage() {
 					{console.log('preview-->', productProperty.preview)}
 					<div className="col-sm-6" style={{ textAlign: 'left' }}>
 						<Link to="/cart">
-							<button className="btn btn-warning oultine-btn" onClick={savePreview}>
-								{' '}
-								Add to cart{' '}
-							</button>
+							<button className="btn btn-warning oultine-btn">Add to cart </button>
 						</Link>
 					</div>
 				</div>

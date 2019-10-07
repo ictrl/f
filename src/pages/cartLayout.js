@@ -33,11 +33,11 @@ export default function Layout({
 			quantity: '',
 			subPrice: '',
 			totalPrice: '',
-			shipping: ''
+			shipping: '',
+			calculatedPrice: null
 		});
 
 		document.getElementById('checkout').remove();
-		
 	};
 
 	const handleChange = (event) => {
