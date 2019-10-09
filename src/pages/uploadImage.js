@@ -54,10 +54,7 @@ export default function UploadImage() {
 										...productProperty,
 										preview: url,
 										subPrice: productProperty.stylePrice + productProperty.sizePrice,
-										calculatedPrice:
-											productProperty.stylePrice +
-											productProperty.sizePrice +
-											productProperty.shipping
+										calculatedPrice: productProperty.stylePrice + productProperty.sizePrice
 									});
 									console.log(productProperty.preview);
 								} else if (productProperty.num === 3) {
@@ -70,10 +67,7 @@ export default function UploadImage() {
 										...productProperty,
 										preview: url,
 										subPrice: productProperty.stylePrice + productProperty.sizePrice,
-										calculatedPrice:
-											productProperty.stylePrice +
-											productProperty.sizePrice +
-											productProperty.shipping
+										calculatedPrice: productProperty.stylePrice + productProperty.sizePrice
 									});
 								}
 								if (productProperty.num === 4) {
@@ -87,10 +81,7 @@ export default function UploadImage() {
 										...productProperty,
 										preview: url,
 										subPrice: productProperty.stylePrice + productProperty.sizePrice,
-										calculatedPrice:
-											productProperty.stylePrice +
-											productProperty.sizePrice +
-											productProperty.shipping
+										calculatedPrice: productProperty.stylePrice + productProperty.sizePrice
 									});
 								}
 							}}
