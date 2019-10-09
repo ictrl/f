@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../themeContext';
+import { ThemeContext } from '../App';
 import { getSizeList, getStyleList } from './cartHelpers';
 
 export default function CanvasPrint() {
@@ -30,7 +30,7 @@ export default function CanvasPrint() {
 	};
 
 	const splitHandler = (e) => {
-		if (e.target.classList[2] == 'i1') {
+		if (e.target.classList[2] === 'i1') {
 			setProductProperty({
 				...productProperty,
 				styleName: 'Single Print',
@@ -46,7 +46,7 @@ export default function CanvasPrint() {
 					</div>
 				)
 			});
-		} else if (e.target.classList[2] == 'i2') {
+		} else if (e.target.classList[2] === 'i2') {
 			setProductProperty({
 				...productProperty,
 				num: 2,
@@ -72,7 +72,7 @@ export default function CanvasPrint() {
 					</div>
 				)
 			});
-		} else if (e.target.classList[2] == 'i3') {
+		} else if (e.target.classList[2] === 'i3') {
 			setProductProperty({
 				...productProperty,
 				num: 3,

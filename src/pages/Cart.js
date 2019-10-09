@@ -1,12 +1,12 @@
 import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../themeContext';
+import { ThemeContext } from '../App';
 import Layout from './cartLayout';
 
 export default function NewCart() {
 	const context = useContext(ThemeContext);
 	const { productProperty, setProductProperty } = context;
-	console.log('CartPage', productProperty);
+	console.log('CartPage', productProperty.quantity);
 
 	return (
 		<div>

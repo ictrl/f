@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../themeContext';
+import { ThemeContext } from '../App';
 import { API } from '../config';
 
 export default function NewCheckOut() {

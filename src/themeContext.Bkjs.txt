@@ -1,54 +1,89 @@
-import React, { useReducer, Fragment, useEffect } from 'react';
-// export const ThemeContext = React.createContext({});
 
-const inintalProducts = [
-	{
-		material: 'defalut maetiral',
-		style: '',
-		stylePrice: null,
-		size: '',
-		sizePrice: null,
-		quantity: 1,
-		images: [ 'https://samrat.online/images/pic.gif' ],
-		subPrice: null,
-		calculatedPrice: null
-	}
-];
-const reducer = (state, action) => {
-	switch (action.type) {
-		case 'material':
-			return state.map((product) => {
-				return { ...product, material: action.value };
-			});
 
-		case 'images':
-			return state.map((product) => {
-				product.images[0] = action.value;
-				return { ...product };
-			});
-		case 'images-push':
-			return state.map((product) => {
-				product.images.push(action.value);
-				return { ...product };
-			});
-
-		default:
-			return state;
-	}
-};
-
-export const ThemeContext = React.createContext();
+///////
+import React, { useState, Fragment } from 'react';
+export const ThemeContext = React.createContext({});
+const util = require('util');
 
 const ThemeProveider = ({ children }) => {
-	const [ products, dispatch ] = useReducer(reducer, inintalProducts);
+	const productJson = {
+		material: null,
+		styleName: null,
+		stylePrice: null,
+		size: null,
+		sizePrice: null,
+		images: [],
+		quantity: null,
+		subPrice: null,
+		calculatedPrice: null,
+		subPrice: null,
+		calculatedPrice: null
+	};
+	const initalState = [
+		{
+			material: null,
+			styleName: null,
+			stylePrice: null,
+			size: null,
+			sizePrice: null,
+			images: [ '' ],
+			quantity: null,
+			subPrice: null,
+			calculatedPrice: null,
+			subPrice: null,
+			calculatedPrice: null
+		}
+	];
+
+	const [ productProperty, setProductProperty ] = useState(initalState);
+
+	const materialUpdate = () => {
+		productProperty.map((product) => {
+			product.material = 'HD';
+		});
+		console.log(util.inspect(initalState, { showHidden: false, depth: null }));
+	};
+	const materialUpdate2 = () => {
+		productProperty.map((product) => {
+			product.material = 'HD 2';
+		});
+		console.log(util.inspect(initalState, { showHidden: false, depth: null }));
+	};
+
+	const imagesUpdate = () => {
+		productProperty.map((product) => {
+			product.images.map((image) => {
+				product.images.push('http://AdiJha.com/profissle.jpg');
+			});
+		});
+		console.log(util.inspect(initalState, { showHidden: false, depth: null }));
+	};
+
+	const undoImagesUpdate = () => {
+		productProperty.map((product) => {
+			product.images.map((image) => {
+				product.images.splice('http://AdiJha.com/profile.jpg');
+			});
+		});
+		console.log(util.inspect(initalState, { showHidden: false, depth: null }));
+	};
+
+	const newProduct = () => {
+		initalState.push(productJson);
+		console.log(util.inspect(initalState, { showHidden: false, depth: null }));
+	};
+
 	return (
 		<Fragment>
-			<ThemeContext.provider>
-				<createYourPrint value={{ productState: products, productDispatch: dispatch }} />
-			</ThemeContext.provider>
+			<ThemeContext.Provider value={{ productProperty, setProductProperty }}>{children}</ThemeContext.Provider>
+			<button onClick={newProduct}>push array</button>
+			<button onClick={materialUpdate}>material</button>
+			<button onClick={materialUpdate2}>material2</button>
+			<button onClick={imagesUpdate}>Add Images</button>
+			<button onClick={undoImagesUpdate}>remove Images</button>
+			{console.log(util.inspect(initalState, { showHidden: false, depth: null }))}
 		</Fragment>
 	);
 };
 
 export default ThemeProveider;
-

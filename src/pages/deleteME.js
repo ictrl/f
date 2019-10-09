@@ -1,43 +1,67 @@
-import React, { useContext, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { ThemeContext } from '../themeContext';
+import React, { useState, Fragment } from 'react';
 
-export default function UploadImage() {
-  const context = useContext(ThemeContext);
-  const { productProperty, setProductProperty } = context;
+export default function tried() {
+const initalState = [
+	{
+		material: 'Canvas',
+		styleName: 'Single Printss',
+		stylePrice: 100,
+		size: '10" X 10"',
+		sizePrice: 50,
+		images: [ 'http://adijha.com/profile.jpg' ],
+		quantity: 1,
+		subPrice: 100,
+		calculatedPrice: 100,
+		subPrice: null,
+		calculatedPrice: null
+	}
+]
 
-  const _handleImageChange = (e) => {
-    e.preventDefault();
 
-    let reader = new FileReader();
-    let file = e.target.files[0];
+const [ productProperty, setProductProperty ] = useState(initalState);
 
-    reader.onloadend = () => {
-      setProductProperty({ ...productProperty, image: file });
-      setProductProperty({ ...productProperty, url: reader.result });
-      console.log('image', file);
-      console.log('url', reader.result);
-    };
 
-    reader.readAsDataURL(file);
-  };
-  return (
-    <Fragment>
-      <div className='center'>
-        <div className='row left-section ' style={{ display: 'block' }}>
-          {' '}
-          <div className='col-sm-12'>
-            <div class='upload-image-preview split' id='uploadImg'>
-              <img src={productProperty.url} alt='' />
-            </div>
-            <input type='file' onChange={_handleImageChange} />
-          </div>
-        </div>
+const materialUpdate = () => {
+	productProperty.map(product => {
+		product.material = 'HD';
+	})
+}
 
-        <Link to='/cart'>
-          <button className='btn '> Add to cart </button>
-        </Link>
-      </div>
-    </Fragment>
-  );
+const imagesUpdate = ( ) => {
+	productProperty.map(product => {
+		product.images.map(image => {
+			product.images.push('http://AdiJha.com/profile.jpg');
+		})
+	} )
+}
+
+const undoImagesUpdate = ( ) => {
+	productProperty.map(product => {
+		product.images.map(image => {
+			product.images.splice('http://AdiJha.com/profile.jpg');
+		})
+	} )
+}
+
+
+	return (
+		<Fragment>
+			{console.log(productProperty)}
+
+			<button onClick={ ()=> {
+				materialUpdate();
+				console.log('second',productProperty)
+			} }>HD </button>
+			<button onClick={ ()=> {
+				imagesUpdate();
+				console.log('AdiJha',productProperty)
+			} }>Adijha </button>
+			<button onClick={ ()=> {
+				undoImagesUpdate('http://AdiJha.com/profile.jpg' );
+				console.log('AdiJha',productProperty)
+			} }>Adijha undo </button>
+
+
+		</Fragment>
+	);
 }

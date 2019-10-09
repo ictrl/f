@@ -1,6 +1,7 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../themeContext';
+import { ThemeContext } from '../App';
+import { Upload } from 'filestack-js/build/main/lib/api/upload';
 
 export default function Layout({
 	styleName = 'Single Print',
@@ -12,20 +13,6 @@ export default function Layout({
 }) {
 	const context = useContext(ThemeContext);
 	const { productProperty, setProductProperty } = context;
-	// const handle = (e) => {
-	//   setProductProperty({ ...productProperty, quantity: e.target.value,
-
-	//    subPrice : productProperty.subPrice * productProperty.quantity,
-	//     totalPrice: productProperty.subPrice + productProperty.shipping
-	//   })
-
-	//   var subP = parseInt(price) * parseInt(e.target.value);
-	//   setProductProperty({
-	//     ...productProperty,
-	//     totalPrice: subP + 10,
-	//     subPrice: subP
-	//   });
-	// };
 
 	const clearContext = (event) => {
 		setProductProperty({
@@ -41,15 +28,39 @@ export default function Layout({
 	};
 
 	const handleChange = (event) => {
+		const value = event.target.value <= 0 ? (event.target.value = 1) : event.target.value;
 		setProductProperty({
 			...productProperty,
-			quantity: event.target.value,
-
-			//calculation bug
-			calculatedPrice: productProperty.subPrice * event.target.value,
-			totalPrice: productProperty.subPrice * event.target.value + productProperty.shipping
+			quantity: value,
+			calculatedPrice: productProperty.subPrice * value,
+			totalPrice: productProperty.subPrice * value + productProperty.shipping
 		});
 	};
+
+	// const updateShippingPrice = () => {
+	// 	//bug logic alter all calculated price
+	// 	//bug admin or retriev from backend admin
+	// 	setProductProperty({
+	// 		...productProperty,
+	// 		shipping: 100
+	// 	});
+	// 	setTimeout(() => {
+	// 		updateTotalPrice();
+	// 	}, 500);
+	// };
+
+	const updateTotalPrice = () => {
+		//bug logic alter all calculated price
+		//bug admin or retriev from backend admin
+		setProductProperty({
+			...productProperty,
+			totalPrice: productProperty.calculatedPrice + productProperty.shipping
+		});
+	};
+
+	useEffect(() => {
+		updateTotalPrice();
+	}, []);
 
 	return (
 		<tr>

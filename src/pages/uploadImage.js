@@ -1,84 +1,16 @@
 import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import ReactFilestack from 'filestack-react';
-import { ThemeContext } from '../themeContext';
+import { ThemeContext } from '../App';
 
 let arr = [];
 export default function UploadImage() {
 	const context = useContext(ThemeContext);
 	const { productProperty, setProductProperty } = context;
-	console.log('UploadPage', productProperty);
-
-	const _handleImageChange = (e) => {
-		e.preventDefault();
-
-		let reader = new FileReader();
-		let file = e.target.files[0];
-
-		reader.onloadend = () => {
-			arr.push(reader.result);
-			console.log('update start');
-			setProductProperty({
-				...productProperty,
-				images: arr,
-				subPrice: productProperty.stylePrice + productProperty.sizePrice,
-				totalPrice: productProperty.stylePrice + productProperty.sizePrice + productProperty.shipping
-			});
-		};
-		reader.readAsDataURL(file);
-	};
 
 	const actionObj = {
 		maxFiles: productProperty.num
 	};
-
-	const mainSection = () => {
-		var frame = productProperty.styleName;
-
-		// if (frame == 'Single Print') {
-		// 	return (
-		// 		<div className="row left-section" style={{ display: 'block' }}>
-		// 			{' '}
-		// 			<div className="col-sm-12 center imgdiv">
-		// 				<div class="upload-image-preview split imgdiv1">
-		// 					<img src={productProperty.images[0]} alt="" className="" />
-		// 				</div>
-		// 				<input type="file" id="test" onChange={_handleImageChange} style={{ display: 'none' }} />
-		// 			</div>
-		// 		</div>
-		// 	);
-		// } else if (frame == 'Wall Displays') {
-		// 	return <h1>Wall Displays</h1>;
-		// } else if (frame == 'Collage Image') {
-		// 	return <h1>Collage Image</h1>;
-		// } else {
-		// 	return (
-		// 		<div className="row left-section" style={{ display: 'block' }}>
-		// 			<div className="col-sm-4">
-		// 				<div className="split upload-image-preview">
-		// 					<img src={productProperty.images[0]} alt="" />
-		// 				</div>
-		// 				<input type="file" onChange={_handleImageChange} />
-		// 			</div>
-		// 			<div className="col-sm-4">
-		// 				<div className="split upload-image-preview">
-		// 					<img src={productProperty.images[1]} alt="" />
-		// 				</div>
-		// 				<input type="file" onChange={_handleImageChange} />
-		// 			</div>
-		// 			<div className="col-sm-4">
-		// 				<div className="split upload-image-preview">
-		// 					<img src={productProperty.images[2]} alt="" />
-		// 				</div>
-		// 				<input type="file" onChange={_handleImageChange} />
-		// 			</div>
-		// 		</div>
-		// 	);
-		// }
-
-		//show img here from filestack
-	};
-
 	return (
 		<Fragment>
 			<div className="center">
@@ -92,15 +24,8 @@ export default function UploadImage() {
 				</div>
 				<div id="previewImg">
 					<img src={productProperty.preview} />
-					{mainSection()}
 				</div>
-
 				<div className="row" style={{ marginTop: '20px' }}>
-					{/* <div className='col-sm-6 center'> */}
-					{/* <Link to='/CanvasPrint' className='btn btn-default' value='Input Button'>
-              <button className='btn'>Select Style</button>
-            </Link> */}
-					{/* </div> */}
 					<div className="col-md-6" style={{ textAlign: 'right' }}>
 						<ReactFilestack
 							apikey={'AfcnFThTU4ebKMjxRMngSz'}
@@ -111,32 +36,62 @@ export default function UploadImage() {
 								customClass: 'btn btn-warning add-img-height'
 							}}
 							onSuccess={(res) => {
-								if (productProperty.num == 1) {
+								if (productProperty.num === 1) {
 									const handle = res.filesUploaded[0].handle;
 									const url = `https://cdn.filestackcontent.com/resize=height:400/${handle}`;
-									setProductProperty({ ...productProperty, preview: url });
-								} else if (productProperty.num == 2) {
+									setProductProperty({
+										...productProperty,
+										preview: url,
+										subPrice: productProperty.stylePrice + productProperty.sizePrice,
+										calculatedPrice: productProperty.stylePrice + productProperty.sizePrice
+									});
+								} else if (productProperty.num === 2) {
 									console.log(res);
 									const handle0 = res.filesUploaded[0].handle;
 									const handle1 = res.filesUploaded[1].handle;
 									const url = `https://process.filestackapi.com/collage=files:[${handle0}],w:800,h:600,/${handle1}`;
-									setProductProperty({ ...productProperty, preview: url });
-								} else if (productProperty.num == 3) {
+									setProductProperty({
+										...productProperty,
+										preview: url,
+										subPrice: productProperty.stylePrice + productProperty.sizePrice,
+										calculatedPrice:
+											productProperty.stylePrice +
+											productProperty.sizePrice +
+											productProperty.shipping
+									});
+									console.log(productProperty.preview);
+								} else if (productProperty.num === 3) {
 									console.log(res);
 									const handle0 = res.filesUploaded[0].handle;
 									const handle1 = res.filesUploaded[1].handle;
 									const handle2 = res.filesUploaded[2].handle;
 									const url = `https://process.filestackapi.com/collage=files:[${handle0},${handle2}],w:800,h:600,/${handle1}`;
-									setProductProperty({ ...productProperty, preview: url });
+									setProductProperty({
+										...productProperty,
+										preview: url,
+										subPrice: productProperty.stylePrice + productProperty.sizePrice,
+										calculatedPrice:
+											productProperty.stylePrice +
+											productProperty.sizePrice +
+											productProperty.shipping
+									});
 								}
-								if (productProperty.num == 4) {
+								if (productProperty.num === 4) {
 									console.log(res);
 									const handle0 = res.filesUploaded[0].handle;
 									const handle1 = res.filesUploaded[1].handle;
 									const handle2 = res.filesUploaded[2].handle;
 									const handle3 = res.filesUploaded[3].handle;
 									const url = `https://process.filestackapi.com/collage=files:[${handle0},${handle2},${handle3}],w:800,h:600,/${handle1}`;
-									setProductProperty({ ...productProperty, preview: url });
+									setProductProperty({
+										...productProperty,
+										preview: url,
+										subPrice: productProperty.stylePrice + productProperty.sizePrice,
+										calculatedPrice:
+											productProperty.stylePrice +
+											productProperty.sizePrice +
+											productProperty.shipping
+									});
 								}
 							}}
 						/>

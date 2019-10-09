@@ -1,7 +1,6 @@
 import React, { useContext, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-
-import { ThemeContext } from '../themeContext';
+import { ThemeContext } from '../App';
 
 export default function CreateYourPrint() {
 	const context = useContext(ThemeContext);
@@ -9,6 +8,7 @@ export default function CreateYourPrint() {
 
 	return (
 		<Fragment>
+			{console.log(productProperty)}
 			<div className="row" style={{ marginBottom: '3rem' }}>
 				<div className="col-sm-12 center" style={{ marginBottom: '30px' }}>
 					<h3>
