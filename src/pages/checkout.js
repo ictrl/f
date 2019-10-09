@@ -218,7 +218,7 @@ export default function NewCheckOut() {
                     <div className='col-sm-3 col-xs-3'>
                       <img
                         className='img-responsive'
-                        src={ productProperty.images[0] }
+                        src={ productProperty.preview }
                       />
                     </div>
                     <div className='col-sm-6 col-xs-6'>
