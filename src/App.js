@@ -122,7 +122,7 @@ const App = ({ children }) => {
 					<Route exact path="/CanvasPrint" component={componentValidation(CanvasPrint)} />
 					<Route exact path="/uploadImage" component={componentValidation(UploadImage)} />
 					<Route exact path="/Cart" component={componentValidation(Cart)} />
-					{/* <Route exact path="/checkout" component={checkout} /> */}
+					<Route exact path="/checkout" component={checkout} />
 				</ThemeContext.Provider>
 
 				<Route exact path="/Login" component={Login} />
