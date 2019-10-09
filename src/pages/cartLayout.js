@@ -107,7 +107,7 @@ export default function Layout({
 					className="btn btn-danger"
 					onClick={(e) => {
 						var parentNode = e.target.parentNode.parentNode;
-						console.log(parentNode);
+						// console.log(parentNode);
 						parentNode.remove();
 						clearContext();
 						// var listItems = document.querySelectorAll("li");
