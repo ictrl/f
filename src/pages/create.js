@@ -53,7 +53,7 @@ export default function CreateStyle() {
   };
   const clickSubmitSize = (e) => {
     e.preventDefault();
-    console.log("clickSubmitSize");
+    // console.log("clickSubmitSize");
     
     const c = document.querySelector('#c').value;
     const d = document.querySelector('#d').value;

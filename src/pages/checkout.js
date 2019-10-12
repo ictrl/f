@@ -7,7 +7,7 @@ export default function NewCheckOut() {
   const { productProperty, setProductProperty } = context;
 
   const createPost = (order) => {
-    console.log('createpost starts');
+    console.log('create POST starts');
     return fetch(`${API}/bid/pay`, {
       method: 'POST',
       Accept: 'application/json',
@@ -65,7 +65,7 @@ export default function NewCheckOut() {
 
     createPost(order);
 
-    console.log(JSON.parse(productProperty.user));
+    // console.log(JSON.parse(productProperty.user));
   };
   return (
     <div>

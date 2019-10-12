@@ -1,23 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
 import "./App.css";
-
 import Navbar from "./components/Navbar";
 import Offers from "./components/Offers";
 import Footer from "./components/Footer";
 import CreateYourPrint from "./components/CreateYourPrint";
 
 import CanvasPrint from "./pages/canvasPrint";
-import uploadImage from "./pages/uploadImage";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import create from "./pages/create";
 import register from "./pages/register";
 import checkout from "./pages/checkout";
-import summary from "./pages/summary";
 import PaymentComplete from "./pages/PaymentComplete";
-
 import quickLinks from "./pages/quickLinks";
 import Home from "./pages/home";
 import contact from "./pages/contact";
@@ -36,69 +31,45 @@ import shippingInfo from "./pages/shippingInfo";
 import howITWorks from "./pages/howITWorks";
 import UploadImage from "./pages/uploadImage";
 import { preview } from "filestack-js/build/main/lib/api/preview";
-
-// import ThemeProvider, { ThemeContext } from './themeContext';
+const util = require("util");
 
 export const ThemeContext = React.createContext({});
 
 const App = ({ children }) => {
-  const [productProperty, setProductProperty] = useState({
-    user: null,
-    material: null,
-    styleName: null,
-    stylePrice: null,
-    size: null,
-    sizePrice: null,
-    preview: null,
-    shipping: 100,
-    quantity: 1,
-    subPrice: null,
-    calculatedPrice: null,
-    totalPrice: null,
-    num: 1,
-    div: (
-      <div className="row left-section " style={{ display: "block" }}>
-        {" "}
-        <div className="col-sm-12">
-          <div className="split">
-            <img src alt="" />
-          </div>
-        </div>
-      </div>
-    )
-  });
+  const [productProperty, setProductProperty] = useState({});
 
   const componentValidation = route => {
     if (route == CanvasPrint) {
       if (productProperty.material == null) {
         return CreateYourPrint;
+        // return route;
       } else {
         return route;
       }
     } else if (route == UploadImage) {
       if (productProperty.material == null) {
         return CreateYourPrint;
+        // return route;
       } else {
         if (productProperty.styleName == null || productProperty.size == null) {
+          // return route;
           return CanvasPrint;
-        } else {
-          return route;
-        }
-      }
-    } else if (route == Cart) {
-      if (productProperty.material == null) {
-        return CreateYourPrint;
-      } else {
-        if (productProperty.styleName == null || productProperty.size == null) {
-          return CanvasPrint;
-        } else if (productProperty.preview == null) {
-          return UploadImage;
         } else {
           return route;
         }
       }
     }
   };
+
+  const show = () => {
+    console.log(
+      util.inspect(productProperty, {
+        showHidden: true,
+        depth: null
+      })
+    );
+  };
+
   return (
     <Router>
       <Offers />
@@ -124,6 +95,8 @@ const App = ({ children }) => {
       <Route exact path="/canvasWallDisplays" component={canvasWallDisplays} />
       <div className="container">
         <ThemeContext.Provider value={{ productProperty, setProductProperty }}>
+          <button onClick={show}>show</button>
+
           <Route exact path="/CreateYourPrint" component={CreateYourPrint} />
           <Route
             exact
@@ -135,14 +108,13 @@ const App = ({ children }) => {
             path="/uploadImage"
             component={componentValidation(UploadImage)}
           />
-          <Route exact path="/Cart" component={componentValidation(Cart)} />
+          <Route exact path="/Cart" component={Cart} />
           <Route exact path="/checkout" component={checkout} />
         </ThemeContext.Provider>
 
         <Route exact path="/Login" component={Login} />
         <Route exact path="/create" component={create} />
         <Route exact path="/register" component={register} />
-        <Route exact path="/summary" component={summary} />
         <Route exact path="/payment-complete" component={PaymentComplete} />
 
         <Route exact path="/privacyPolicy" component={privacyPolicy} />

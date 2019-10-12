@@ -7,6 +7,16 @@ export default function CanvasPrint() {
   const context = useContext(ThemeContext);
   const { productProperty, setProductProperty } = context;
   const [sizes, setSizeList] = useState([]);
+  const [div, setDiv] = useState([
+    <div className="row left-section " style={{ display: "block" }}>
+      {" "}
+      <div className="col-sm-12">
+        <div className="split">
+          <img src alt="" />
+        </div>
+      </div>
+    </div>
+  ]);
   const [styles, setStyleList] = useState([{}, {}, {}, {}]);
 
   const loadSizes = () => {
@@ -29,151 +39,140 @@ export default function CanvasPrint() {
     });
   };
 
-  const first = frame => {
-    let active = document.getElementsByClassName(frame);
-    console.log(active[0]);
-    active[0].classList.add("collage-thumbnail-select");
-    //   element[0].classList.add("collage-thumbnail-select");
-  };
-
   const splitHandler = e => {
     if (e.target.classList[2] === "i1") {
-      first("i1");
       setProductProperty({
         ...productProperty,
         styleName: "Single Print",
         stylePrice: styles[0].price,
-        num: 1,
-        div: (
-          <div className="row left-section" style={{ display: "block" }}>
-            <div className="col-sm-12">
-              <div class="upload-image-preview split" id="uploadImg">
-                <img src={productProperty.url} alt="" />
-              </div>
+        num: 1
+      });
+      setDiv(
+        <div className="row left-section" style={{ display: "block" }}>
+          <div className="col-sm-12">
+            <div class="upload-image-preview split" id="uploadImg">
+              <img src={productProperty.url} alt="" />
             </div>
           </div>
-        )
-      });
+        </div>
+      );
     } else if (e.target.classList[2] === "i2") {
-      first("i2");
       setProductProperty({
         ...productProperty,
         num: 2,
         styleName: "Split Image",
-        stylePrice: styles[1].price,
-        div: (
-          <div className="row left-section" style={{ display: "block" }}>
-            <div className="col-sm-4">
-              <div className="split">
-                <img src alt="" />
-              </div>
-            </div>
-            <div className="col-sm-4">
-              <div className="split">
-                <img src alt="" />
-              </div>
-            </div>
-            <div className="col-sm-4">
-              <div className="split">
-                <img src alt="" />
-              </div>
+        stylePrice: styles[1].price
+      });
+      setDiv(
+        <div className="row left-section" style={{ display: "block" }}>
+          <div className="col-sm-4">
+            <div className="split">
+              <img src alt="" />
             </div>
           </div>
-        )
-      });
+          <div className="col-sm-4">
+            <div className="split">
+              <img src alt="" />
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="split">
+              <img src alt="" />
+            </div>
+          </div>
+        </div>
+      );
     } else if (e.target.classList[2] === "i3") {
-      first("i3");
       setProductProperty({
         ...productProperty,
         num: 3,
         styleName: "Wall Display",
-        stylePrice: styles[2].price,
-        div: (
-          <div className="row left-section" style={{ display: "block" }}>
-            <div className="col-sm-6">
-              <div className="row">
-                <div className="col-sm-12">
-                  <div className="split2">
-                    <img src alt="" />
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-12">
-                  <div className="split2">
-                    <img src alt="" />
-                  </div>
+        stylePrice: styles[2].price
+      });
+      setDiv(
+        <div className="row left-section" style={{ display: "block" }}>
+          <div className="col-sm-6">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="split2">
+                  <img src alt="" />
                 </div>
               </div>
             </div>
-            <div className="col-sm-6">
-              <div className="split">
-                <img src alt="" />
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="split2">
+                  <img src alt="" />
+                </div>
               </div>
             </div>
           </div>
-        )
-      });
+          <div className="col-sm-6">
+            <div className="split">
+              <img src alt="" />
+            </div>
+          </div>
+        </div>
+      );
     } else {
-      first("i4");
       setProductProperty({
         ...productProperty,
         styleName: "Collage Image",
         num: 4,
-        stylePrice: styles[3].price,
-        div: (
-          <div className="row left-section" style={{ display: "block" }}>
-            <div className="col-sm-5">
-              <div className="row">
-                <div className="col-sm-12">
-                  <div className="split2">
-                    <img src alt="" />
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-12">
-                  <div className="split2">
-                    <img src alt="" />
-                  </div>
+        stylePrice: styles[3].price
+      });
+      setDiv(
+        <div className="row left-section" style={{ display: "block" }}>
+          <div className="col-sm-5">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="split2">
+                  <img src alt="" />
                 </div>
               </div>
             </div>
-            <div className="col-sm-2">
-              <div className="row">
-                <div className="col-sm-12">
-                  <div className="split2 collage1">
-                    <img src alt="" />
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-12">
-                  <div className="split2 collage2">
-                    <img src alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-5">
-              <div className="row">
-                <div className="col-sm-12">
-                  <div className="split2">
-                    <img src="" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-12">
-                  <div className="split2">
-                    <img src alt="" />
-                  </div>
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="split2">
+                  <img src alt="" />
                 </div>
               </div>
             </div>
           </div>
-        )
-      });
+          <div className="col-sm-2">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="split2 collage1">
+                  <img src alt="" />
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="split2 collage2">
+                  <img src alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-5">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="split2">
+                  <img src="" alt="" />
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="split2">
+                  <img src alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
     }
   };
 
@@ -208,7 +207,8 @@ export default function CanvasPrint() {
           </h4>
         </div>
         <div className="col-sm-6">
-          {productProperty.div}
+          {div}
+
           <div className="row" style={{ marginTop: "20px" }}>
             <div className="col-sm-6 center">
               <Link
