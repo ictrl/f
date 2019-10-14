@@ -86,31 +86,44 @@ const App = ({ children }) => {
   return (
     <Router>
       <Offers />
-      <Navbar />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/catalog" component={catalog} />
-      <Route exact path="/premiumPrints" component={premiumPrints} />
-      <Route exact path="/wallArt" component={wallArt} />
-      <Route exact path="/category" component={category} />
-      <Route exact path="/landescape" component={landescape} />
-      <Route exact path="/urban" component={urban} />
-      <Route exact path="/architecture" component={architecture} />
-      <Route exact path="/contact" component={contact} />
-      <Route exact path="/singleCanvasPrints" component={singleCanvasPrints} />
-      <Route exact path="/largeCanvasPrints" component={largeCanvasPrints} />
-      <Route
-        exact
-        path="/acrylicPremiumPrints"
-        component={acrylicPremiumPrints}
-      />
-      <Route
-        exact
-        path="/floatingFrameCanvas"
-        component={floatingFrameCanvas}
-      />
-      <Route exact path="/canvasCollages" component={canvasCollages} />
-      <Route exact path="/canvasSplitImage" component={canvasSplitImage} />
-      <Route exact path="/canvasWallDisplays" component={canvasWallDisplays} />
+
+      <ThemeContext.Provider value={{ productProperty, setProductProperty }}>
+        <Navbar />
+
+        <Route exact path="/" component={Home} />
+        <Route exact path="/catalog" component={catalog} />
+        <Route exact path="/premiumPrints" component={premiumPrints} />
+        <Route exact path="/wallArt" component={wallArt} />
+        <Route exact path="/category" component={category} />
+        <Route exact path="/landescape" component={landescape} />
+        <Route exact path="/urban" component={urban} />
+        <Route exact path="/architecture" component={architecture} />
+        <Route exact path="/contact" component={contact} />
+        <Route
+          exact
+          path="/singleCanvasPrints"
+          component={singleCanvasPrints}
+        />
+        <Route exact path="/largeCanvasPrints" component={largeCanvasPrints} />
+        <Route
+          exact
+          path="/acrylicPremiumPrints"
+          component={acrylicPremiumPrints}
+        />
+        <Route
+          exact
+          path="/floatingFrameCanvas"
+          component={floatingFrameCanvas}
+        />
+        <Route exact path="/canvasCollages" component={canvasCollages} />
+        <Route exact path="/canvasSplitImage" component={canvasSplitImage} />
+        <Route
+          exact
+          path="/canvasWallDisplays"
+          component={canvasWallDisplays}
+        />
+      </ThemeContext.Provider>
+
       <div className="container">
         <ThemeContext.Provider value={{ productProperty, setProductProperty }}>
           {/* <button onClick={show}>show</button> */}

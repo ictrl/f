@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../App";
 
 import "../styles/navbar.css";
 
@@ -7,6 +8,9 @@ import account from "../images/acoount.png";
 import cart from "../images/cart.png";
 
 export default function Navbar() {
+  const context = useContext(ThemeContext);
+  const { productProperty, setProductProperty } = context;
+
   return (
     <nav
       id="header"
@@ -47,7 +51,17 @@ export default function Navbar() {
             </Link>
             <ul className="dropdown-menu list-inline menu1">
               <li>
-                <Link to="/singleCanvasPrints" className="center">
+                <Link
+                  onClick={() => {
+                    setProductProperty({
+                      ...productProperty,
+                      style: "Single",
+                      material: "Canvas"
+                    });
+                  }}
+                  to="/singleCanvasPrints"
+                  className="center"
+                >
                   <img
                     src={require("../images/m1.jpg")}
                     style={{ width: "100%" }}
