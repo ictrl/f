@@ -9,7 +9,7 @@ export default function category() {
         <div className="col-sm-6"></div>
         <div className="col-sm-6">
           <h1 className="canvas-heading" style={{ marginTop: 89 }}>
-            Categories
+            Landscapes
           </h1>
           <p className="canvas-paragaraph" style={{ marginBottom: 100 }}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -90,19 +90,44 @@ export default function category() {
                 </Link>
               </div>
               <div className="col-sm-4">
-                <img src={require("../images/m2.jpg")} className="thumbnail" />
+                <Link to="/createYourPrint">
+                  <img
+                    src={require("../images/m2.jpg")}
+                    className="thumbnail"
+                  />
+                </Link>
               </div>
               <div className="col-sm-4">
-                <img src={require("../images/m32.jpg")} className="thumbnail" />
+                <Link to="/createYourPrint">
+                  <img
+                    src={require("../images/m32.jpg")}
+                    className="thumbnail"
+                  />
+                </Link>
               </div>
               <div className="col-sm-4">
-                <img src={require("../images/m29.jpg")} className="thumbnail" />
+                <Link to="/createYourPrint">
+                  <img
+                    src={require("../images/m29.jpg")}
+                    className="thumbnail"
+                  />
+                </Link>
               </div>
               <div className="col-sm-4">
-                <img src={require("../images/m20.jpg")} className="thumbnail" />
+                <Link to="/createYourPrint">
+                  <img
+                    src={require("../images/m20.jpg")}
+                    className="thumbnail"
+                  />
+                </Link>
               </div>
               <div className="col-sm-4">
-                <img src={require("../images/m22.jpg")} className="thumbnail" />
+                <Link to="/createYourPrint">
+                  <img
+                    src={require("../images/m22.jpg")}
+                    className="thumbnail"
+                  />
+                </Link>
               </div>
             </div>
           </div>

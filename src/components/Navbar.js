@@ -129,7 +129,7 @@ export default function Navbar() {
             </Link>
             <ul className="dropdown-menu list-inline menu2">
               <li>
-                <Link to="/createYourPrint" className="center">
+                <Link to="/landescape" className="center">
                   <img
                     src={require("../images/m4.jpg")}
                     style={{ width: "100%" }}
@@ -142,7 +142,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/createYourPrint" className="center">
+                <Link to="/landescape" className="center">
                   <img
                     src={require("../images/m1.jpg")}
                     style={{ width: "100%" }}
@@ -155,7 +155,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/createYourPrint" className="center">
+                <Link to="/landescape" className="center">
                   <img
                     src={require("../images/m3.jpg")}
                     style={{ width: "100%" }}
@@ -168,7 +168,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/createYourPrint" className="center">
+                <Link to="/landescape" className="center">
                   <img
                     src={require("../images/m4.jpg")}
                     style={{ width: "100%" }}
@@ -181,7 +181,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/createYourPrint" className="center">
+                <Link to="/landescape" className="center">
                   <img
                     src={require("../images/m5.jpg")}
                     style={{ width: "100%" }}
@@ -194,7 +194,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/createYourPrint" className="center">
+                <Link to="/architecture" className="center">
                   <img
                     src={require("../images/m2.jpg")}
                     style={{ width: "100%" }}
@@ -207,7 +207,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/createYourPrint" className="center">
+                <Link to="/urban" className="center">
                   <img
                     src={require("../images/m3.jpg")}
                     style={{ width: "100%" }}
@@ -218,7 +218,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/createYourPrint" className="center">
+                <Link to="/architecture" className="center">
                   <img
                     src={require("../images/m4.jpg")}
                     style={{ width: "100%" }}
@@ -231,7 +231,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/createYourPrint" className="center">
+                <Link to="/urban" className="center">
                   <img
                     src={require("../images/m4.jpg")}
                     style={{ width: "100%" }}
@@ -244,7 +244,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/createYourPrint" className="center">
+                <Link to="/urban" className="center">
                   <img
                     src={require("../images/m5.jpg")}
                     style={{ width: "100%" }}
@@ -301,13 +301,6 @@ export default function Navbar() {
             <Link to="/catalog">
               Canvas Ideas {/* <b class="caret"></b> */}
             </Link>
-          </li>
-
-          <li>
-            <Link to="/catalog">Offers {/* <b class="caret"></b> */}</Link>
-          </li>
-          <li>
-            <Link to="/catalog">Blog {/* <b class="caret"></b> */}</Link>
           </li>
           <li>
             <Link

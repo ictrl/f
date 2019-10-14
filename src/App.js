@@ -10,7 +10,12 @@ import CreateYourPrint from "./components/CreateYourPrint";
 
 import CanvasPrint from "./pages/canvasPrint";
 import Cart from "./pages/Cart";
+import wallArt from "./pages/wallArt";
+import premiumPrints from "./pages/premiumPrints";
 import Login from "./pages/Login";
+import architecture from "./pages/architecture";
+import landescape from "./pages/landescape";
+import urban from "./pages/urban";
 import create from "./pages/create";
 import register from "./pages/register";
 import checkout from "./pages/checkout";
@@ -84,7 +89,12 @@ const App = ({ children }) => {
       <Navbar />
       <Route exact path="/" component={Home} />
       <Route exact path="/catalog" component={catalog} />
+      <Route exact path="/premiumPrints" component={premiumPrints} />
+      <Route exact path="/wallArt" component={wallArt} />
       <Route exact path="/category" component={category} />
+      <Route exact path="/landescape" component={landescape} />
+      <Route exact path="/urban" component={urban} />
+      <Route exact path="/architecture" component={architecture} />
       <Route exact path="/contact" component={contact} />
       <Route exact path="/singleCanvasPrints" component={singleCanvasPrints} />
       <Route exact path="/largeCanvasPrints" component={largeCanvasPrints} />
