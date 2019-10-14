@@ -79,7 +79,15 @@ export default function Checkout() {
 
   const setLayout = () => {
     if (products.length === 0) {
-      return <h1>Your Cart is Empty</h1>;
+      return (
+        <Link
+          to="/createYourPrint"
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          <h1 className="">Your Cart is Empty</h1>
+          <a style={{color :""}}>Continue Shopping!</a>
+        </Link>
+      );
     } else {
       for (let i = 0; i < products.length; i++) {
         tempSubtotal = tempSubtotal + JSON.parse(products[i]).productPrice;

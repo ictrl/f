@@ -27,7 +27,17 @@ export default function NewCart() {
 
   const setLayout = () => {
     if (products.length === 0) {
-      return <h1>Your Cart is Empty</h1>;
+      return (
+        <Link
+          to="/createYourPrint"
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          <div className="jumbotron center">
+            <h1> Your Cart is Empty</h1>
+            <a style={{ color: "" }}>Continue Shopping!</a>
+          </div>
+        </Link>
+      );
     } else {
       for (let i = 0; i < products.length; i++) {
         tempSubtotal = tempSubtotal + JSON.parse(products[i]).productPrice;
@@ -46,11 +56,21 @@ export default function NewCart() {
   };
 
   const updateCart = () => {
-    setSummaryDetails({
-      ...summaryDetails,
-      subtotal: tempSubtotal,
-      total: summaryDetails.subtotal + 200
-    });
+    if (products.length === 0) {
+      setSummaryDetails({
+        ...summaryDetails,
+        subtotal: 0,
+        total: 0,
+        tax: 0,
+        shipping: 0
+      });
+    } else {
+      setSummaryDetails({
+        ...summaryDetails,
+        subtotal: tempSubtotal,
+        total: summaryDetails.subtotal + 200
+      });
+    }
   };
 
   useEffect(() => {
