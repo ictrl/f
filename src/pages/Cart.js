@@ -28,13 +28,10 @@ export default function NewCart() {
   const setLayout = () => {
     if (products.length === 0) {
       return (
-        <Link
-          to="/createYourPrint"
-          style={{ textDecoration: "none", color: "black" }}
-        >
+        <Link to="/" style={{ textDecoration: "none", color: "black" }}>
           <div className="jumbotron center">
             <h1> Your Cart is Empty</h1>
-            <a style={{ color: "" }}>Continue Shopping!</a>
+            <a>Continue Shopping!</a>
           </div>
         </Link>
       );
@@ -68,7 +65,9 @@ export default function NewCart() {
       setSummaryDetails({
         ...summaryDetails,
         subtotal: tempSubtotal,
-        total: summaryDetails.subtotal + 200
+        total: summaryDetails.subtotal + 200,
+        tax: 100,
+        shipping: 100
       });
     }
   };

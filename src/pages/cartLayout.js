@@ -20,26 +20,40 @@ export default function Layout({
 
   const handleChange = event => {
     const value =
-      event.target.value <= 0 ? (event.target.value = 1) : event.target.value;
+    event.target.value <= 0 ? (event.target.value = 1) : event.target.value;
     setQuantity(value);
-    setTotalProductPrice(value * productPrice);
+    setTotalProductPrice(value * productPrice); 
+  };
 
-    setSummaryDetails({
+  const chn = () => {
+       setSummaryDetails({
       ...summaryDetails,
       subtotal: 999
     });
-  };
+  }
 
-  const callCali = () => {
-    return <Cart calci="pkmb" />;
-  };
+  // const callCali = () => {
+  //   return <Cart calci="pkmb" />;
+  // };
 
-  useEffect(() => {
-    callCali();
-  }, []);
+  // useEffect(() => {
+  //   callCali();
+  // }, []);
 
   return (
     <>
+      {/* <button
+        onClick={() => {
+          console.log(summaryDetails.subtotal);
+        }}
+      >
+        see
+      </button>
+      <button
+        onClick={chn}
+      >
+        change */}
+      {/* </button> */}
       <div className="col-md-12" style={{ padding: 0 }}>
         <div className="col-md-7 col-xs-7" style={{ padding: 0 }}>
           <div className="com-md-12" style={{ padding: 0 }}>
@@ -63,7 +77,7 @@ export default function Layout({
         </div>
         <div className="col-md-5 col-xs-5">
           <div className="col-md-4 col-xs-4">
-            <h5 align="center">₹{productPrice}</h5>
+            <h5 align="center">₹ {productPrice}</h5>
           </div>
           <div className="col-md-4 col-xs-4" style={{ textAlign: "center" }}>
             <input
@@ -80,7 +94,7 @@ export default function Layout({
             />
           </div>
           <div className="col-md-4">
-            <h5 align="center"> {totalProductPrice}</h5>
+            <h5 align="center">₹ {totalProductPrice}</h5>
           </div>
         </div>
       </div>
