@@ -380,841 +380,480 @@ export default function CanvasPrint() {
 														<div className="tab-pane active" id="lA" style={{ height: '41.6rem' }}>
 															<div className=" row" style={{ width: '48rem', height: '45rem' }}>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 54    col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 54  ">
 																		<img
-																			className="12X18 190"
+																			className="12X18 54  "
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 54  ">12" X 18"</h5>
+																		<div className="12X18 54  " style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 54  " style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 54  " style={{ color: '#ff0000' }}>
+																				54  
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 54   col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 54 ">
 																		<img
-																			className="12X18 190"
+																			className="12X18 54 "
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 54 ">12" X 18"</h5>
+																		<div className="12X18 54 " style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 54 " style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 54 " style={{ color: '#ff0000' }}>
+																				54 
 																			</p>
 																		</div>
 																	</center>
 																</div>{' '}
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 79   col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 79 ">
 																		<img
-																			className="12X18 190"
+																			className="12X18 79 "
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 79 ">12" X 18"</h5>
+																		<div className="12X18 79 " style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 79 " style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 79 " style={{ color: '#ff0000' }}>
+																				79 
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 79   col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 79 ">
 																		<img
-																			className="12X18 190"
+																			className="12X18 79 "
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 79 ">12" X 18"</h5>
+																		<div className="12X18 79 " style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 79 " style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 79 " style={{ color: '#ff0000' }}>
+																				79 
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 138  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 138">
 																		<img
-																			className="12X18 190"
+																			className="12X18 138"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 138">12" X 18"</h5>
+																		<div className="12X18 138" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 138" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 138" style={{ color: '#ff0000' }}>
+																				138
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 138  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 138">
 																		<img
-																			className="12X18 190"
+																			className="12X18 138"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 138">12" X 18"</h5>
+																		<div className="12X18 138" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 138" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 138" style={{ color: '#ff0000' }}>
+																				138
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 170  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 170">
 																		<img
-																			className="12X18 190"
+																			className="12X18 170"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 170">12" X 18"</h5>
+																		<div className="12X18 170" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 170" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 170" style={{ color: '#ff0000' }}>
+																				170
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 170  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 170">
 																		<img
-																			className="12X18 190"
+																			className="12X18 170"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 170">12" X 18"</h5>
+																		<div className="12X18 170" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 170" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 170" style={{ color: '#ff0000' }}>
+																				170
 																			</p>
 																		</div>
 																	</center>
 																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
+															
+												
+												
+												
+															
 															</div>
 														</div>
 														<div className="tab-pane" id="lB" style={{ width: '48rem', height: '45rem' }}>
 															<div className="row">
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 67  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 67">
 																		<img
-																			className="12X18 190"
+																			className="12X18 67"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 67">12" X 18"</h5>
+																		<div className="12X18 67" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 67" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 67" style={{ color: '#ff0000' }}>
+																				67
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 114  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 114">
 																		<img
-																			className="12X18 190"
+																			className="12X18 114"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 114">12" X 18"</h5>
+																		<div className="12X18 114" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 114" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 114" style={{ color: '#ff0000' }}>
+																				114
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 171  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 171">
 																		<img
-																			className="12X18 190"
+																			className="12X18 171"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 171">12" X 18"</h5>
+																		<div className="12X18 171" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 171" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 171" style={{ color: '#ff0000' }}>
+																				171
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 184  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 184">
 																		<img
-																			className="12X18 190"
+																			className="12X18 184"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 184">12" X 18"</h5>
+																		<div className="12X18 184" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 184" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 184" style={{ color: '#ff0000' }}>
+																				184
 																			</p>
 																		</div>
 																	</center>
 																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
+															
 															</div>
 														</div>
 														<div className="tab-pane" id="lC" style={{ width: '50rem', height: '50rem' }}>
 															<div className="row">
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 66   col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 66 ">
 																		<img
-																			className="12X18 190"
+																			className="12X18 66 "
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 66 ">12" X 18"</h5>
+																		<div className="12X18 66 " style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 66 " style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 66 " style={{ color: '#ff0000' }}>
+																				66 
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 66   col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 66 ">
 																		<img
-																			className="12X18 190"
+																			className="12X18 66 "
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 66 ">12" X 18"</h5>
+																		<div className="12X18 66 " style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 66 " style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 66 " style={{ color: '#ff0000' }}>
+																				66 
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 114  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 114">
 																		<img
-																			className="12X18 190"
+																			className="12X18 114"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 114">12" X 18"</h5>
+																		<div className="12X18 114" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 114" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 114" style={{ color: '#ff0000' }}>
+																				114
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 114  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 114">
 																		<img
-																			className="12X18 190"
+																			className="12X18 114"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 114">12" X 18"</h5>
+																		<div className="12X18 114" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 114" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 114" style={{ color: '#ff0000' }}>
+																				114
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 156  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 156">
 																		<img
-																			className="12X18 190"
+																			className="12X18 156"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 156">12" X 18"</h5>
+																		<div className="12X18 156" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 156" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 156" style={{ color: '#ff0000' }}>
+																				156
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 170  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 170">
 																		<img
-																			className="12X18 190"
+																			className="12X18 170"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 170">12" X 18"</h5>
+																		<div className="12X18 170" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 170" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 170" style={{ color: '#ff0000' }}>
+																				170
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 170  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 170">
 																		<img
-																			className="12X18 190"
+																			className="12X18 170"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 170">12" X 18"</h5>
+																		<div className="12X18 170" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 170" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 170" style={{ color: '#ff0000' }}>
+																				170
 																			</p>
 																		</div>
 																	</center>
 																</div>
 																<div
-																	className="12X18 190  col-sm-3 center  box"
+																	className="12X18 170  col-sm-3 center  box"
 																	onClick={handler}
 																	style={{ padding: '1.5rem' }}
 																>
-																	<center className="12X18 190">
+																	<center className="12X18 170">
 																		<img
-																			className="12X18 190"
+																			className="12X18 170"
 																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
 																			alt="12 X 18"
 																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
+																		<h5 className="12X18 170">12" X 18"</h5>
+																		<div className="12X18 170" style={{ display: 'flex', padding: '0 2rem' }}>
+																			<strike className="12X18 170" style={{ color: '#808080', fontSize: 14 }}>
 																				190
 																			</strike>
 																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
+																			<p className="12X18 170" style={{ color: '#ff0000' }}>
+																				170
 																			</p>
 																		</div>
 																	</center>
 																</div>
-																<div
-																	className="12X18 190  col-sm-3 center  box"
-																	onClick={handler}
-																	style={{ padding: '1.5rem' }}
-																>
-																	<center className="12X18 190">
-																		<img
-																			className="12X18 190"
-																			src="https://dummyimage.com/28x38/bbbbbb/bbbbbb"
-																			alt="12 X 18"
-																		/>
-																		<h5 className="12X18 190">12" X 18"</h5>
-																		<div className="12X18 190" style={{ display: 'flex', padding: '0 2rem' }}>
-																			<strike className="12X18 190" style={{ color: '#808080', fontSize: 14 }}>
-																				190
-																			</strike>
-																			&nbsp; &nbsp;
-																			<p className="12X18 190" style={{ color: '#ff0000' }}>
-																				150
-																			</p>
-																		</div>
-																	</center>
-																</div>
+															
 															</div>
 														</div>
 														<div className="tab-pane" id="lD" style={{ width: '50rem', height: '50rem' }}>
