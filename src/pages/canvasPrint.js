@@ -41,6 +41,7 @@ export default function CanvasPrint() {
 
   const splitHandler = e => {
     if (e.target.classList[2] === "i1") {
+    tempFix();
       setProductProperty({
         ...productProperty,
         styleName: "Single Print",
@@ -57,6 +58,8 @@ export default function CanvasPrint() {
         </div>
       );
     } else if (e.target.classList[2] === "i2") {
+    tempFix();
+
       setProductProperty({
         ...productProperty,
         num: 2,
@@ -83,6 +86,8 @@ export default function CanvasPrint() {
         </div>
       );
     } else if (e.target.classList[2] === "i3") {
+    tempFix();
+
       setProductProperty({
         ...productProperty,
         num: 3,
@@ -115,6 +120,7 @@ export default function CanvasPrint() {
         </div>
       );
     } else {
+    tempFix();
       setProductProperty({
         ...productProperty,
         styleName: "Collage Image",
@@ -174,6 +180,14 @@ export default function CanvasPrint() {
         </div>
       );
     }
+  };
+
+  const tempFix = () => {
+    setProductProperty({
+      ...productProperty,
+      size: "18 X 20",
+      sizePrice: 150
+    });
   };
 
   const handleChange = e => {
