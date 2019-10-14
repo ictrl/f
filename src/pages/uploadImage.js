@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ReactFilestack from "filestack-react";
 import { ThemeContext } from "../App";
 
-let arr = [];
 export default function UploadImage() {
   const context = useContext(ThemeContext);
   const { productProperty, setProductProperty } = context;

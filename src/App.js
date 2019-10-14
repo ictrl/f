@@ -6,6 +6,8 @@ import Offers from "./components/Offers";
 import Footer from "./components/Footer";
 import CreateYourPrint from "./components/CreateYourPrint";
 
+// import SProvider, { ssContext } from "./sContext";
+
 import CanvasPrint from "./pages/canvasPrint";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
@@ -34,10 +36,16 @@ import { preview } from "filestack-js/build/main/lib/api/preview";
 const util = require("util");
 
 export const ThemeContext = React.createContext({});
+export const ssContext = React.createContext({});
 
 const App = ({ children }) => {
   const [productProperty, setProductProperty] = useState({});
-
+  const [summaryDetails, setSummaryDetails] = useState({
+    subtotal: 0,
+    shipping: 100,
+    tax: 100,
+    total: 200
+  });
   const componentValidation = route => {
     if (route == CanvasPrint) {
       if (productProperty.material == null) {
@@ -61,14 +69,14 @@ const App = ({ children }) => {
     }
   };
 
-  const show = () => {
-    console.log(
-      util.inspect(productProperty, {
-        showHidden: true,
-        depth: null
-      })
-    );
-  };
+  // const show = () => {
+  //   console.log(
+  //     util.inspect(productProperty, {
+  //       showHidden: true,
+  //       depth: null
+  //     })
+  //   );
+  // };
 
   return (
     <Router>
@@ -95,7 +103,7 @@ const App = ({ children }) => {
       <Route exact path="/canvasWallDisplays" component={canvasWallDisplays} />
       <div className="container">
         <ThemeContext.Provider value={{ productProperty, setProductProperty }}>
-          <button onClick={show}>show</button>
+          {/* <button onClick={show}>show</button> */}
 
           <Route exact path="/CreateYourPrint" component={CreateYourPrint} />
           <Route
@@ -108,8 +116,6 @@ const App = ({ children }) => {
             path="/uploadImage"
             component={componentValidation(UploadImage)}
           />
-          <Route exact path="/Cart" component={Cart} />
-          <Route exact path="/checkout" component={checkout} />
         </ThemeContext.Provider>
 
         <Route exact path="/Login" component={Login} />
@@ -123,6 +129,14 @@ const App = ({ children }) => {
         <Route exact path="/howITWorks" component={howITWorks} />
         <Route exact path="/quickLinks" component={quickLinks} />
       </div>
+
+      <ThemeContext.Provider value={{ productProperty, setProductProperty }}>
+        <ssContext.Provider value={{ summaryDetails, setSummaryDetails }}>
+          <Route exact path="/checkout" component={checkout} />
+          <Route exact path="/Cart" component={Cart} />
+        </ssContext.Provider>
+      </ThemeContext.Provider>
+
       <Footer />
     </Router>
   );

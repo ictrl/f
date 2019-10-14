@@ -8434,3 +8434,345 @@ input ::placeholder {
 	margin: auto;
 	/* padding-top: 500px !important; */
 }
+
+/* //cart page */
+
+.btn-cart {
+    color: #fff;
+    background: #000;
+    border-radius: 2px;
+    border: #000;
+    height: 40px;
+}
+.update-cart {
+    margin: 0;
+    border-radius: 2px;
+    color: #000;
+    background: #fff;
+    padding: 10px 15px;
+    border: 0.5px solid rgb(0, 0, 0);
+}
+.update-cart:hover {
+    color: #fff;
+    background: #000;
+}
+.payment-summary {
+    padding: 0 2rem 3rem 2rem;
+    background-color: #f5f5f5;
+}
+.text-discount {
+    height: 40px;
+    padding: 10px;
+    width: 240px;
+    margin-right: -1rem;
+    border: 1px solid #000 !important;
+}
+.text-apply-discount {
+    height: 40px;
+    width: 160px;
+    padding: 10px;
+    /* border: none; */
+    color: #fff;
+    background: #000;
+    border: 0.4px solid #000 !important;
+}
+.text-apply-discount:hover {
+    background-color: rgb(47, 46, 46);
+    color: #fff;
+}
+.cart-checkout:hover {
+    color: #fff;
+    background-color: rgb(47, 46, 46);
+}
+.summary-header {
+    margin-bottom: -1rem;
+}
+.payment-summary {
+    padding: 1rem 1rem 2rem 1rem;
+}
+@media (max-width: 768px) {
+    .payment-summary {
+        margin: 4rem;
+    }
+    .text-discount {
+        height: 35px;
+        padding: 6px;
+        width: 235px;
+        margin-right: -1rem;
+        border: 1px solid #000 !important;
+    }
+    .text-apply-discount {
+        height: 35px;
+        width: 160px;
+        padding: 6px;
+        /* border: none; */
+        color: #fff;
+        background: #000;
+        border: 0.4px solid #000 !important;
+    }
+    .cart-img {
+        margin-left: 6rem;
+    }
+}
+/* @media (max-width: 425px) {
+    .cart-products {
+        width: 425px;
+    }
+    .product-property {
+        width: 400px;
+    }
+    .product-property-item {
+        width: 250px;
+    }
+} */
+/* \\\/////checkout */
+.mid-header{
+    margin-top: 1.25rem;
+}
+.p1o{
+    padding: 1rem 0;
+}
+.p-04{
+    padding: 0 4px;
+}
+.p-03{
+    padding: 0 3px;
+}
+.p-02{
+    padding: 0 2px;
+}
+.pa-0{
+    padding: 0;
+}
+.m-top-1{
+    margin-top: 1rem;
+}
+.m-top-2{
+    margin-top: 2rem;
+}
+.m-top-3{
+    margin-top: 3rem;
+}
+.m-top-4{
+    margin-top: 4rem;
+}
+.m-top-5{
+    margin-top: 5rem;
+}
+.bg-f5{
+    background: #F5F5F5;
+}
+/* end cart page */
+
+/* size popup */
+        a {
+            color: #72b032;
+        }
+
+        a,
+        a:hover,
+        a:focus,
+        a:visited {
+            text-decoration: none;
+        }
+
+        .tabs-left>.nav-tabs {
+            border-bottom: 0;
+        }
+
+        .tab-content>.tab-pane {
+            display: none;
+        }
+
+        .tab-content>.active {
+            display: block;
+        }
+
+        .tabs-left>.nav-tabs>li {
+            float: none;
+        }
+
+        .tabs-left>.nav-tabs>li>a,
+        .tabs-left>.nav-tabs>li>div {
+            margin-right: 0;
+            /* margin-bottom: 3px; */
+        }
+
+        .tabs-left>.nav-tabs {
+            float: left;
+            /* margin-right: 0; */
+            border-right: 1px solid #ddd;
+
+        }
+
+        .tabs-left>.nav-tabs>li>a,
+        .tabs-left>.nav-tabs>li>div {
+            margin-right: -1px;
+            -webkit-border-radius: 4px 0 0 4px;
+            -moz-border-radius: 4px 0 0 4px;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .tabs-left>.nav-tabs>li>a:hover,
+        .tabs-left>.nav-tabs>li>a:focus,
+        .tabs-left>.nav-tabs>li>div:hover,
+        .tabs-left>.nav-tabs>li>div:focus {
+            border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+            background-color: #eeeeee;
+        }
+
+        .tabs-left>.nav-tabs .active>a,
+        .tabs-left>.nav-tabs .active>a:hover,
+        .tabs-left>.nav-tabs .active>a:focus,
+        .tabs-left>.nav-tabs .active>div,
+        .tabs-left>.nav-tabs .active>div:hover,
+        .tabs-left>.nav-tabs .active>div:focus {
+            border-color: #ddd transparent #ddd #ddd;
+            *border-right-color: #ffffff;
+        }
+
+        /** Let tabls-left class be available in bootstrap 3.3.7 - F **/
+
+        .account-type {
+            /*font-family: 'Roboto', sans-serif;*/
+            color: #a0aeb6;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+
+        .account-amount {
+            /*font-family: 'Roboto', sans-serif;*/
+            color: #a0aeb6;
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        /* TABS */
+        .tabs-left>.nav-tabs {
+            margin-right: 0px;
+            padding: 0;
+            height: 700px;
+            /* Debe ser el mismo height que el que tenga .tab-content */
+        }
+
+        /* CONTENIDO DE LOS TABS */
+        .tab-content {
+            background-color: #ffffff;
+            border: solid 1px #dce1e5;
+            border-left-style: none;
+            height: 700px;
+            /* Debe ser el mismo height que el que tenga .tabs-left > .nav-tabs */
+            padding-left: 50px;
+
+            border-radius: 0px 4px 4px 4px;
+            -moz-border-radius: 0px 4px 4px 4px;
+            -webkit-border-radius: 0px 4px 4px 4px;
+
+            -webkit-box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-content>div {
+            margin-top: 26px;
+        }
+
+        /* Formato del tab activo */
+        .tabs-left>.nav-tabs .active>a,
+        .tabs-left>.nav-tabs .active>a:hover,
+        .tabs-left>.nav-tabs .active>a:focus,
+        .tabs-left>.nav-tabs .active div,
+        .tabs-left>.nav-tabs .active div:hover,
+        .tabs-left>.nav-tabs .active div:focus {
+            background-color: #ffffff;
+
+            border-bottom-style: none;
+            border-left-style: none;
+
+            /*border-bottom: 1px solid #DCE1E5;*/
+            /*border-left: 1px solid #DCE1E5;*/
+            border-bottom-left-radius: 0px;
+            border-right-style: none;
+
+            margin-right: -1px;
+
+            -webkit-box-shadow: -4px 0px 18px -1px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: -4px 0px 18px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: -4px 0px 18px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Formato de los tabs en general */
+        .tabs-left>.nav-tabs>li:nth-child(1)>a,
+        .tabs-left>.nav-tabs>li:nth-child(1)>a:hover,
+        .tabs-left>.nav-tabs>li:nth-child(1)>a:focus,
+        .tabs-left>.nav-tabs>li:nth-child(1)>div,
+        .tabs-left>.nav-tabs>li:nth-child(1)>div:hover,
+        .tabs-left>.nav-tabs>li:nth-child(1)>div:focus {
+            cursor: pointer;
+            border-top-left-radius: 4px;
+        }
+
+        .tabs-left>.nav-tabs>li.active:nth-child(1)>a,
+        .tabs-left>.nav-tabs>li.active:nth-child(1)>a:hover,
+        .tabs-left>.nav-tabs>li.active:nth-child(1)>a:focus,
+        .tabs-left>.nav-tabs>li.active:nth-child(1)>div,
+        .tabs-left>.nav-tabs>li.active:nth-child(1)>div:hover,
+        .tabs-left>.nav-tabs>li.active:nth-child(1)>div:focus {
+            border-top-left-radius: 4px;
+            border-bottom-style: none;
+            border-left: 1px solid #dce1e5;
+        }
+
+        .tabs-left>.nav-tabs>li>a,
+        .tabs-left>.nav-tabs>li>div {
+            display: table;
+            /*border: solid 1px transparent;*/
+            margin-right: -1px;
+
+            margin-bottom: 0;
+            padding-bottom: 0;
+
+            height: 105px;
+
+            border: solid 1px #dce1e5;
+            border-radius: 0px;
+        }
+
+        /* Style of the div element acting as tab content */
+        .tabbable.tabs-left>.nav-tabs>li>div>div {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0px 12px 0px 12px;
+
+            min-width: 105px;
+            max-width: 105px;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        #MyAccountsTab li div {
+            width: 100%;
+        }
+
+        .box {
+            border: 1px solid #ececec;
+            padding-top: 5px;
+            width: 12rem;
+            height: 12rem;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .box:hover {
+            border: 1px solid #808080;
+            padding-top: 5px;
+        }
+
+        .col-md-10 {
+            height: 44rem !important;
+        }
+
+/* size popup */

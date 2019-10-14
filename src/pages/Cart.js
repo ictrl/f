@@ -1,231 +1,187 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "./cartLayout";
-import util from "util";
+import { ThemeContext, ssContext } from "../App";
 
 export default function NewCart() {
+  const context = useContext(ThemeContext);
+  const contextt = useContext(ssContext);
+  const { setProductProperty } = context;
+  const { summaryDetails, setSummaryDetails } = contextt;
   const [products, setProducts] = useState([]);
-  const temp = [];
+  let temp = [];
+  let tempSubtotal = 0;
+  const clearContext = () => {
+    setProductProperty({});
+  };
 
-  let key = localStorage.length;
   const getProducts = () => {
+    let temp = [];
     for (var i = 0, len = localStorage.length; i < len; ++i) {
       var key = localStorage.key(i);
       var element = localStorage.getItem(key);
       temp.push(element);
-      setProducts(...products, temp);
     }
+    setProducts(temp);
   };
 
   const setLayout = () => {
-    if (key === 1 && products == !null) {
-      return (
-        <>
+    if (products.length === 0) {
+      return <h1>Your Cart is Empty</h1>;
+    } else {
+      for (let i = 0; i < products.length; i++) {
+        tempSubtotal = tempSubtotal + JSON.parse(products[i]).productPrice;
+        temp.push(
           <Layout
-            material={"JSON.parse(products[0].material)"}
-            styleName={"JSON.parse(products[0].styleName)"}
-            sizes={"JSON.parse(products[0].size)"}
-            price={"JSON.parse(products[0]).productPrice "}
-            image={"JSON.parse(products[0].preview)"}
+            material={JSON.parse(products[i]).material}
+            styleName={JSON.parse(products[i]).styleName}
+            sizes={JSON.parse(products[i]).size}
+            productPrice={JSON.parse(products[i]).productPrice}
+            image={JSON.parse(products[i]).preview}
           />
-        </>
-      );
-    } else if (key === 2 && products[0] == !null) {
-      return (
-        <>
-          <Layout
-            material={products[0].material}
-            styleName={products[0].styleName}
-            sizes={products[0].size}
-            price={products[0].productPrice}
-            image={products[0].preview}
-          />
-          <Layout
-            material={products[1].material}
-            styleName={products[1].styleName}
-            sizes={products[1].size}
-            price={products[1].productPrice}
-            image={products[1].preview}
-          />
-        </>
-      );
-    } else if (key === 3 && products[0] == !null) {
-      return (
-        <>
-          <Layout
-            material={products[0].material}
-            styleName={products[0].styleName}
-            sizes={products[0].size}
-            price={products[0].productPrice}
-            image={products[0].preview}
-          />
-          <Layout
-            material={products[1].material}
-            styleName={products[1].styleName}
-            sizes={products[1].size}
-            price={products[1].productPrice}
-            image={products[1].preview}
-          />
-          <Layout
-            material={products[2].material}
-            styleName={products[2].styleName}
-            sizes={products[2].size}
-            price={products[2].productPrice}
-            image={products[2].preview}
-          />
-        </>
-      );
-    } else if (key === 4 && products[0] == !null) {
-      return (
-        <>
-          <Layout
-            material={products[0].material}
-            styleName={products[0].styleName}
-            sizes={products[0].size}
-            price={products[0].productPrice}
-            image={products[0].preview}
-          />
-          <Layout
-            material={products[1].material}
-            styleName={products[1].styleName}
-            sizes={products[1].size}
-            price={products[1].productPrice}
-            image={products[1].preview}
-          />
-          <Layout
-            material={products[2].material}
-            styleName={products[2].styleName}
-            sizes={products[2].size}
-            price={products[2].productPrice}
-            image={products[2].preview}
-          />
-          <Layout
-            material={products[3].material}
-            styleName={products[3].styleName}
-            sizes={products[3].size}
-            price={products[3].productPrice}
-            image={products[3].preview}
-          />
-        </>
-      );
+        );
+      }
+      return temp;
     }
+  };
+
+  const updateCart = () => {
+    setSummaryDetails({
+      ...summaryDetails,
+      subtotal: tempSubtotal,
+      total: summaryDetails.subtotal + 200
+    });
   };
 
   useEffect(() => {
     getProducts();
-  }, []);
+    clearContext();
+    updateCart();
+  }, [summaryDetails]);
 
   return (
-    <div>
-      <button
-        onClick={() => {
-          console.log(
-            util.inspect(JSON.parse(products[0]).productPrice, {
-              depth: null
-            })
-          );
-        }}
-      >
-        {" "}
-        productPrice
-      </button>
-      <button
-        onClick={() => {
-          console.log(
-            util.inspect(products, {
-              depth: null
-            })
-          );
-        }}
-      >
-        {" "}
-        products
-      </button>
+    <div className=" col-md-12" style={{ padding: "0 8rem 2rem 5rem" }}>
+      <div className="col-md-12">
+        <center>
+          <h2>SHOPPING CART</h2>
+        </center>
+      </div>
+      <div className="col-md-12">
+        <div className="col-md-9 cart-products">
+          <div
+            className="col-md-12"
+            style={{ padding: "0 3rem", marginTop: "2rem" }}
+          >
+            <div className="col-md-12" style={{ padding: 0 }}>
+              <div className="col-md-7 col-xs-7" style={{ padding: 0 }}>
+                <h5 className="product-property-item" align=" left">
+                  ITEM{" "}
+                </h5>
+              </div>
+              <div className="col-md-5 col-xs-5 product-property-item ">
+                <div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                  <div className="  col-md-4 col-sm-4 col-lg-4  col-xs-4 ">
+                    <h5 align="center">PRICE</h5>
+                  </div>
+                  <div className="col-xs-4">
+                    <h5 align="center">QTY</h5>
+                  </div>
+                  <div className="col-xs-4">
+                    <h5 align="center">SUBTOTAL</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr style={{ border: "0.25px solid rgb(198, 196, 196)" }} />
 
-      <div className="container" style={{ marginTop: 50, marginBottom: 50 }}>
-        <div className="row">
-          <div className="col-sm-12 col-md-10 col-md-offset-1">
-            <div className="table-responsive">
-              <table className="table table-hover">
-                <thead>
-                  <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th className="text-center">Price</th>
-                    <th className="text-center">Total</th>
-                    <th>&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {setLayout()}
-                  <tr>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td>
-                      <h5>Subtotal</h5>
-                    </td>
-                    <td className="text-right">
-                      <h5>
-                        <strong>₹ {"Total Product Price"}</strong>
-                      </h5>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td>
-                      <h5>Estimated shipping</h5>
-                    </td>
-                    <td className="text-right">
-                      <h5>
-                        <strong>₹ {"Shipping Price Algo"}</strong>
-                      </h5>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td>
-                      <h3>Total</h3>
-                    </td>
-                    <td className="text-right">
-                      <h3>
-                        <strong>₹ {"Total Price"}</strong>
-                      </h3>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td>
-                      <Link to="/CreateYourPrint">
-                        <button type="button" className="btn btn-default">
-                          Continue Shopping
-                        </button>
-                      </Link>
-                    </td>
-                    <td>
-                      <Link to="/checkout">
-                        <button
-                          type="button"
-                          id="checkout"
-                          className="btn btn-warning"
-                        >
-                          Checkout
-                        </button>
-                      </Link>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            {setLayout()}
+
+            <div className="col-md-12 col-xs-12" style={{ padding: "0" }}>
+              <h4 style={{ fontSize: 16, margin: "5px 0" }}>
+                {" "}
+                Apply Discount Code{" "}
+              </h4>
+            </div>
+            <div
+              className="col-md-12"
+              style={{ display: "flex", padding: "0" }}
+            >
+              <input
+                type="text"
+                className="text-discount "
+                placeholder="Enter Discount Code"
+              />
+              <input
+                className="text-apply-discount"
+                type="button"
+                defaultValue="APPLY DISCOUNT"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3  payment-summary ">
+          <div className="col-md-12 ">
+            <h3 className="summary-header">Summary</h3>
+          </div>
+          <div className=" col-md-12 " style={{ padding: 0 }}>
+            <hr style={{ border: "0.25px solid rgb(206, 205, 205)" }} />
+            <div className="col-md-12 col-xs-12" style={{ padding: 0 }}>
+              <div className="col-md-6 col-xs-6" style={{ padding: 0 }}>
+                <h5 align=" left">SUBTOTAL</h5>
+              </div>
+              <div className="col-md-6" style={{ padding: 0 }}>
+                <h5 align="right"> ₹{summaryDetails.subtotal}</h5>
+              </div>
+            </div>
+            <div className="col-md-12" style={{ padding: 0 }}>
+              <div className="col-md-8" style={{ padding: 0 }}>
+                <h5 align="left">SHIPPING</h5>
+              </div>
+              <div className="col-md-4" style={{ padding: 0 }}>
+                <h5 align="right">₹{summaryDetails.shipping}</h5>
+              </div>
+            </div>
+            <div className="col-md-12" style={{ padding: 0 }}>
+              <div className="col-md-6" style={{ padding: 0 }}>
+                <h5 align=" left">TAX</h5>
+              </div>
+              <div className="col-md-6" style={{ padding: 0 }}>
+                <h5 align="right">₹{summaryDetails.tax}</h5>
+              </div>
+              <hr style={{ border: "0.5px solid rgb(168, 167, 167)" }} />
+              <div
+                className="col-md-12"
+                style={{ padding: 0, marginTop: "-1rem" }}
+              >
+                <div className="col-md-8" style={{ padding: 0 }}>
+                  <h4 style={{ fontWeight: 540 }} align="left">
+                    ORDER TOTAL
+                  </h4>
+                </div>
+                <div className="col-md-4" style={{ padding: 0 }}>
+                  <h4 style={{ fontWeight: 600 }} align="right">
+                    ₹{summaryDetails.total}
+                  </h4>
+                </div>
+              </div>
+              <center>
+                {" "}
+                <Link to="/checkout">
+                  <button
+                    type="submit"
+                    style={{
+                      borderRadius: 3,
+                      width: "23rem",
+                      marginTop: "3rem"
+                    }}
+                    className="btn btn-cart cart-checkout"
+                  >
+                    Checkout
+                    <i className="fa fa-chevron-right" />
+                  </button>
+                </Link>
+                <center></center>
+              </center>
             </div>
           </div>
         </div>
