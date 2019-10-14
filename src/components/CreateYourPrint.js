@@ -11,9 +11,7 @@ export default function CreateYourPrint() {
       <div className="row" style={{ marginBottom: "3rem" }}>
         <div className="col-sm-12 center" style={{ marginBottom: "30px" }}>
           <h3>
-            <strong style={{ color: "#ff9900" }}>
-              CREATE YOUR OWN CANVAS $
-            </strong>
+            <strong style={{ color: "#ff9900" }}>CREATE YOUR OWN CANVAS</strong>
           </h3>
           <h4>(Choose the perfect material)</h4>
         </div>
