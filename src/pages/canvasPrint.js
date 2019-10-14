@@ -332,7 +332,7 @@ export default function CanvasPrint() {
 																	<br />
 																	<span className="account-amount">Rectangle</span>
 																	<br />
-																	<p>From ₹ 150</p>
+																	<p>From ₹ 54</p>
 																</div>
 															</div>
 														</li>
@@ -345,7 +345,7 @@ export default function CanvasPrint() {
 																	<br />
 																	<span className="account-amount">Square</span>
 																	<br />
-																	<p>From ₹ 200</p>
+																	<p>From ₹ 67</p>
 																</div>
 															</div>
 														</li>
@@ -358,7 +358,7 @@ export default function CanvasPrint() {
 																	<br />
 																	<span className="account-amount">Panoramic</span>
 																	<br />
-																	<p>From ₹ 250</p>
+																	<p>From ₹ 66</p>
 																</div>
 															</div>
 														</li>
@@ -371,7 +371,7 @@ export default function CanvasPrint() {
 																	<br />
 																	<span className="account-amount">Custom Size</span>
 																	<br />
-																	<p>From ₹ 300</p>
+																	<p>From ₹ 150</p>
 																</div>
 															</div>
 														</li>
