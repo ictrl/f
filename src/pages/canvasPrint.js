@@ -191,14 +191,12 @@ export default function CanvasPrint() {
 
   const handler = e => {
     var children = e.children;
-    // console.log(e.target.classList[3]);
     console.log(children);
-    // const appp = children[0];
-    // const aooo = children[2];
-    // const price = aooo.children;
-    // const pri = price[1].innerHTML;
-    // console.log(pri);
-    // console.log(appp.alt);
+    setProductProperty({
+      ...productProperty,
+      size: "80X80",
+      sizePrice: 150
+    });
   };
 
   useEffect(() => {
@@ -314,14 +312,34 @@ export default function CanvasPrint() {
             <div className="col-sm-12">
               <div>
                 <div>
+                  {/* <select
+                id="slct"
+                onChange={handleChange}
+                className="browser-defaul,ethisstom-select custom-select-lg mb-3 shape"
+              >
+                <option value="">Select options</option>
+                {sizes.map((p, i) => (
+                  <option
+                    value={p.value + " ₹ " + p.price}
+                    key={i}
+                    id={p.value}
+                    className={p.price}
+                  >
+                    {p.value}
+                    &nbsp;&nbsp;&nbsp; ₹{p.price}
+                  </option>
+                ))}
+              </select>
+              <span className="arrow-down">▼</span> */}
                   <button
                     type="button"
-                    className="btn btn-info btn-lg"
+                    className="btn  btn-lg shape"
                     data-toggle="modal"
                     data-target="#myModal"
                   >
-                    Open Modal
+                    Please select size*
                   </button>
+                  <span className="arrow-down">▼</span>
                   {/* Modal  fade*/}
                   <div id="myModal" className="modal fade" role="dialog">
                     <div

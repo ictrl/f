@@ -14,23 +14,23 @@ export default function Checkout() {
   let tempSubtotal = 0;
 
   const createPost = order => {
-    // console.log(payMethod);
-    // if (payMethod === "cod") {
-    // console.log("equall");
-    // return <Redirect to="/payment-complete" />;
-    // } else {
-    return fetch(`${API}/bid/pay`, {
-      method: "POST",
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      body: JSON.stringify(order)
-    })
-      .then(res => res.text())
-      .then(text => (window.location.href = text))
-      .catch(err => {
-        console.log(err);
-      });
-    // }
+    console.log(payMethod);
+    if (payMethod === "cod") {
+      console.log("equall");
+      return <Redirect to="/payment-complete" />;
+    } else {
+      return fetch(`${API}/bid/pay`, {
+        method: "POST",
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        body: JSON.stringify(order)
+      })
+        .then(res => res.text())
+        .then(text => (window.location.href = text))
+        .catch(err => {
+          console.log(err);
+        });
+    }
   };
 
   const saveUser = e => {
