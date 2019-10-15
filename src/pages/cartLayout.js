@@ -1,6 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Cart from "./Cart";
+import React, { useState, useContext} from "react";
+
 import { ssContext } from "../App";
 
 export const cartContext = React.createContext({});
@@ -15,7 +14,7 @@ export default function Layout({
   const contextt = useContext(ssContext);
   const { summaryDetails, setSummaryDetails } = contextt;
 
-  const [quantity, setQuantity] = useState(1);
+  const [setQuantity] = useState(1);
   const [totalProductPrice, setTotalProductPrice] = useState(productPrice);
 
   const handleChange = event => {
@@ -32,28 +31,9 @@ export default function Layout({
     });
   }
 
-  // const callCali = () => {
-  //   return <Cart calci="pkmb" />;
-  // };
-
-  // useEffect(() => {
-  //   callCali();
-  // }, []);
-
   return (
     <>
-      {/* <button
-        onClick={() => {
-          console.log(summaryDetails.subtotal);
-        }}
-      >
-        see
-      </button>
-      <button
-        onClick={chn}
-      >
-        change */}
-      {/* </button> */}
+
       <div className="col-md-12" style={{ padding: 0 }}>
         <div className="col-md-7 col-xs-7" style={{ padding: 0 }}>
           <div className="com-md-12" style={{ padding: 0 }}>
