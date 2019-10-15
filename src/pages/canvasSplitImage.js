@@ -57,7 +57,7 @@ export default function CanvasSplitImage() {
         <div className="col-sm-6"></div>
         <div className="col-sm-6">
           <h1 className="canvas-heading" style={{ marginTop: 89 }}>
-            Sinle Canvas Prints
+            Canvas Split images
           </h1>
           <p className="canvas-paragaraph" style={{ marginBottom: 100 }}>
             {" "}
