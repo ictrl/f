@@ -7,17 +7,14 @@ export default function SingleCanvasPrints() {
   const context = useContext(ThemeContext);
   const { productProperty, setProductProperty } = context;
 
-  var heigh = '';
-  var widt = '';
+  var costomHeight = '';
+  var customWidth = '';
 
-
-
-  
   const customSizeh = (e) => {
-    heigh = e.target.value
+    costomHeight = e.target.value
   }
   const customSizew = (e) => {
-    widt = e.target.value
+    customWidth = e.target.value
     
   }
   
@@ -30,25 +27,25 @@ export default function SingleCanvasPrints() {
     const i = str.indexOf(' ');
     
     var res = str.slice(0, i);
-    var rest = strr.slice(i, );
+    var rest = parseInt(strr.slice(i, ))
     
     // console.log(res)
     // console.log(rest)
-    setProductProperty({ ...productProperty, size: res, sizePrice: rest });
+    setProductProperty({ ...productProperty, size: res, sizePrice: rest ,productPrice:  rest + productProperty.stylePrice});
     
     
   }
   
   const sizeAndPrice = () => {
 
-    const customSize = `${heigh}x${widt}`
+    const customSize = `${costomHeight}x${customWidth}`
 
-    setProductProperty({ ...productProperty, size: customSize, sizePrice: "3047" });
+    setProductProperty({ ...productProperty, size: customSize, sizePrice: 3047,productPrice:  3047 + productProperty.stylePrice});
     
   }
   // const customsizeAndPrice = () => {
 
-  //   const customSize = `${heigh}x${widt}`
+  //   const customSize = `${costomHeight}x${customWidth}`
 
   //   setProductProperty({ ...productProperty, size: customSize, sizePrice: "3047" });
     
@@ -60,7 +57,7 @@ export default function SingleCanvasPrints() {
         <div className="col-sm-6"></div>
         <div className="col-sm-6">
           <h1 className="canvas-heading" style={{ marginTop: 89 }}>
-            Sinle Canvas Prints
+            Canvas Single Prints
           </h1>
           <p className="canvas-paragaraph" style={{ marginBottom: 100 }}>
             {" "}
