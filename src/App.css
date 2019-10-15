@@ -8726,3 +8726,7 @@ input ::placeholder {
 .carousel-item {
     transition-duration: 1s, 1s !important;
 }
+
+.set-border {
+	border: 1px solid #ff9900 !important;
+}

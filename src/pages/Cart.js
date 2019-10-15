@@ -19,11 +19,8 @@ export default function NewCart() {
     let temp = [];
     for (var i = 0, len = localStorage.length; i < len; ++i) {
       var key = localStorage.key(i);
-
       var element = localStorage.getItem(key);
-      if (JSON.parse(element).styleName != undefined) {
-        temp.push(element);
-      } else continue;
+      temp.push(element);
     }
     setProducts(temp);
   };

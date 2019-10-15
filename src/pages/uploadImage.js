@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from "react";
+import React, { useContext, useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 import ReactFilestack from "filestack-react";
 import { ThemeContext } from "../App";
@@ -6,6 +6,7 @@ import { ThemeContext } from "../App";
 export default function UploadImage() {
   const context = useContext(ThemeContext);
   const { productProperty, setProductProperty } = context;
+  const { loading, setLoading } = useState(false);
 
   const actionObj = {
     maxFiles: productProperty.num

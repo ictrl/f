@@ -39,14 +39,37 @@ export default function CanvasPrint() {
 		});
 	};
 
+	const removeBorder = () => {
+		let x = document.getElementsByClassName('set-border');
+
+		if (x.length > 0) {
+			x[0].classList.remove('set-border');
+		}
+	};
+
+	const setBorder = (num) => {
+		if (num == 1) {
+			document.getElementById('i1').classList.add('set-border');
+		} else if (num == 2) {
+			document.getElementById('i2').classList.add('set-border');
+		} else if (num == 3) {
+			document.getElementById('i3').classList.add('set-border');
+		} else if (num == 4) {
+			document.getElementById('i4').classList.add('set-border');
+		}
+	};
+
 	const splitHandler = (e) => {
+		removeBorder();
 		if (e.target.classList[2] === 'i1') {
+			setBorder(1);
 			setProductProperty({
 				...productProperty,
 				styleName: 'Single Print',
 				stylePrice: styles[0].price,
 				num: 1
 			});
+
 			setDiv(
 				<div className="row left-section" style={{ display: 'block' }}>
 					<div className="col-sm-12">
@@ -57,6 +80,7 @@ export default function CanvasPrint() {
 				</div>
 			);
 		} else if (e.target.classList[2] === 'i2') {
+			setBorder(2);
 			setProductProperty({
 				...productProperty,
 				num: 2,
@@ -83,6 +107,7 @@ export default function CanvasPrint() {
 				</div>
 			);
 		} else if (e.target.classList[2] === 'i3') {
+			setBorder(3);
 			setProductProperty({
 				...productProperty,
 				num: 3,
@@ -115,6 +140,7 @@ export default function CanvasPrint() {
 				</div>
 			);
 		} else {
+			setBorder(4);
 			setProductProperty({
 				...productProperty,
 				styleName: 'Collage Image',
@@ -176,47 +202,22 @@ export default function CanvasPrint() {
 		}
 	};
 
-	const handleChange = (e) => {
-		var str = e.target.value;
-
-		var pos = str.search('₹');
-		var size = str.slice(' ', pos);
-    var price = str.slice(pos + 2);
-		setProductProperty({
-			...productProperty,
-			size: size,
-			sizePrice: parseInt(price)
-		});
-	};
-
 	const handler = (e) => {
 		const sty = e.target.className;
 		const popupSize = sty.slice(0, 5);
 		const popupPrice = sty.slice(6, 9);
-   document.getElementById('cancel').click();
+		document.getElementById('cancel').click();
 
-    setProductProperty({
-      ...productProperty, 
-      size: 		popupSize,
-		 sizePrice:parseInt(popupPrice)
-    })
+		setProductProperty({
+			...productProperty,
+			size: popupSize,
+			sizePrice: parseInt(popupPrice)
+		});
 	};
-
-	const returnSize = () =>{
-		if (productProperty.size == undefined){
-			return "Please select size*"
-		} else{
-			return productProperty.size + " ₹" + productProperty.sizePrice 
-
-		}
-
-	} 
-
 
 	useEffect(() => {
 		loadSizes();
 		loadStyles();
-		returnSize();
 	}, []);
 
 	return (
@@ -253,8 +254,8 @@ export default function CanvasPrint() {
 								<strong>1. Select Styles</strong>
 							</h4>
 						</div>
-						<div className="col-sm-3 x i1" onClick={splitHandler}>
-							<div className="card collage-thumbnail i1">
+						<div className="col-sm-3 x i1 " onClick={splitHandler}>
+							<div id="i1" className="card collage-thumbnail i1">
 								<img className="x xx i1" src={require('../images/single.png')} alt="" />
 								<h5 className="x xx i1">
 									Single <br />
@@ -264,7 +265,7 @@ export default function CanvasPrint() {
 							</div>
 						</div>
 						<div className="col-sm-3 x i2" onClick={splitHandler}>
-							<div className="card collage-thumbnail i2">
+							<div id="i2" className="card collage-thumbnail i2">
 								<img src={require('../images/split.png')} alt="" className="x xx i2" />
 								<h5 className="x xx i2">
 									Split
@@ -275,7 +276,7 @@ export default function CanvasPrint() {
 							</div>
 						</div>
 						<div className="col-sm-3 x i3" onClick={splitHandler}>
-							<div className="card collage-thumbnail i3">
+							<div id="i3" className="card collage-thumbnail i3">
 								<img src={require('../images/wall.png')} alt="" className="x xx i3" />
 								<h5 className="x xx i3">
 									Wall
@@ -286,7 +287,7 @@ export default function CanvasPrint() {
 							</div>
 						</div>
 						<div className="col-sm-3 i4" onClick={splitHandler}>
-							<div className="card collage-thumbnail ">
+							<div id="i4" className="card collage-thumbnail ">
 								<img src={require('../images/collage.png')} alt="" />
 								<h5>
 									Collage
@@ -306,16 +307,10 @@ export default function CanvasPrint() {
 
 						<div>
 							<div>
-	                  <button
-                    type="button"
-                    className="btn  btn-lg shape"
-                    data-toggle="modal"
-                    data-target="#myModal"
-                  >
-					  	{returnSize()}
-                  </button>
-				
-                       {/* <span className="arrow-down">▼</span> */}
+								<button type="button" className="btn  btn-lg shape" data-toggle="modal" data-target="#myModal">
+									Please select size*
+								</button>
+								{/* <span className="arrow-down">▼</span> */}
 								{/* Modal  fade*/}
 								<div id="myModal" className="modal fade" role="dialog">
 									<div
@@ -324,7 +319,6 @@ export default function CanvasPrint() {
 									>
 										{/* Modal content*/}
 										<div className="modal-content" style={{ height: '48.6rem', width: '67.2rem' }}>
-
 											<div className=" row popup-window" style={{ width: '90rem' }}>
 												<div
 													id="MyAccountsTab"
@@ -409,7 +403,7 @@ export default function CanvasPrint() {
 																			</strike>
 																			&nbsp; &nbsp;
 																			<p className="12X18 54  " style={{ color: '#ff0000' }}>
-																				54  
+																				54
 																			</p>
 																		</div>
 																	</center>
@@ -432,7 +426,7 @@ export default function CanvasPrint() {
 																			</strike>
 																			&nbsp; &nbsp;
 																			<p className="12X18 54 " style={{ color: '#ff0000' }}>
-																				54 
+																				54
 																			</p>
 																		</div>
 																	</center>
@@ -455,7 +449,7 @@ export default function CanvasPrint() {
 																			</strike>
 																			&nbsp; &nbsp;
 																			<p className="12X18 79 " style={{ color: '#ff0000' }}>
-																				79 
+																				79
 																			</p>
 																		</div>
 																	</center>
@@ -478,7 +472,7 @@ export default function CanvasPrint() {
 																			</strike>
 																			&nbsp; &nbsp;
 																			<p className="12X18 79 " style={{ color: '#ff0000' }}>
-																				79 
+																				79
 																			</p>
 																		</div>
 																	</center>
@@ -575,11 +569,6 @@ export default function CanvasPrint() {
 																		</div>
 																	</center>
 																</div>
-															
-												
-												
-												
-															
 															</div>
 														</div>
 														<div className="tab-pane" id="lB" style={{ width: '48rem', height: '45rem' }}>
@@ -676,7 +665,6 @@ export default function CanvasPrint() {
 																		</div>
 																	</center>
 																</div>
-															
 															</div>
 														</div>
 														<div className="tab-pane" id="lC" style={{ width: '50rem', height: '50rem' }}>
@@ -699,7 +687,7 @@ export default function CanvasPrint() {
 																			</strike>
 																			&nbsp; &nbsp;
 																			<p className="12X18 66 " style={{ color: '#ff0000' }}>
-																				66 
+																				66
 																			</p>
 																		</div>
 																	</center>
@@ -722,7 +710,7 @@ export default function CanvasPrint() {
 																			</strike>
 																			&nbsp; &nbsp;
 																			<p className="12X18 66 " style={{ color: '#ff0000' }}>
-																				66 
+																				66
 																			</p>
 																		</div>
 																	</center>
@@ -865,7 +853,6 @@ export default function CanvasPrint() {
 																		</div>
 																	</center>
 																</div>
-															
 															</div>
 														</div>
 														<div className="tab-pane" id="lD" style={{ width: '50rem', height: '50rem' }}>
