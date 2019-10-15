@@ -55,7 +55,8 @@ export default function Navbar() {
                   onClick={() => {
                     setProductProperty({
                       ...productProperty,
-                      style: "Single",
+                      styleName: "Single",
+                      stylePrice: "100",
                       material: "Canvas"
                     });
                   }}
