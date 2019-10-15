@@ -202,10 +202,21 @@ export default function CanvasPrint() {
     })
 	};
 
+	const returnSize = () =>{
+		if (productProperty.size == undefined){
+			return "Please select size*"
+		} else{
+			return productProperty.size + " ₹" + productProperty.sizePrice 
+
+		}
+
+	} 
+
 
 	useEffect(() => {
 		loadSizes();
 		loadStyles();
+		returnSize();
 	}, []);
 
 	return (
@@ -301,8 +312,9 @@ export default function CanvasPrint() {
                     data-toggle="modal"
                     data-target="#myModal"
                   >
-                    Please select size*
+					  	{returnSize()}
                   </button>
+				
                        {/* <span className="arrow-down">▼</span> */}
 								{/* Modal  fade*/}
 								<div id="myModal" className="modal fade" role="dialog">

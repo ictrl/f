@@ -74,21 +74,19 @@ const App = ({ children }) => {
     }
   };
 
-  // const show = () => {
-  //   console.log(
-  //     util.inspect(productProperty, {
-  //       showHidden: true,
-  //       depth: null
-  //     })
-  //   );
-  // };
-
   return (
     <Router>
       <Offers />
 
       <ThemeContext.Provider value={{ productProperty, setProductProperty }}>
         <Navbar />
+        <button
+          onClick={() => {
+            console.log(productProperty);
+          }}
+        >
+          state
+        </button>
 
         <Route exact path="/" component={Home} />
         <Route exact path="/catalog" component={catalog} />
@@ -126,7 +124,6 @@ const App = ({ children }) => {
 
       <div className="container">
         <ThemeContext.Provider value={{ productProperty, setProductProperty }}>
-          {/* <button onClick={show}>show</button> */}
 
           <Route exact path="/CreateYourPrint" component={CreateYourPrint} />
           <Route
