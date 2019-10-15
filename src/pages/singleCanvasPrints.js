@@ -7,6 +7,53 @@ export default function SingleCanvasPrints() {
   const context = useContext(ThemeContext);
   const { productProperty, setProductProperty } = context;
 
+  var heigh = '';
+  var widt = '';
+
+
+
+  
+  const customSizeh = (e) => {
+    heigh = e.target.value
+  }
+  const customSizew = (e) => {
+    widt = e.target.value
+    
+  }
+  
+  
+  const radioSubmit = (e) =>{
+    const str = e.target.value
+    const strr = e.target.value
+    // console.log(str);
+    // console.log(strr);
+    const i = str.indexOf(' ');
+    
+    var res = str.slice(0, i);
+    var rest = strr.slice(i, );
+    
+    // console.log(res)
+    // console.log(rest)
+    setProductProperty({ ...productProperty, size: res, sizePrice: rest });
+    
+    
+  }
+  
+  const sizeAndPrice = () => {
+
+    const customSize = `${heigh}x${widt}`
+
+    setProductProperty({ ...productProperty, size: customSize, sizePrice: "3047" });
+    
+  }
+  // const customsizeAndPrice = () => {
+
+  //   const customSize = `${heigh}x${widt}`
+
+  //   setProductProperty({ ...productProperty, size: customSize, sizePrice: "3047" });
+    
+  // }
+
   return (
     <Fragment>
       <div className="row canvas top-banner">
@@ -56,7 +103,9 @@ export default function SingleCanvasPrints() {
                             type="radio"
                             id={1}
                             name="option"
+                            value="8x8 299"
                             defaultValue={1}
+                            onClick={radioSubmit}
                           />
                           <label htmlFor={1} />
                         </div>
@@ -70,7 +119,7 @@ export default function SingleCanvasPrints() {
                         <img src={require("../images/arrow.png")} alt />
                       </td>
                       <td>
-                        <Link className="btn btn-warning" to="/createYourPrint">
+                        <Link  className="btn btn-warning" to="/uploadImage">
                           Submit
                         </Link>
                       </td>
@@ -82,6 +131,8 @@ export default function SingleCanvasPrints() {
                             type="radio"
                             id={2}
                             name="option"
+                            value="12x8 634"
+                            onClick={radioSubmit}
                             defaultValue={2}
                           />
                           <label htmlFor={2} />
@@ -96,7 +147,7 @@ export default function SingleCanvasPrints() {
                         <img src={require("../images/arrow.png")} alt />
                       </td>
                       <td>
-                        <Link className="btn btn-warning" to="/createYourPrint">
+                        <Link className="btn btn-warning"  to="/uploadImage">
                           Submit
                         </Link>
                       </td>
@@ -108,6 +159,8 @@ export default function SingleCanvasPrints() {
                             type="radio"
                             id={3}
                             name="option"
+                            value="10x10 660"
+                            onClick={radioSubmit}
                             defaultValue={3}
                           />
                           <label htmlFor={3} />
@@ -122,7 +175,7 @@ export default function SingleCanvasPrints() {
                         <img src={require("../images/arrow.png")} alt />
                       </td>
                       <td>
-                        <Link className="btn btn-warning" to="/createYourPrint">
+                        <Link className="btn btn-warning"  to="/uploadImage">
                           Submit
                         </Link>
                       </td>
@@ -135,6 +188,8 @@ export default function SingleCanvasPrints() {
                             id={4}
                             name="option"
                             defaultValue={4}
+                            value="16x20 1177"
+                            onClick={radioSubmit}
                           />
                           <label htmlFor={4} />
                         </div>
@@ -148,7 +203,7 @@ export default function SingleCanvasPrints() {
                         <img src={require("../images/arrow.png")} alt />
                       </td>
                       <td>
-                        <Link className="btn btn-warning" to="/createYourPrint">
+                        <Link className="btn btn-warning"  to="/uploadImage">
                           Submit
                         </Link>
                       </td>
@@ -161,6 +216,8 @@ export default function SingleCanvasPrints() {
                             id={5}
                             name="option"
                             defaultValue={5}
+                            value="20x30 3047"
+                            onClick={radioSubmit}
                           />
                           <label htmlFor={5} />
                         </div>
@@ -174,7 +231,7 @@ export default function SingleCanvasPrints() {
                         <img src={require("../images/arrow.png")} alt />
                       </td>
                       <td>
-                        <Link className="btn btn-warning" to="/createYourPrint">
+                        <Link className="btn btn-warning"  to="/uploadImage">
                           Submit
                         </Link>
                       </td>
@@ -200,12 +257,14 @@ export default function SingleCanvasPrints() {
                               className="form-control"
                               id="height"
                               style={{ width: 50 }}
+                              onChange={customSizeh }
                             />
                           </div>
                           <span>x</span>
                           <div className="form-group">
                             <input
                               type="text"
+                              onChange={customSizew}
                               className="form-control"
                               id="width"
                               style={{ width: 50 }}
@@ -221,7 +280,7 @@ export default function SingleCanvasPrints() {
                         <img src={require("../images/arrow.png")} alt />
                       </td>
                       <td>
-                        <Link className="btn btn-warning" to="/createYourPrint">
+                        <Link className="btn btn-warning" onClick={sizeAndPrice} to="/uploadImage">
                           Submit
                         </Link>
                       </td>
