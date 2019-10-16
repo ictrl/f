@@ -1,4 +1,4 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 
 import { ssContext } from "../App";
 
@@ -19,21 +19,13 @@ export default function Layout({
 
   const handleChange = event => {
     const value =
-    event.target.value <= 0 ? (event.target.value = 1) : event.target.value;
+      event.target.value <= 0 ? (event.target.value = 1) : event.target.value;
     setQuantity(value);
-    setTotalProductPrice(value * productPrice); 
+    setTotalProductPrice(value * productPrice);
   };
-
-  const chn = () => {
-       setSummaryDetails({
-      ...summaryDetails,
-      subtotal: 999
-    });
-  }
 
   return (
     <>
-
       <div className="col-md-12" style={{ padding: 0 }}>
         <div className="col-md-7 col-xs-7" style={{ padding: 0 }}>
           <div className="com-md-12" style={{ padding: 0 }}>
@@ -70,7 +62,8 @@ export default function Layout({
               defaultValue={1}
               min={1}
               max={190}
-              onChange={handleChange}
+              // onChange={handleChange}
+              value="1"
             />
           </div>
           <div className="col-md-4">
