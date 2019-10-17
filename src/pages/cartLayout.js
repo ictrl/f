@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-
+import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 import { ssContext } from "../App";
 
 export const cartContext = React.createContext({});
@@ -9,7 +9,8 @@ export default function Layout({
   material = "",
   sizes = "",
   productPrice = null,
-  image = ""
+  image = "",
+  productKey = ""
 }) {
   const contextt = useContext(ssContext);
   const { summaryDetails, setSummaryDetails } = contextt;
@@ -22,6 +23,11 @@ export default function Layout({
       event.target.value <= 0 ? (event.target.value = 1) : event.target.value;
     setQuantity(value);
     setTotalProductPrice(value * productPrice);
+  };
+
+  const deleteProduct = e => {
+    localStorage.removeItem(e.target.alt);
+    setSummaryDetails({ ...summaryDetails });
   };
 
   return (
@@ -80,20 +86,23 @@ export default function Layout({
           <div className="col-md-4 col-xs-4"></div>
           <div className="col-md-4 col-xs-4"></div>
           <div className="col-md-4 col-xs-4 text-right">
-            <a href>
+            <Link to="/createYourPrint">
               <img
+                onClick={deleteProduct}
                 src={require("../images/edit.png")}
                 height="20px"
                 width="20px"
+                alt={productKey}
               />
-            </a>
-            <a href>
-              <img
-                src={require("../images/trash.png")}
-                height="20px"
-                width="20px"
-              />
-            </a>
+            </Link>
+            &nbsp;
+            <img
+              onClick={deleteProduct}
+              src={require("../images/trash.png")}
+              height="20px"
+              width="20px"
+              alt={productKey}
+            />
           </div>
         </div>
       </div>

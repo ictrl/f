@@ -53,17 +53,14 @@ const App = ({ children }) => {
     if (route == CanvasPrint) {
       if (productProperty.material == null) {
         return CreateYourPrint;
-        // return route;
       } else {
         return route;
       }
     } else if (route == UploadImage) {
       if (productProperty.material == null) {
         return CreateYourPrint;
-        // return route;
       } else {
         if (productProperty.styleName == null || productProperty.size == null) {
-          // return route;
           return CanvasPrint;
         } else {
           return route;
@@ -72,14 +69,14 @@ const App = ({ children }) => {
     }
   };
 
-  //   const show = () => {
-  //     console.log(
-  //       util.inspect(productProperty, {
-  //         showHidden: true,
-  //         depth: null
-  //       })
-  //     );
-  //   };
+  // const show = () => {
+  //   console.log(
+  //     util.inspect(productProperty, {
+  //       showHidden: true,
+  //       depth: null
+  //     })
+  //   );
+  // };
 
   return (
     <Router>
@@ -132,7 +129,8 @@ const App = ({ children }) => {
           <Route
             exact
             path="/uploadImage"
-            component={componentValidation(UploadImage)}
+            component={UploadImage}
+            // component={componentValidation(UploadImage)}
           />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/create" component={create} />

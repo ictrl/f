@@ -8730,3 +8730,7 @@ input ::placeholder {
 .set-border {
 	border: 1px solid #ff9900 !important;
 }
+.mx-auto{
+	margin-left: auto;
+	margin-right: auto;
+}

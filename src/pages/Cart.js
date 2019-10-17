@@ -21,6 +21,9 @@ export default function NewCart() {
       var key = localStorage.key(i);
       if (key.slice(0, 7) == "Product") {
         var element = localStorage.getItem(key);
+        element = JSON.parse(element);
+        element.key = key;
+        element = JSON.stringify(element);
         temp.push(element);
       }
     }
@@ -47,6 +50,7 @@ export default function NewCart() {
             sizes={JSON.parse(products[i]).size}
             productPrice={JSON.parse(products[i]).productPrice}
             image={JSON.parse(products[i]).preview}
+            productKey={JSON.parse(products[i]).key}
           />
         );
       }
