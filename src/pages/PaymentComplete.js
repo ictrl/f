@@ -5,22 +5,8 @@ export default function PaymentComplete() {
     localStorage.clear();
   };
 
-  const getProducts = () => {
-    let temp = [];
-    for (var i = 0, len = localStorage.length; i < len; ++i) {
-      var key = localStorage.key(i);
-
-      var element = localStorage.getItem(key);
-      if (JSON.parse(element).styleName != undefined) {
-        temp.push(element);
-      } else continue;
-    }
-    console.log(temp);
-  };
-
   useEffect(() => {
-    // clearLocal();
-    getProducts();
+    clearLocal();
   }, []);
 
   return (

@@ -71,8 +71,10 @@ export default function Checkout() {
     let temp = [];
     for (var i = 0, len = localStorage.length; i < len; ++i) {
       var key = localStorage.key(i);
-      var element = localStorage.getItem(key);
-      temp.push(element);
+      if (key.slice(0, 7) == "Product") {
+        var element = localStorage.getItem(key);
+        temp.push(element);
+      }
     }
     setProducts(temp);
   };

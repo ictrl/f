@@ -215,9 +215,19 @@ export default function CanvasPrint() {
 		});
 	};
 
+		const returnSize = () => {
+      if (productProperty.size == undefined) {
+        return "Please select size*";
+      } else {
+        return productProperty.size + " ₹" + productProperty.sizePrice;
+      }
+    }; 
+
+
 	useEffect(() => {
 		loadSizes();
 		loadStyles();
+		returnSize();
 	}, []);
 
 	return (
@@ -308,11 +318,12 @@ export default function CanvasPrint() {
 						<div>
 							<div>
 								<button type="button" className="btn  btn-lg shape" data-toggle="modal" data-target="#myModal">
-									Please select size*
-								</button>
+										  	{returnSize()}
+                  </button>
 								{/* <span className="arrow-down">▼</span> */}
 								{/* Modal  fade*/}
-								<div id="myModal" className="modal fade" role="dialog">
+						
+						    <div id="myModal" className="modal fade" role="dialog">
 									<div
 										className="modal-dialog modal-lg"
 										style={{ height: '51rem', width: '67.2rem', marginTop: '10rem' }}
@@ -923,6 +934,7 @@ export default function CanvasPrint() {
 										</div>
 									</div>
 								</div>
+							
 							</div>
 						</div>
 					</div>

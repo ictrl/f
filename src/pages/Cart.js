@@ -19,8 +19,13 @@ export default function NewCart() {
     let temp = [];
     for (var i = 0, len = localStorage.length; i < len; ++i) {
       var key = localStorage.key(i);
-      var element = localStorage.getItem(key);
-      temp.push(element);
+      if (key.slice(0, 7) == "Product") {
+        var element = localStorage.getItem(key);
+        element = JSON.parse(element);
+        element.key = key;
+        element = JSON.stringify(element);
+        temp.push(element);
+      }
     }
     setProducts(temp);
   };
@@ -45,6 +50,7 @@ export default function NewCart() {
             sizes={JSON.parse(products[i]).size}
             productPrice={JSON.parse(products[i]).productPrice}
             image={JSON.parse(products[i]).preview}
+            productKey={JSON.parse(products[i]).key}
           />
         );
       }
