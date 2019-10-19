@@ -203,10 +203,22 @@ export default function CanvasPrint() {
 	};
 
 	const handler = (e) => {
+		const sty = e.target.className;
+		const popupSize = sty.slice(0, 5);
+		const popupPrice = sty.slice(6, 9);
+		document.getElementById('cancel').click();
+
+		setProductProperty({
+			...productProperty,
+			size: popupSize,
+			sizePrice: parseInt(popupPrice)
+		});
+	};
+
+	const handlers = (e) => {
 		// const sty = e.target.className;
 		let popupSize = '';
 		let popupPrice = '';
-		document.getElementById('cancel').click();
 
 		switch (e.target.tagName) {
 			case 'DIV':
@@ -305,7 +317,11 @@ export default function CanvasPrint() {
 				setDiv(<img src={spanImg.src} width="450px" height="450px" />);
 
 				break;
+			default:
+				console.log('default');
 		}
+
+		document.getElementById('cancels').click();
 
 		setProductProperty({
 			...productProperty,
@@ -1078,7 +1094,7 @@ export default function CanvasPrint() {
 															>
 																<div
 																	className="12X18 102 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="12X18 102  ">
@@ -1102,7 +1118,7 @@ export default function CanvasPrint() {
 																</div>
 																<div
 																	className="16X16 103 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="16X16 103  ">
@@ -1126,7 +1142,7 @@ export default function CanvasPrint() {
 																</div>
 																<div
 																	className="12X12 106 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="12X12 106  ">
@@ -1150,7 +1166,7 @@ export default function CanvasPrint() {
 																</div>
 																<div
 																	className="16X20 137 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="16X20 137  ">
@@ -1174,7 +1190,7 @@ export default function CanvasPrint() {
 																</div>
 																<div
 																	className="16X20 137 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="16X20 137  ">
@@ -1198,7 +1214,7 @@ export default function CanvasPrint() {
 																</div>
 																<div
 																	className="16X20 137 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="16X20 137  ">
@@ -1223,7 +1239,7 @@ export default function CanvasPrint() {
 
 																<div
 																	className="16X20 137 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="16X20 137  ">
@@ -1248,7 +1264,7 @@ export default function CanvasPrint() {
 
 																<div
 																	className="16X20 137 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="16X20 137  ">
@@ -1273,7 +1289,7 @@ export default function CanvasPrint() {
 
 																<div
 																	className="16X20 137 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="16X20 137  ">
@@ -1281,7 +1297,7 @@ export default function CanvasPrint() {
 																			className="16X20 137  "
 																			src={require('../xd/8s.svg')}
 																			alt="12 X 18"
-																			width="50"
+																			width="40"
 																		/>
 																		<h5 className="16X20 137  "> (3) 12" x 12" & (1) 40" x 30"</h5>
 																		<span className="16X20 137  " style={{ display: 'flex', padding: '0 2rem' }}>
@@ -1298,7 +1314,7 @@ export default function CanvasPrint() {
 
 																<div
 																	className="16X20 137 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="16X20 137  ">
@@ -1323,7 +1339,7 @@ export default function CanvasPrint() {
 
 																<div
 																	className="16X20 137 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="16X20 137  ">
@@ -1348,7 +1364,7 @@ export default function CanvasPrint() {
 
 																<div
 																	className="16X20 137 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="16X20 137  ">
@@ -1373,7 +1389,7 @@ export default function CanvasPrint() {
 
 																<div
 																	className="16X20 137 col-sm-3 center  box"
-																	onClick={handler}
+																	onClick={handlers}
 																	style={{ padding: '1.5rem' }}
 																>
 																	<center className="16X20 137  ">
@@ -1407,7 +1423,7 @@ export default function CanvasPrint() {
 															height: '6.6rem'
 														}}
 													>
-														<button type="button" id="cancel" className="btn btn-default" data-dismiss="modal">
+														<button type="button" id="cancels" className="btn btn-default" data-dismiss="modal">
 															Cancel
 														</button>
 														{/* </div> */}

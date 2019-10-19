@@ -1,8 +1,8 @@
-
-							<div>
+<div>
 								<button type="button" className="btn  btn-lg shape" data-toggle="modal" data-target="#myModal">
 									{returnSize()}
 								</button>
+
 								{/* <span className="arrow-down">▼</span> */}
 								{/* Modal  fade*/}
 
@@ -617,12 +617,4 @@
 										</div>
 									</div>
 								</div>
-</div>
-              
-
-
-
-
-
-
-              
+							</div>

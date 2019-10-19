@@ -159,7 +159,7 @@ export default function Navbar() {
 								</Link>
 							</li>
 
-							<li>
+							{/* <li>
 								<Link to="/floatingFrameCanvas" className="center">
 									<img src={require('../images/m5.jpg')} style={{ width: '100%' }} className="thumbnail" alt="" />
 									<h5 style={{ color: 'blue' }}>Floating Frame Canvas</h5>
@@ -167,7 +167,7 @@ export default function Navbar() {
 										Stretched print frame <br /> inside floating frame
 									</p>
 								</Link>
-							</li>
+							</li> */}
 						</ul>
 					</li>
 					<li className="dropdown ">
@@ -184,19 +184,19 @@ export default function Navbar() {
 							<li>
 								<Link to="/landescape" className="center">
 									<img src={require('../images/m1.jpg')} style={{ width: '100%' }} className="thumbnail" alt="" />
-									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>LandEscape</h5>
+									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Aboriginal</h5>
 								</Link>
 							</li>
 							<li>
 								<Link to="/landescape" className="center">
 									<img src={require('../images/m3.jpg')} style={{ width: '100%' }} className="thumbnail" alt="" />
-									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>LandEscape</h5>
+									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Urban</h5>
 								</Link>
 							</li>
 							<li>
 								<Link to="/landescape" className="center">
 									<img src={require('../images/m4.jpg')} style={{ width: '100%' }} alt="" className="thumbnail" />
-									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>LandEscape</h5>
+									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Architecture</h5>
 								</Link>
 							</li>
 							<li>
@@ -208,31 +208,56 @@ export default function Navbar() {
 							<li>
 								<Link to="/architecture" className="center">
 									<img src={require('../images/m2.jpg')} style={{ width: '100%' }} alt="" className="thumbnail" />
-									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Aboriginal</h5>
-								</Link>
-							</li>
-							<li>
-								<Link to="/urban" className="center">
-									<img src={require('../images/m3.jpg')} style={{ width: '100%' }} alt="" className="thumbnail" />
-									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Urban</h5>
-								</Link>
-							</li>
-							<li>
-								<Link to="/architecture" className="center">
-									<img src={require('../images/m4.jpg')} style={{ width: '100%' }} className="thumbnail" alt="" />
-									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Architecture</h5>
-								</Link>
-							</li>
-							<li>
-								<Link to="/urban" className="center">
-									<img src={require('../images/m4.jpg')} style={{ width: '100%' }} className="thumbnail" alt="" />
 									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Abstract</h5>
 								</Link>
 							</li>
 							<li>
 								<Link to="/urban" className="center">
-									<img src={require('../images/m5.jpg')} style={{ width: '100%' }} alt="" className="thumbnail" />
+									<img src={require('../images/m3.jpg')} style={{ width: '100%' }} alt="" className="thumbnail" />
 									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Contemporary</h5>
+								</Link>
+							</li>
+							<li>
+								<Link to="/architecture" className="center">
+									<img src={require('../images/m4.jpg')} style={{ width: '100%' }} className="thumbnail" alt="" />
+									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Retro</h5>
+								</Link>
+							</li>
+							<li>
+								<Link to="/urban" className="center">
+									<img src={require('../images/m4.jpg')} style={{ width: '100%' }} className="thumbnail" alt="" />
+									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Sports</h5>
+								</Link>
+							</li>
+							<li>
+								<Link to="/urban" className="center">
+									<img src={require('../images/m5.jpg')} style={{ width: '100%' }} alt="" className="thumbnail" />
+									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Nature</h5>
+								</Link>
+							</li>
+
+							<li>
+								<Link to="/urban" className="center">
+									<img src={require('../images/m5.jpg')} style={{ width: '100%' }} alt="" className="thumbnail" />
+									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Japnese</h5>
+								</Link>
+							</li>
+							<li>
+								<Link to="/urban" className="center">
+									<img src={require('../images/m5.jpg')} style={{ width: '100%' }} alt="" className="thumbnail" />
+									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Egyptian</h5>
+								</Link>
+							</li>
+							<li>
+								<Link to="/urban" className="center">
+									<img src={require('../images/m5.jpg')} style={{ width: '100%' }} alt="" className="thumbnail" />
+									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Food</h5>
+								</Link>
+							</li>
+							<li>
+								<Link to="/urban" className="center">
+									<img src={require('../images/m5.jpg')} style={{ width: '100%' }} alt="" className="thumbnail" />
+									<h5 style={{ marginTop: '-1rem', color: 'blue' }}>Drinks</h5>
 								</Link>
 							</li>
 						</ul>
