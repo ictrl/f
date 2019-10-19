@@ -7,6 +7,7 @@ export default function CanvasPrint() {
 	const context = useContext(ThemeContext);
 	const { productProperty, setProductProperty } = context;
 	const [ sizes, setSizeList ] = useState([]);
+	const [ button, setButton ] = useState('#myModal');
 	const [ div, setDiv ] = useState(
 		<div className="row left-section " style={{ display: 'block' }}>
 			{' '}
@@ -61,7 +62,9 @@ export default function CanvasPrint() {
 
 	const splitHandler = (e) => {
 		removeBorder();
+
 		if (e.target.classList[2] === 'i1') {
+			setButton('#myModal');
 			setBorder(1);
 			setProductProperty({
 				...productProperty,
@@ -80,6 +83,7 @@ export default function CanvasPrint() {
 				</div>
 			);
 		} else if (e.target.classList[2] === 'i2') {
+			setButton('#myModall');
 			setBorder(2);
 			setProductProperty({
 				...productProperty,
@@ -107,6 +111,7 @@ export default function CanvasPrint() {
 				</div>
 			);
 		} else if (e.target.classList[2] === 'i3') {
+			setButton('#myModall');
 			setBorder(3);
 			setProductProperty({
 				...productProperty,
@@ -140,6 +145,7 @@ export default function CanvasPrint() {
 				</div>
 			);
 		} else {
+			setButton('#myModall');
 			setBorder(4);
 			setProductProperty({
 				...productProperty,
@@ -433,7 +439,7 @@ export default function CanvasPrint() {
 							{/* single canvas starts */}
 
 							<div>
-								<button type="button" className="btn  btn-lg shape" data-toggle="modal" data-target="#myModal">
+								<button type="button" className="btn  btn-lg shape" data-toggle="modal" data-target={button}>
 									{returnSize()}
 								</button>
 
@@ -1058,9 +1064,9 @@ export default function CanvasPrint() {
 							{/* split canvas starts */}
 
 							<div>
-								<button type="button" className="btn  btn-lg shape" data-toggle="modal" data-target="#myModall">
+								{/* <button type="button" className="btn  btn-lg shape" data-toggle="modal" data-target="#myModall">
 									{returnSize()}
-								</button>
+								</button> */}
 								{/* <span className="arrow-down">▼</span> */}
 								{/* Modal  fade*/}
 								<div id="myModall" className="modal fade" role="dialog">
