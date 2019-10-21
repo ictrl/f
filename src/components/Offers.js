@@ -15,7 +15,7 @@ export default function Offers() {
 					zIndex: '999'
 				}}
 			>
-				<div className=" col-sm-6 col-md-3 pro" style={{ textAlign: 'left', marginLeft: '-4.5rem' }}>
+				<div className=" col-sm-6 col-md-3 pro" style={{ textAlign: 'left', marginLeft: '-6rem' }}>
 					<span className="left-top" style={{ fontSize: '12px', paddingLeft: '0' }}>
 						Sign up &amp; get gift voucher worth `1000
 					</span>
