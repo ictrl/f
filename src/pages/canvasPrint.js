@@ -471,7 +471,7 @@ export default function CanvasPrint() {
 
               <Link to="/cart">
                 <button
-                  className="btn btn-warning oultine-btn"
+                  className="btn btn-warning oultine-btn add-img-height"
                   onClick={saveProduct}
                 >
                   Add to cart{" "}

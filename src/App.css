@@ -8425,7 +8425,8 @@ input ::placeholder {
 }
 
 .add-img-height {
-	height: 34.5px;
+	height: 50.5px;
+	width: auto;
 }
 
 #previewImg {
