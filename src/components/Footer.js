@@ -16,7 +16,7 @@ export default function Footer() {
 			<div className="row footer">
 				<div className="col-sm-1" />
 				<div className="col-sm-2" style={{ lineHeight: '5rem' }}>
-					<p style={{ fontWeight: '200', fontSize: '13px', letterSpacing: '4px' }}>COMPANY</p>
+					<p style={{ fontWeight: '700', fontSize: '13px', letterSpacing: '4px' }}>COMPANY</p>
 					<ul style={{ fontSize: '13px', letterSpacing: '1.5px' }}>
 						<li>
 							<Link to="/privacyPolicy">PRIVACY POLICY</Link>
@@ -46,7 +46,7 @@ export default function Footer() {
 					</ul>
 				</div>
 				<div className="col-sm-2" style={{ lineHeight: '5rem' }}>
-					<p style={{ fontWeight: '200', fontSize: '13px', letterSpacing: '4px' }}>BE SOCIAL</p>
+					<p style={{ fontWeight: '700', fontSize: '13px', letterSpacing: '4px' }}>BE SOCIAL</p>
 					<ul style={{ lineHeight: '3.4rem' }}>
 						<li>
 							<div style={{ display: 'flex' }}>

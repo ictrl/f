@@ -79,11 +79,12 @@ export default function Home() {
       </div>
       <div className="row" style={{ marginTop: "2rem" }}>
         <div className="col-sm-12 center">
-          <h2 style={{fontSize: '23px'}}>
+          <h2 style={{ fontWeight:'700', fontSize: '23px'}}>
             Choose the perfect material and
             <br />
             style for your home
           </h2>
+          <br/>
           <p style={{fontSize: '14px'}}>
           
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -154,20 +155,24 @@ export default function Home() {
       </div>
       <div className="row canvas">
         <div className="col-sm-8 canvas-inner">
-          <h1 style={{fontSize: '40px'}} className="canvas-heading">
+          <h1 style={{fontSize: '40px',lineHeight:'46px'}} className="canvas-heading">
             Create
             <br />
             your own
             <br />
             Canvas
           </h1>
-          <p style={{fontSize: '13px'}} className="canvas-paragaraph">
+            <br />
+
+          <p style={{fontSize: '13px',lineHeight:'23px'}} className="canvas-paragaraph">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem <br />
             Ipsum has been the industry's standard dummy text ever since the
             1500s,
           </p>
           <p className="canvas-paragaraph">
+            <br />
+
             <Link style={{fontSize: '15px'}}
               to="/CreateYourPrint"
               className="btn btn-warning"
@@ -293,7 +298,7 @@ export default function Home() {
       <div>
         <p
           className="center testimonial-upper"
-          style={{ letterSpacing: "4px", fontSize: "30px", fontWeight: "10" }}
+          style={{ letterSpacing: "6px", fontSize: "30px", fontWeight: "10" }}
         >
           CUSTOMER TESTIMONIALS
         </p>
@@ -464,27 +469,29 @@ export default function Home() {
         <div className="col-sm-4">
           <div className="bottom-banner-right" style={{background:'#424242'}}>
             <div className="right-inner">
-              <h2 style={{fontSize: '30px'}}>
+              <p style={{fontSize: '30px'}}>
                 LATEST <strong>NEWS</strong> FROM THE <br />
                 GALLERIQ <strong>BLOG</strong>
-              </h2>
-              <hr />
-              <p style={{fontSize: '15px'}}>11 Mar’19:</p>
+              </p>
+              <hr align="left" width="3110" />
+              <p style={{ fontSize: '15px' }}>11 Mar’19:</p>
+              <br />
               <p style={{fontSize: '12px'}}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad
                 minim veniam, quis nostrud. Excepteur sint.
               </p>
-              <a style={{fontSize: '14px'}} to="#" className="btn">
+              <br />
+              <Link style={{fontSize: '14px'}} to="/" className="btn">
                 Read More
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </div>
       <div className="row">
         <div className="col-sm-12 center">
-          <img src={require("../images/Instagram_icon@1X.png")} alt="" />
+          <img width="40" src={require("../images/Instagram_icon@1X.png")} alt="" />
           <h3>GALLERIQ ON INSTAGRAM</h3>
           <hr
             style={{
@@ -496,29 +503,35 @@ export default function Home() {
           <div style={{ margin: "0 2rem", marginBottom: "3rem" }}>
             {/**<div id='instafeed_gallery' style={{ padding: '2rem 1rem' }}></div> */}
 
+
+
+
             <div id="" style={{ padding: "2rem 1rem" }}>
+
+
               <div class="col-md-3 ">
-                <img
+                <img 
                   src="https://scontent.cdninstagram.com/vp/ee82adb66f3869fb1f4f233f54c18fe4/5E352120/t51.2885-15/sh0.08/e35/s640x640/54732081_2480255758651162_2082569370229781734_n.jpg?_nc_ht=scontent.cdninstagram.com"
-                  class="img-responsive overley-hover"
+                  className="img-responsive overley-hover"  alt="--"
                 />
               </div>
-              <div class="col-md-3 ">
+              
+              <div className="col-md-3 ">
                 <img
                   src="https://scontent.cdninstagram.com/vp/57dbf4ab6a4836aa69149760daaeda61/5E19C9F8/t51.2885-15/sh0.08/e35/s640x640/53931056_553119818509947_4756748281490530144_n.jpg?_nc_ht=scontent.cdninstagram.com"
-                  class="img-responsive overley-hover"
+                  className="img-responsive overley-hover"  alt="--"
                 />
               </div>
-              <div class="col-md-3 ">
+              <div className="col-md-3 ">
                 <img
                   src="https://scontent.cdninstagram.com/vp/8d2aad4c01caea949c1812be869fe5f1/5E1B517B/t51.2885-15/sh0.08/e35/s640x640/52382697_1969205423206223_242070823319389570_n.jpg?_nc_ht=scontent.cdninstagram.com"
-                  class="img-responsive overley-hover"
+                  className="img-responsive overley-hover"  alt="--"
                 />
               </div>
-              <div class="col-md-3 ">
+              <div className="col-md-3 ">
                 <img
                   src="https://scontent.cdninstagram.com/vp/f2ed4263496f583eb944491aaef8c41f/5E1B6633/t51.2885-15/sh0.08/e35/s640x640/52673355_584651762009851_2514136196853131759_n.jpg?_nc_ht=scontent.cdninstagram.com"
-                  class="img-responsive overley-hover"
+                  className="img-responsive overley-hover"  alt="--"
                 />
               </div>
             </div>

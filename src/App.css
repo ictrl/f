@@ -7406,7 +7406,7 @@ button.close {
   -ms-transform: scale(1.2);
   transform: scale(1.2); */
 
-	background-color: rgba(236, 143, 11, 0.5);
+	background-color:rgba(255, 153, 0, 0.864);
 }
 
 .hovereffect h2 {
@@ -7491,10 +7491,14 @@ button.close {
 	display: block;
 	border-radius: 50%;
 }
-.carousel1 .testimonial {
+
+@media(min-width: 920px){
+	.carousel1 .testimonial {
 	padding: 30px 0 10px;
 	width: 900px;
 }
+}
+
 .carousel1 .overview {
 	text-align: center;
 	padding-bottom: 5px;
@@ -7939,21 +7943,22 @@ body {
 
 /*bottom banner*/
 .bottom-banner-right {
-	background-color: #424242333;
+	background-color: #424242;
 	color: #fff;
 }
 @media (min-width: 1200px) {
 	.bottom-banner-right {
 		position: relative;
-		right: 135px;
-		width: 520px;
-		top: 6rem;
+		right: 103px;
+		width: 470px;
+		height: 33.5rem;
+		top: 5.5rem;
 	}
 	.img-bg-rm:hover {
 		background-color: #fff !important;
 	}
 	.right-inner {
-		padding: 60px;
+		padding: 40px;
 	}
 }
 
@@ -8133,8 +8138,8 @@ input ::placeholder {
 	font-style: italic;
 	font-size: 15px;
 	color: #424242;
-	letter-spacing: 1.5px;
-	line-height: 3rem;
+	/* letter-spacing: px; */
+	line-height: 2.5rem;
 }
 
 .testmonial-quote {

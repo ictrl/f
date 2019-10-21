@@ -66,6 +66,7 @@ export default function Navbar() {
 						<Link data-toggle="dropdown" className="dropdown-toggle" style={{ fontSize: '16px' }} to="/createYourPrint">
 							Canvas Prints
 						</Link>
+
 						<ul className="dropdown-menu list-inline menu1">
 							<li>
 								<Link
@@ -172,7 +173,7 @@ export default function Navbar() {
 					</li>
 					<li className="dropdown ">
 						<Link data-toggle="dropdown" className="dropdown-toggle" to="/createYourPrint" style={{ fontSize: '16px' }}>
-							Wall Art {/* <b class="caret"></b> */}
+							Wall Art
 						</Link>
 						<ul className="dropdown-menu list-inline menu2">
 							<li>
@@ -264,7 +265,7 @@ export default function Navbar() {
 					</li>
 					<li className="dropdown ">
 						<Link data-toggle="dropdown" className="dropdown-toggle" to="/createYourPrint" style={{ fontSize: '16px' }}>
-							Premium Prints {/* <b class="caret"></b> */}
+							Premium Prints
 						</Link>
 						<ul className="dropdown-menu list-inline menu3">
 							<li>
@@ -289,7 +290,7 @@ export default function Navbar() {
 					</li>
 					<li>
 						<Link to="/catalog" style={{ fontSize: '16px' }}>
-							Canvas Ideas {/* <b class="caret"></b> */}
+							Canvas Ideas
 						</Link>
 					</li>
 					<li>
