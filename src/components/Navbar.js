@@ -64,7 +64,7 @@ export default function Navbar() {
 				<ul className="nav navbar-nav nav-center">
 					<li className="dropdown ">
 						<Link data-toggle="dropdown" className="dropdown-toggle" style={{ fontSize: '16px' }} to="/createYourPrint">
-							Canvas Prints
+							Canvas Prints &nbsp; &nbsp;
 						</Link>
 
 						<ul className="dropdown-menu list-inline menu1">
@@ -173,7 +173,7 @@ export default function Navbar() {
 					</li>
 					<li className="dropdown ">
 						<Link data-toggle="dropdown" className="dropdown-toggle" to="/createYourPrint" style={{ fontSize: '16px' }}>
-							Wall Art
+							Wall Art&nbsp;&nbsp;
 						</Link>
 						<ul className="dropdown-menu list-inline menu2">
 							<li>
@@ -265,7 +265,7 @@ export default function Navbar() {
 					</li>
 					<li className="dropdown ">
 						<Link data-toggle="dropdown" className="dropdown-toggle" to="/createYourPrint" style={{ fontSize: '16px' }}>
-							Premium Prints
+							Premium Prints&nbsp;&nbsp;
 						</Link>
 						<ul className="dropdown-menu list-inline menu3">
 							<li>
@@ -290,7 +290,7 @@ export default function Navbar() {
 					</li>
 					<li>
 						<Link to="/catalog" style={{ fontSize: '16px' }}>
-							Canvas Ideas
+							Canvas Ideas&nbsp;&nbsp;
 						</Link>
 					</li>
 					<li>
