@@ -462,7 +462,7 @@ export default function Home() {
           />
         </div>
         <div className="col-sm-4">
-          <div className="bottom-banner-right">
+          <div className="bottom-banner-right" style={{background:'#424242'}}>
             <div className="right-inner">
               <h2 style={{fontSize: '30px'}}>
                 LATEST <strong>NEWS</strong> FROM THE <br />
