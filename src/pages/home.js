@@ -46,29 +46,30 @@ export default function Home() {
         </a>
       </div>
       <div
+        
         className="row"
         style={{ padding: "20px 0", backgroundColor: "#EFEFEF" }}
       >
         <div className="col-sm-2" />
         <div className="col-sm-2  second-sec">
           <img src={require("../images/shipping.png")} alt="" />
-          <div>
+          <div  style={{fontSize: '13px'}}>
             FREE <br /> SHIPPING
           </div>
         </div>
-        <div className="col-sm-2 second-sec">
+        <div style={{fontSize: '13px'}} className="col-sm-2 second-sec">
           <img src={require("../images/cod.png")} alt="" />
           <div>
             COD <br /> AVAILABLE
           </div>
         </div>
-        <div className="col-sm-2  second-sec">
+        <div style={{fontSize: '13px'}} className="col-sm-2  second-sec">
           <img src={require("../images/payment.png")} alt="" />
           <div>
             SECURE <br /> PAYMENT
           </div>
         </div>
-        <div className="col-sm-2  second-sec" style={{ borderRight: "none" }}>
+        <div style={{fontSize: '13px'}} className="col-sm-2  second-sec" style={{ borderRight: "none" }}>
           <img src={require("../images/service.png")} alt="" />
           <div>
             FRIENDLY <br /> SERVICE
@@ -78,13 +79,13 @@ export default function Home() {
       </div>
       <div className="row" style={{ marginTop: "2rem" }}>
         <div className="col-sm-12 center">
-          <h2>
+          <h2 style={{fontSize: '23px'}}>
             Choose the perfect material and
             <br />
             style for your home
           </h2>
-          <p>
-            {" "}
+          <p style={{fontSize: '14px'}}>
+          
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum
             <br /> has been the industry's standard dummy text ever since the
@@ -104,11 +105,11 @@ export default function Home() {
               alt=""
             />
             <div className="overlay">
-              <h2>
+              <h2 style={{fontSize: '30px'}}>
                 Caanvas <br />
                 Print
               </h2>
-              <Link className="info" to="/catalog">
+              <Link style={{fontSize: '15px'}} className="info" to="/catalog">
                 Explore More
               </Link>
             </div>
@@ -122,11 +123,11 @@ export default function Home() {
               alt=""
             />
             <div className="overlay">
-              <h2>
+              <h2 style={{fontSize: '30px'}}>
                 Wall <br />
                 Art
               </h2>
-              <Link className="info" to="/wallArt">
+              <Link style={{fontSize: '15px'}} className="info" to="/wallArt">
                 Explore More
               </Link>
             </div>
@@ -140,11 +141,11 @@ export default function Home() {
               alt=""
             />
             <div className="overlay">
-              <h2>
+              <h2 style={{fontSize: '30px'}}>
                 Premium <br />
                 Prints
               </h2>
-              <Link className="info" to="/premiumPrints">
+              <Link style={{fontSize: '15px'}} className="info" to="/premiumPrints">
                 Explore More
               </Link>
             </div>
@@ -153,21 +154,21 @@ export default function Home() {
       </div>
       <div className="row canvas">
         <div className="col-sm-8 canvas-inner">
-          <h1 className="canvas-heading">
+          <h1 style={{fontSize: '40px'}} className="canvas-heading">
             Create
             <br />
             your own
             <br />
             Canvas
           </h1>
-          <p className="canvas-paragaraph">
+          <p style={{fontSize: '13px'}} className="canvas-paragaraph">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem <br />
             Ipsum has been the industry's standard dummy text ever since the
             1500s,
           </p>
           <p className="canvas-paragaraph">
-            <Link
+            <Link style={{fontSize: '15px'}}
               to="/CreateYourPrint"
               className="btn btn-warning"
               role="button"
@@ -180,7 +181,7 @@ export default function Home() {
       </div>
       ;
       <div>
-        <h3 className="center " style={{ fontWeight: "700" }}>
+        <h3 className="center " style={{fontSize: '28px'}} style={{ fontWeight: "700" }}>
           SHOP BY COLLECTION
         </h3>
       </div>
@@ -195,11 +196,11 @@ export default function Home() {
               alt=""
             />
             <div className="banner-content-details  fadeIn-left">
-              <h3 className="banner-content-title">Single Canvas Print</h3>
+              <h3 className="banner-content-title" >Single Canvas Print</h3>
               <p className="banner-content-text">This is a short description</p>
             </div>
           </Link>
-          <h4 className="center">Single Canvas Print</h4>
+          <h4 className="center" style={{fontSize: '20px'}}>Single Canvas Print</h4>
         </div>
 
         <div class="banner-content col-sm-6 canvas-right">
@@ -216,7 +217,7 @@ export default function Home() {
               <p className="banner-content-text">This is a short description</p>
             </div>
           </Link>
-          <h4 className="center">Canvas Collages</h4>
+          <h4 className="center" style={{fontSize: '20px'}}>Canvas Collages</h4>
         </div>
 
         <div class="banner-content col-sm-12">
@@ -234,7 +235,7 @@ export default function Home() {
             </div>
           </Link>
 
-          <h4 className="center">CANVAS SPLIT IMAGE</h4>
+          <h4 className="center" style={{fontSize: '20px'}}>CANVAS SPLIT IMAGE</h4>
         </div>
 
         <div class="banner-content col-sm-6 canvas-left">
@@ -251,7 +252,7 @@ export default function Home() {
               <p className="banner-content-text">This is a short description</p>
             </div>
           </Link>
-          <h4 className="center">Floating Frame Canvas</h4>
+          <h4 className="center" style={{fontSize: '20px'}}>Floating Frame Canvas</h4>
         </div>
 
         <div class="banner-content col-sm-6 canvas-right">
@@ -268,7 +269,7 @@ export default function Home() {
               <p className="banner-content-text">This is a short description</p>
             </div>
           </Link>
-          <h4 className="center">Large Canvas Print</h4>
+          <h4 className="center" style={{fontSize: '20px'}}>Large Canvas Print</h4>
         </div>
 
         <div class="banner-content col-sm-12">
@@ -286,7 +287,7 @@ export default function Home() {
             </div>
           </Link>
 
-          <h4 className="center">Acrylic Premium Prints</h4>
+          <h4 className="center" style={{fontSize: '20px'}}>Acrylic Premium Prints</h4>
         </div>
       </div>
       <div>
@@ -329,7 +330,7 @@ export default function Home() {
                 />
               </div>
               <p className="overview">
-                <p>- Nitesh Upraity</p>
+                <p style={{fontSize: '14px'}}>- Nitesh Upraity</p>
               </p>
               <div className="star-rating">
                 <ul className="list-inline">
@@ -378,13 +379,13 @@ export default function Home() {
                 />
               </div>
               <p className="overview">
-                <p>- Nitesh Upraity</p>
+                <p style={{fontSize: '14px'}}>- Nitesh Upraity</p>
               </p>
               <div className="star-rating">
                 <ul className="list-inline">
                   <li className="list-inline-item">
                     <i className="fa fa-star" />
-                  </li>
+                  </li> 
                   <li className="list-inline-item">
                     <i className="fa fa-star" />
                   </li>
@@ -427,7 +428,7 @@ export default function Home() {
                     alt=""
                   />
                 </div>
-                <p>- Nitesh Upraity</p>
+                <p style={{fontSize: '14px'}}> - Nitesh Upraity</p>
               </p>
               <div className="star-rating">
                 <ul className="list-inline">
@@ -463,18 +464,18 @@ export default function Home() {
         <div className="col-sm-4">
           <div className="bottom-banner-right">
             <div className="right-inner">
-              <h2>
+              <h2 style={{fontSize: '30px'}}>
                 LATEST <strong>NEWS</strong> FROM THE <br />
                 GALLERIQ <strong>BLOG</strong>
               </h2>
               <hr />
-              <p>11 Mar’19:</p>
-              <p>
+              <p style={{fontSize: '15px'}}>11 Mar’19:</p>
+              <p style={{fontSize: '12px'}}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad
                 minim veniam, quis nostrud. Excepteur sint.
               </p>
-              <a to="#" className="btn">
+              <a style={{fontSize: '14px'}} to="#" className="btn">
                 Read More
               </a>
             </div>

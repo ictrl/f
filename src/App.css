@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap&subset=devanagari,latin-ext');
 /* ///////////////// */
 
 html {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins-regular', sans-serif;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
@@ -8131,6 +8131,7 @@ input ::placeholder {
 }
 .testimonial {
 	font-style: italic;
+	font-size: 15px;
 	color: #000;
 	letter-spacing: 1.5px;
 	line-height: 3rem;

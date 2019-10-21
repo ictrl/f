@@ -63,7 +63,7 @@ export default function Navbar() {
 			<div id="navbarCollapse" className="collapse navbar-collapse">
 				<ul className="nav navbar-nav nav-center">
 					<li className="dropdown ">
-						<Link data-toggle="dropdown" className="dropdown-toggle" to="/createYourPrint">
+						<Link data-toggle="dropdown" className="dropdown-toggle" style={{ fontSize: '16px' }} to="/createYourPrint">
 							Canvas Prints
 						</Link>
 						<ul className="dropdown-menu list-inline menu1">
@@ -171,7 +171,7 @@ export default function Navbar() {
 						</ul>
 					</li>
 					<li className="dropdown ">
-						<Link data-toggle="dropdown" className="dropdown-toggle" to="/createYourPrint">
+						<Link data-toggle="dropdown" className="dropdown-toggle" to="/createYourPrint" style={{ fontSize: '16px' }}>
 							Wall Art {/* <b class="caret"></b> */}
 						</Link>
 						<ul className="dropdown-menu list-inline menu2">
@@ -263,7 +263,7 @@ export default function Navbar() {
 						</ul>
 					</li>
 					<li className="dropdown ">
-						<Link data-toggle="dropdown" className="dropdown-toggle" to="/createYourPrint">
+						<Link data-toggle="dropdown" className="dropdown-toggle" to="/createYourPrint" style={{ fontSize: '16px' }}>
 							Premium Prints {/* <b class="caret"></b> */}
 						</Link>
 						<ul className="dropdown-menu list-inline menu3">
@@ -288,7 +288,9 @@ export default function Navbar() {
 						</ul>
 					</li>
 					<li>
-						<Link to="/catalog">Canvas Ideas {/* <b class="caret"></b> */}</Link>
+						<Link to="/catalog" style={{ fontSize: '16px' }}>
+							Canvas Ideas {/* <b class="caret"></b> */}
+						</Link>
 					</li>
 					<li>
 						<Link
@@ -297,6 +299,7 @@ export default function Navbar() {
 							role="button"
 							aria-haspopup="true"
 							aria-expanded="false"
+							style={{ fontSize: '16px' }}
 						>
 							Create a Canvas
 						</Link>
