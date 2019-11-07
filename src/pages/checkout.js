@@ -13,6 +13,12 @@ export default function Checkout() {
   let temp = [];
   let tempSubtotal = 0;
 
+const poha = () => {
+  console.log(API)
+}
+
+
+
   const createPost = order => {
     console.log(payMethod);
     if (payMethod === "cod") {
@@ -290,6 +296,8 @@ export default function Checkout() {
                   placeholder="Enter Discount Code"
                 />
                 <input
+                  onClick={poha}
+
                   className="text-apply-discount"
                   type="button"
                   defaultValue="APPLY DISCOUNT"

@@ -108,14 +108,14 @@ const App = ({ children }) => {
 					<Route
 						exact
 						path="/CanvasPrint"
-						// component={CanvasPrint}
-						component={componentValidation(CanvasPrint)}
+						component={CanvasPrint}
+						// component={componentValidation(CanvasPrint)}
 					/>
 					<Route
 						exact
 						path="/uploadImage"
-						// component={UploadImage}
-						component={componentValidation(UploadImage)}
+						component={UploadImage}
+						// component={componentValidation(UploadImage)}
 					/>
 					<Route exact path="/Login" component={Login} />
 					<Route exact path="/create" component={create} />
