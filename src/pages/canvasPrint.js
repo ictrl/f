@@ -235,6 +235,7 @@ export default function CanvasPrint() {
 
 	const handlers = (e) => {
 		// const sty = e.target.className;
+		document.getElementById('cancel').click();
 		let popupSize = '';
 		let popupPrice = '';
 
